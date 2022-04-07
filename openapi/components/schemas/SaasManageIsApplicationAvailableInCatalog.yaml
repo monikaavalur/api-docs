@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: >-
+      False if app is not found in tenants application table OR appKey's
+      template is not found in the global catalog. True otherwise
+  Error:
+    type: object
+    description: Error message text on failure, may be null

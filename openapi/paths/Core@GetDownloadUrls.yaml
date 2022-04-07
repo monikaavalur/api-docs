@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets download urls.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetDownloadUrls.yaml
+  x-idap-anon: false

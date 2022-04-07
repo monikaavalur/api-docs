@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set the tenant configuration.
+  description: Reserved for on premises environments.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - key
+            - tenantId
+            - value
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: The tenant id.
+            value:
+              type: string
+              description: The configuration setting.
+            key:
+              type: string
+              description: The configuration key.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigSetAdvancedConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

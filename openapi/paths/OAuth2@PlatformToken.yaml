@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets a token based on grant type.
+  description: See the OAuth2 spec https://oauth.net/2/
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - grant_type
+          type: object
+          properties:
+            grant_type:
+              type: string
+              description: Grant what type of token.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2PlatformToken.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Directory Service Management
+  summary: Delete global group assertion mapping.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/FederationDeleteGlobalGroupAssertionMapping.yaml
+  x-idap-anon: false

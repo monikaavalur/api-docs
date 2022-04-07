@@ -1,0 +1,18 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: Role and rights for a directoryfile.
+    items:
+      type: object
+      properties:
+        Role:
+          type: string
+          description: The directoryfile ace principal.
+        Rights:
+          type: string
+          description: The rights the principal has.
+      description: A directoryfile role and right.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

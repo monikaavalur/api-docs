@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Delete a list of profiles.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Uuids
+          type: object
+          properties:
+            Uuids:
+              type: array
+              description: A list of profile unique identifiers to delete.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathDeleteProfiles.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

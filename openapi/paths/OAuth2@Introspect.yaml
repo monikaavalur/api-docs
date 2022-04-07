@@ -1,0 +1,33 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Introspects the access token to refresh token.
+  description: >-
+    An opaque token is validated using the this endpoint by passing the access
+    token or refresh token via the token body parameter and returns a boolean
+    that indicates whether it is active. If the token is active, additional data
+    about the token is also returned. If the token is invalid, expired, or
+    revoked, it is considered inactive. Refer complete guide <a
+    href="https://identity-developer.cyberark.com/docs/validate-a-token"
+    >here</a>. See the OAuth2 spec https://oauth.net/2/
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - token
+          type: object
+          properties:
+            token:
+              type: string
+              description: The access token, ID token, refresh token to process.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2Introspect.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

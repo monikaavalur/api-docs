@@ -1,0 +1,10 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: Standard JSON response.
+  Error:
+    type: object
+    properties: {}
+    description: Standard JSON response.

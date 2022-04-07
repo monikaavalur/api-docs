@@ -1,0 +1,14 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Retrieves a list of product licenses for this tenant, from Salesforce.
+  description: List of product licenses, by group and with counts.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetPurchasedLicenses.yaml
+  x-idap-anon: false

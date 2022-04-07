@@ -1,0 +1,66 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Shortcut:
+        type: boolean
+        description: Whether the application has been set for optional installation
+      Url:
+        type: string
+        description: Application Url
+      AdminTag:
+        type: string
+        description: Application admin tag
+      Description:
+        type: string
+        description: Application description
+      Category:
+        type: string
+        description: Application category
+      Name:
+        type: string
+        description: Application name
+      TemplateName:
+        type: string
+        description: Application template name
+      PasswordIsSet:
+        type: boolean
+        description: Whether the password has been set
+      WebAppType:
+        type: string
+        description: Application web-app-type
+      DisplayName:
+        type: string
+        description: Application display name
+      UsernameRO:
+        type: boolean
+        description: Whether user name is read-only
+      WebAppTypeDisplayName:
+        type: string
+        description: Display name of web-app-type
+      AppTypeDisplayName:
+        type: string
+        description: Display name of application type
+      Intranet:
+        type: boolean
+        description: Whether the application is an intranet app
+      AppType:
+        type: string
+        description: Application type
+      AppKey:
+        type: string
+        description: Application key
+      Rank:
+        type: integer
+        description: Application rank
+      Icon:
+        type: string
+        description: Path of application icon image
+      Username:
+        type: string
+        description: Application username
+    description: Application data
+  Error:
+    type: object
+    description: Error message text on failure, may be null

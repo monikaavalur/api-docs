@@ -1,0 +1,36 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of object collections
+    items:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The name of the collection.
+        Description:
+          type: string
+          description: The collection description.
+        OjbectType:
+          type: string
+          description: The collection object type.
+        Filters:
+          type: string
+          description: The collection filters.
+        CollectionType:
+          type: string
+          description: The collections collectiontype.
+        Rank:
+          type: string
+          description: The collections rank.
+        Parent:
+          type: string
+          description: The collections parent.
+        ParentPath:
+          type: string
+          description: The collections parent path.
+      description: A list of collections.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

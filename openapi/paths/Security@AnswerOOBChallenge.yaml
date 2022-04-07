@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: 'MultiFactor Auth support: answer out of band challenge.'
+  description: |-
+    Invoked by 3rd party services for answering out of band challenges.
+                (text messages or email, not PhoneFactor)
+                Supports the click on link scenario.
+  parameters:
+    - name: answer
+      in: query
+      description: The answer to verify against.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityAnswerOOBChallenge.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

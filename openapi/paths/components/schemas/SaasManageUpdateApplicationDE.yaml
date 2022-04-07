@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      State:
+        type: integer
+        description: Application state
+      success:
+        type: boolean
+        description: Whether the operation is successful
+    description: Result
+  Error:
+    type: object
+    description: Error message text on failure, may be null

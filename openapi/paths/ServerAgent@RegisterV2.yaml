@@ -1,0 +1,110 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Enrolls a machine to the CIP using an enrollment code.
+  description: |-
+    See EnrollV2 for enrolling using user credentials.
+                Use the same arguments as EnrollV2 with the following modifications:
+                    Added: EnrollmentCode
+                    Disallowed: Owner
+                        Owner must be omitted or the empty string since the agent profile will be the owner
+                        of the enrollment code.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - AgentVersion
+            - EnrollmentCode
+            - FQDN
+            - Name
+            - OperatingSystem
+            - Owner
+            - ResourceSetting
+          type: object
+          properties:
+            OperatingSystem:
+              type: string
+              description: >-
+                Operating system of the enrolling machine. Should start with
+                'darwin' for macOS, and 'windows' for Windows. Can start with
+                anything for Linux. See 
+            Sets:
+              type: array
+              description: 'List of system sets to add the created system to: '
+              items:
+                type: object
+                properties: {}
+            Name:
+              type: string
+              description: >-
+                Name prefix of the agent / corresponding service user. If the
+                Suffix argument is supplied, said suffix will be used to form
+                the final name. Otherwise, a default suffix will be used
+            CertificatePassword:
+              type: string
+              description: >-
+                Password to protect the PKCS #12 'Cert' return value. If omitted
+                or empty, a default password is used
+              default: '[default password]'
+            ResourcePolicy:
+              type: string
+              description: JSON encoded policies the corresponding system should have
+              default: null
+            DeviceID:
+              type: string
+              description: >-
+                Device ID of the enrolling machine. Should only be provided by
+                Mac agents
+              default: ''
+            AgentVersion:
+              type: string
+              description: Version of the agent performing the enrollment
+            ResourceName:
+              type: string
+              description: >-
+                Name the PAS system corresponding to the enrolled machine should
+                have. If the Suffix argument is supplied, the final name of the
+                system will be in the form '[name]@[suffix]'. Otherwise, the
+                final name will be in the form '[name]'
+              default: '[value of Name]'
+            Suffix:
+              type: string
+              description: >-
+                Specific suffix to use for the login and resource names. See the
+                documentation of Name and ResourceName for details
+              default: ''
+            FQDN:
+              type: string
+              description: Either the FQDN or IP address of the machine being enrolled
+            ResourceSetting:
+              type: string
+              description: >-
+                JSON encoded settings the corresponding system should have. At
+                minimum, the 'ComputerClass' and 'SessionType' values should be
+                provided
+            Overwrite:
+              type: boolean
+              description: >-
+                Whether an agent profile take over attempt is made if the
+                enrollment would result in such a scenario
+              default: false
+            EnrollmentCode:
+              type: string
+              description: Enrollment code to enroll with.
+            Owner:
+              type: string
+              description: >-
+                Name of a user or CIP role to set as the owner of the agent
+                profile. The owner impacts what users can manage or take over
+                the profile
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentRegisterV2.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get editable message template.
+  parameters:
+    - name: templateName
+      in: query
+      description: The message template name.
+      required: true
+      schema:
+        type: string
+    - name: templateType
+      in: query
+      description: The message template type.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetEditableMessageTemplate.yaml
+  x-idap-anon: false

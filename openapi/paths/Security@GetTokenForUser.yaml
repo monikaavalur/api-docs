@@ -1,0 +1,42 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: |-
+    Get Token for username
+                Requires OATH2 Authorization header
+  description: Retrieves a Bearer Token for use with the username provided
+  parameters:
+    - name: user
+      in: query
+      description: username to get Bearer Token for.
+      required: true
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: auth type to return for user
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - user
+          type: object
+          properties:
+            user:
+              type: string
+              description: username to get Bearer Token for.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityGetTokenForUser.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

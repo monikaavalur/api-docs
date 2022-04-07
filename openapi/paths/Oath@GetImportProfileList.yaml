@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get import profile list.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathGetImportProfileList.yaml
+  x-idap-anon: false

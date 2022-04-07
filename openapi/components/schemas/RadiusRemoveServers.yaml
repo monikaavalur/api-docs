@@ -1,0 +1,29 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      RemovedServers:
+        type: array
+        description: A list of radius hosts removed.
+        items:
+          type: string
+      Removed:
+        type: integer
+        description: The count of radius servers removed
+    description: Results from the removal of the radius servers.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "Results from the removal of the radius servers.", 
+                      type: "object",
+                      properties:
+                      {
+                          Removed: { description: "The count of radius servers removed", type: "integer" },
+                          RemovedServers: { description: "A list of radius hosts removed.", type: "array", items: { type: "string" } }
+                      }
+                  }
+                  

@@ -1,0 +1,21 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Type:
+        type: string
+        description: The resource type, always 'directory'.
+      Path:
+        type: string
+        description: Full path to the directory.
+      Perms:
+        type: string
+        description: The caller's permissions on the file.
+      Name:
+        type: string
+        description: Directory name without the path.
+    description: Directory information and metadata object
+  Error:
+    type: object
+    description: Error message text on failure, may be null

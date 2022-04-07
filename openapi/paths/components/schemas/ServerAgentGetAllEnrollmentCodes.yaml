@@ -1,0 +1,66 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      NeverExpire:
+        type: boolean
+        description: Enrollment code never expires
+      MaxUseCount:
+        type: integer
+        description: The number of times allowed to enroll using this enrollment code
+      IPRange:
+        type: array
+        description: List of IP ranges for the enrollment code
+        items:
+          type: string
+      Description:
+        type: string
+        description: Description of the enrollment code
+      NoMaxUseCount:
+        type: boolean
+        description: >-
+          No limit on the number of times allowed to enroll using this
+          enrollment code
+      UseCount:
+        type: integer
+        description: The number of times already enrolled using this enrollment code
+      ConnectorName:
+        type: array
+        description: List of Connector Name for the enrollment code
+        items:
+          type: string
+      OwnerID:
+        type: string
+        description: ID of the owner of the enrollment code
+      SetID:
+        type: array
+        description: List of Set ID for the enrollment code
+        items:
+          type: string
+      OwnerType:
+        type: string
+        description: Type of the owner of the enrollment code
+      EnrollmentCode:
+        type: string
+        description: ID of the enrollment code
+      ExpiryDate:
+        type: string
+        description: The expiry date of the enrollment code
+      Owner:
+        type: string
+        description: Name of the owner of the enrollment code
+      ConnectorID:
+        type: array
+        description: List of Connector ID for the enrollment code
+        items:
+          type: string
+      SetName:
+        type: array
+        description: List of Set Name for the enrollment code
+        items:
+          type: string
+    description: A list of enrollment codes for this tenant
+  Error:
+    type: object
+    description: Error message text on failure, may be null

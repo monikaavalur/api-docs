@@ -1,0 +1,41 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: To create a local user on target windows machine
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Password
+            - RequestId
+            - TargetMachine
+            - UserName
+          type: object
+          properties:
+            Password:
+              type: string
+              description: User password
+            TargetMachine:
+              type: string
+              description: Machine FQDN
+            UserName:
+              type: string
+              description: User to be created
+            Groups:
+              type: string
+              description: Comma seperated group names that user must be part of
+            RequestId:
+              type: string
+              description: Correlation ID to the external system
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/WinDpaCreateUser.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

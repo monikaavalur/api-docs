@@ -1,0 +1,18 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: List of users with their UUID's.
+    items:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: Name of user.
+        UUID:
+          type: string
+          description: UUID of user.
+      description: User name and UUID.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

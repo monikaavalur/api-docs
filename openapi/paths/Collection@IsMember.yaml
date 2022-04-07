@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the members with access to the set.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+            - Key
+            - Table
+          type: object
+          properties:
+            directHint:
+              type: boolean
+              description: ''
+            ID:
+              type: integer
+              description: The uuid reference to a collection.
+            recurse:
+              type: boolean
+              description: Look for children (default=false).
+            Table:
+              type: string
+              description: Member table.
+            Key:
+              type: string
+              description: The key to use when examining the table.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionIsMember.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

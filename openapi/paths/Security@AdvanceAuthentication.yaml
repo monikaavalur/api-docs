@@ -1,0 +1,68 @@
+post:
+  tags:
+    - Authentication
+  summary: Attempt to advance the state of an authentication session.
+  description: >-
+    <p>Use this API to advance the user authentication to authenticate the user
+    against CyberArk Identity. 
+                <ul><li>Once start authentication API is invoked and a user authentication session has been created successfully, the advance authentication API is invoked to further advance the user authentication process.</li>
+                <li>SessionId and MechanismId returned as part of the “/startAuthentication” API are passed as request parameters to this API. </li>
+                <li>If the request to the API is successful, you can expect 'StartNextChallenge' or 'LoginSuccess' response, however the system may (at any time) return a new MFA Package which may add, remove, or change challenges.</li>
+                <li>For Out of Bounds (OOB) challenge, which involves an additional entity, such as a smartphone, in the authentication process. Please refer <a href="https://identity-developer.cyberark.com/docs/advancing-out-of-bounds-authentication">OOB Challenge</a></li>
+                <li>For MFA please refer <a href="https://identity-developer.cyberark.com/docs/advancing-multi-factor-authentication">MFA Process</a></li>
+                <li>As a response to advance authentication API, an authentication cookie (. ASPXAUTH) would be returned for the user. This cookie can be used to access the CyberArk Identity APIs on behalf of the user. </li>
+                <li>Failure cases typically result in an 'Undefined' error message when the tenant settings are not configured properly or a "LoginFailure' message when incorrect answers to the MFA challenges have terminated the user session (these incorrect answers may have been sent in previous calls to this API).</li>
+                </ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Action
+            - MechanismId
+            - SessionId
+          type: object
+          properties:
+            TenantId:
+              type: string
+              description: >-
+                Tenant ID received as a response to the start authentication
+                API 
+              default: abc-123
+            Action:
+              type: string
+              description: >-
+                The action to be taken with respect to the supplied
+                MechanismId(Ex: answer to the challenge, send oob challenge,
+                wait for oob response, etc.).  <ul>possible actions
+                <li>Unknown</li><li>Answer</li><li>StartOOB</li><li>Poll</li><li>ForgotPassword</li><li>RetryOOB</li></ul>
+            PersistentLogin:
+              type: boolean
+              description: >-
+                Flag indicating if the user's session should persist after
+                closing the browser
+            SessionId:
+              type: string
+              description: >-
+                The session ID is retrieved from the response received from
+                Start Authentication API.
+            MechanismId:
+              type: string
+              description: >-
+                The mechanism ID is retrieved from the response received from
+                Start Authentication API.
+            Answer:
+              type: string
+              description: >-
+                For mechanisms that need to be answered such as password,
+                security code, etc., provide the answers in this field 
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityAdvanceAuthentication.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

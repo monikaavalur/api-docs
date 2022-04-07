@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Gets the active directory topology for the directory service Uuid or the
+    domain name.
+  parameters:
+    - name: directoryServiceUuidOrDomainName
+      in: query
+      description: Directory service Uuid or domain name to use when requesting a topology.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetAdTopology.yaml
+  x-idap-anon: false

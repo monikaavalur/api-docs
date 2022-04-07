@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Removes AuthSource for list of users
+  description: |-
+    You must be a system administrator or have user management permissions.
+                May perform the updates to users asyncronously if list of users is large (will return before updates are complete).
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Users
+          type: object
+          properties:
+            SendInvites:
+              type: boolean
+              description: Send email invitation to updated users (default=false)
+            Users:
+              type: array
+              description: List of user UUIDs/names to to remove Auth Source from
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceRemoveAuthSource.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

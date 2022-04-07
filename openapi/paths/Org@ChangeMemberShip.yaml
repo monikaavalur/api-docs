@@ -1,0 +1,55 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Change membership on specific organization
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - OrgId
+          type: object
+          properties:
+            Add:
+              type: array
+              description: >-
+                DataEntity containing the list of member to add into the
+                organization
+              items:
+                type: object
+                properties:
+                  ID:
+                    type: string
+                    description: Entity ID.
+                  Type:
+                    type: string
+                    description: The type of entity.
+                description: Resource entity.
+            OrgId:
+              type: string
+              description: ID of the organization to update
+            Remove:
+              type: array
+              description: >-
+                DataEntity containing the list of member to remove from the
+                organization
+              items:
+                type: object
+                properties:
+                  ID:
+                    type: string
+                    description: Entity ID.
+                  Type:
+                    type: string
+                    description: The type of entity.
+                description: Resource entity.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgChangeMemberShip.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

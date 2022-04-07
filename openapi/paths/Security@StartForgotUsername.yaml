@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+    - Authentication
+  summary: >-
+    Starts a forgot username session that looks similar to an MFA authentication
+    session.
+  description: >-
+    Returns an mfa package with a single challenge (special case
+    'ForgotUsername' package). The tenant Id is derived from the URL - there is
+    no way to specify it otherwise.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Version
+          type: object
+          properties:
+            Version:
+              type: string
+              description: The payload key version.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityStartForgotUsername.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

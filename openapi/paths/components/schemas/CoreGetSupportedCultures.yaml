@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      native name:
+        type: string
+        description: Culture native name
+      code:
+        type: string
+        description: Culture code value
+    description: Culture map, code to native name, multiple entries.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

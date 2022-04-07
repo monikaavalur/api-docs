@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: >-
+    Revokes federated group membership from a specific group for a specific
+    user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Group
+            - User
+          type: object
+          properties:
+            Federation:
+              type: string
+              description: >-
+                UUID of the federation that granted membership previously and
+                we're now revoking membership from. If omitted, the user will be
+                removed from the group completely (no memberships will remain
+                granted from any federation)
+            Group:
+              type: string
+              description: UUID of the group
+            User:
+              type: string
+              description: UUID of the user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationRemoveUserFromFederatedGroup.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

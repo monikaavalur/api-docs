@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the public part of the Service Provider signing certificate.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationSPSigningCertificate.yaml
+  x-idap-anon: true

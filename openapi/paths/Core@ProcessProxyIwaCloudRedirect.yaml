@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Redirect to the targetUrl.
+  parameters:
+    - name: oneTimePass
+      in: query
+      description: Do the redirect just once.
+      required: true
+      schema:
+        type: string
+    - name: targetUrl
+      in: query
+      description: Target url.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreProcessProxyIwaCloudRedirect.yaml
+  x-idap-anon: true

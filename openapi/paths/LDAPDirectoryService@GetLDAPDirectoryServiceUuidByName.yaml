@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: >-
+    Get the Directory Service UUID for a specific LDAP, using the name assigned
+    by the user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - DirectoryServiceName
+          type: object
+          properties:
+            DirectoryServiceName:
+              type: string
+              description: The name assigned to the LDAP directory service.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceGetLDAPDirectoryServiceUuidByName.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

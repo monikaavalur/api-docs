@@ -1,0 +1,49 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Adds a service to the Lightweight Directory Access Protocol (LDAP) config.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - PropertyToAttributeMap
+            - ScriptingPropertyToAttributeMap
+            - ServerType
+            - UniqueIdentifier
+            - UseBrokenShadowExpire
+            - UsePagedSearch
+          type: object
+          properties:
+            UniqueIdentifier:
+              type: string
+              description: The unique identifier of the LDAP server.
+            UsePagedSearch:
+              type: boolean
+              description: Use paged search.
+            UseBrokenShadowExpire:
+              type: boolean
+              description: Use broken shadow expire.
+            PropertyToAttributeMap:
+              type: object
+              properties: {}
+              description: The property to attribute map.
+            ServerType:
+              type: string
+              description: The LDAP server type.
+            ScriptingPropertyToAttributeMap:
+              type: object
+              properties: {}
+              description: The scripting property to attribute map.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceAddLDAPDirectoryServiceConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

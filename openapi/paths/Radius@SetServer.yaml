@@ -1,0 +1,58 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Configures a Radius server.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - HostAddress
+            - HostCustomPromptMechChosen
+            - HostDescription
+            - HostDisplayName
+            - HostSharedSecret
+            - UserIdCustomSubstAttrName
+            - UserIdSubstAttr
+          type: object
+          properties:
+            HostDescription:
+              type: string
+              description: The description of the external RADIUS server.
+            HostDisplayName:
+              type: string
+              description: The displayname of the external RADIUS server.
+            HostPort:
+              type: integer
+              description: The port on the external RADIUS server.
+            UserIdSubstAttr:
+              type: integer
+              description: see UsernameCustomType enum, from ExternalRadiusHelper
+            HostAddress:
+              type: string
+              description: The IP address of the server.
+            ReceiveTimeout:
+              type: integer
+              description: The timeout for receiving a response from this server, in ms.
+            HostCustomPromptMechChosen:
+              type: string
+              description: The custom prompt for answering RADIUS MFA.
+            HostSharedSecret:
+              type: string
+              description: The shared secret to be used when connecting to the server.
+            UserIdCustomSubstAttrName:
+              type: string
+              description: The name of the field to use for custom username.
+            MaxAttempts:
+              type: integer
+              description: The maximum number of times to attempt the auth request.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusSetServer.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Begin the process of recovering a lost or forgotten user name.
+  description: The request must be made using a tenant-specific URL.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - SearchKey
+          type: object
+          properties:
+            SearchKey:
+              type: string
+              description: Email address of the user to search for.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityForgotUsername.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

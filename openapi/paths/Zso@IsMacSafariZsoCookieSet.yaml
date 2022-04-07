@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Is the Mac Safari Zso cookie set.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ZsoIsMacSafariZsoCookieSet.yaml
+  x-idap-anon: true

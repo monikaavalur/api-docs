@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get editable message templates.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetEditableMessageTemplates.yaml
+  x-idap-anon: false

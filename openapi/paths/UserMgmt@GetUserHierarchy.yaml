@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Fetch the reporting hierarchy for a specified user.
+  description: >-
+    Attributes will vary depending on the type of the directory service the user
+    belongs to.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID to fetch hierarchy for (default=current user)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtGetUserHierarchy.yaml
+  x-idap-anon: false

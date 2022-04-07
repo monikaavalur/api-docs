@@ -1,0 +1,33 @@
+post:
+  tags:
+    - User Management
+  summary: Applies or clears a cloud lock for a given user.
+  description: >-
+    <p><ul><li>Invoke this API if you want to lock the user account of a given
+    user</li>
+                 <li>Only system administrator, users with user management rights, or the user itself can invoke this API.</li></ul></p>
+  parameters:
+    - name: user
+      in: query
+      description: >-
+        The unique ID of the user. The unique ID is generated when the user is
+        created.
+      required: true
+      schema:
+        type: string
+    - name: lockUser
+      in: query
+      description: >-
+        This parameter specifies if the user account should be locked or not.The
+        default value is 'false'.
+      required: true
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSetCloudLock.yaml
+  x-idap-anon: false

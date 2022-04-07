@@ -1,0 +1,17 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Get a specific admin security question.
+  description: >-
+    <p><ul><li>Once you've added all of the questions, you can then get the list
+    of admin-defined questions available for the tenant by invoking the
+    endpoint.</li>
+                <li>Refer guides section https://identity-developer.cyberark.com/docs/multiple-secret-question-enrollment </li></ul></p>
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetAdminSecurityQuestions.yaml
+  x-idap-anon: false

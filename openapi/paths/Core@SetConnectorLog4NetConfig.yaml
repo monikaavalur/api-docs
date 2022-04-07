@@ -1,0 +1,56 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the connector Log4Net config for a connector.
+  parameters:
+    - name: proxyId
+      in: query
+      description: The connector to set the Log4Net config on.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - lintfile_file
+            - lintfile_maxSizeRollBackups
+            - lintfile_maximumFileSize
+            - logLevel
+            - rollingfile_file
+            - rollingfile_maxSizeRollBackups
+            - rollingfile_maximumFileSize
+          type: object
+          properties:
+            lintfile_maxSizeRollBackups:
+              type: string
+              description: The lint file's maximum number of backups.
+            rollingfile_file:
+              type: string
+              description: The rolling file's file name.
+            lintfile_maximumFileSize:
+              type: string
+              description: The lint file's maximum file size.
+            rollingfile_maxSizeRollBackups:
+              type: string
+              description: The rolling file's maximum number of backups.
+            rollingfile_maximumFileSize:
+              type: string
+              description: The rolling file's maximum size.
+            lintfile_file:
+              type: string
+              description: The lint file's file name.
+            logLevel:
+              type: string
+              description: The desired level of logging (DEBUG|INFO|WARN|ERROR|FATAL).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreSetConnectorLog4NetConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

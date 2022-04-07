@@ -1,0 +1,49 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      aud:
+        type: string
+        description: aud
+      unique_name:
+        type: string
+        description: unique name of the user
+      email_verified:
+        type: string
+        description: Is Email verified.
+      given_name:
+        type: integer
+        description: User given name
+      family_name:
+        type: string
+        description: Family name of the user.
+      email:
+        type: string
+        description: Email of the user
+      name:
+        type: string
+        description: User name
+      auth_time:
+        type: string
+        description: Auth time
+      Success:
+        type: boolean
+        description: Success
+      preferred_username:
+        type: string
+        description: Preferred user name
+      sub:
+        type: string
+        description: sub
+    description: Response contains user related information
+  Error:
+    type: object
+    properties:
+      InvalidAppConfig:
+        type: string
+        description: invalid app configuration
+      InvalidURL:
+        type: string
+        description: Bad Url
+    description: The below error message is displayed incase of failure

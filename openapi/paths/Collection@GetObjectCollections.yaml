@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the objects set.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ObjectType
+          type: object
+          properties:
+            SubObjectType:
+              type: string
+              description: The sub object type of the colleciton.
+            ObjectType:
+              type: integer
+              description: The object type of the collection.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionGetObjectCollections.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

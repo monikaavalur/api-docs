@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: The user settings in UI Query Response format.
+    items:
+      type: object
+      properties: {}
+  Error:
+    type: object
+    description: Error message text on failure, may be null

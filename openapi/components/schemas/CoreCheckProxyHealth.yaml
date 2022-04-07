@@ -1,0 +1,22 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Connectors:
+        type: array
+        description: Array of Cloud Connectors. See notes for a breakdown of this package
+        items:
+          type: object
+          properties: {}
+      Version:
+        type: string
+        description: >-
+          Version of the health check package. Will change if the format of this
+          package changes
+    description: >-
+      A package that includes a list of objects detailing the health statuses of
+      one or more cloud connectors.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

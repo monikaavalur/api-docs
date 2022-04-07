@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Creates a Reports directory in the tenant for the current user.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreCreateUserHomeReportsDirectory.yaml
+  x-idap-anon: false

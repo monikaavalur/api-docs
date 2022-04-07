@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get global group assertion mappings.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/FederationGetGlobalGroupAssertionMappings.yaml
+  x-idap-anon: false

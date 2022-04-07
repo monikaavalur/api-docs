@@ -1,0 +1,47 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Deprecated -- User login.
+  description: Please use StartAuthentication/AdvanceAuthentication.
+  parameters:
+    - name: systemID
+      in: query
+      description: The customer processing the login.
+      required: true
+      schema:
+        type: string
+    - name: user
+      in: query
+      description: The user trying to login.
+      required: true
+      schema:
+        type: string
+    - name: password
+      in: query
+      description: The user password.
+      required: true
+      schema:
+        type: string
+    - name: persist
+      in: query
+      description: The persist state given to the cookie.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityLogin.yaml
+  deprecated: true
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

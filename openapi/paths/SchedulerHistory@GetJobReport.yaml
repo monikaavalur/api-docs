@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Make a job report.
+  parameters:
+    - name: jobId
+      in: query
+      description: The job to examine.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SchedulerHistoryGetJobReport.yaml
+  x-idap-anon: false

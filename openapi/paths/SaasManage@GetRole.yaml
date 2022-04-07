@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Fetch a Role.
+  description: You must be a system administrator or have role management permissions.
+  parameters:
+    - name: Name
+      in: query
+      description: Role UUID
+      required: true
+      schema:
+        type: string
+    - name: SuppressPrincipalsList
+      in: query
+      description: >-
+        If true, the principals list will not be included (may make this call
+        much faster)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageGetRole.yaml
+  deprecated: true
+  x-idap-anon: false

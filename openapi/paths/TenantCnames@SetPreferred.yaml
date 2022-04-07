@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the tenant cname to preferred as cname
+  parameters:
+    - name: customCname
+      in: query
+      description: preferred cname
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantCnamesSetPreferred.yaml
+  x-idap-anon: false

@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of federated groups.
+    items:
+      type: object
+      properties: {}
+  Error:
+    type: object
+    description: Error message text on failure, may be null

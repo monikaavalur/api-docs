@@ -1,0 +1,16 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: >-
+      The response contains HTML with a redirect URI to a login page where user
+      needs to provide credentials for authentication.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The response contains HTML with a redirect URI to a login page where user needs to provide credentials for authentication.", type: "string"
+                  }
+                  

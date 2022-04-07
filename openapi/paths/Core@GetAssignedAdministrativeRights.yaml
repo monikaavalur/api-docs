@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Get list of administrative rights associated with a role.
+  parameters:
+    - name: role
+      in: query
+      description: UUID of role
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetAssignedAdministrativeRights.yaml
+  x-idap-anon: false

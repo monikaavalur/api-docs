@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Application Management
+  summary: Create an application.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            ID:
+              type: array
+              description: Application template name
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageImportAppFromTemplate.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

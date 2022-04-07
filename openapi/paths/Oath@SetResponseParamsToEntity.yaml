@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set response parameters to entity.
+  parameters:
+    - name: oathProfileDe
+      in: query
+      description: The oath profile data entity.
+      required: true
+      schema:
+        type: string
+    - name: showSecret
+      in: query
+      description: Set the oath secret data entity properties.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathSetResponseParamsToEntity.yaml
+  x-idap-anon: false

@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Request the cancellation of a job.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - jobId
+            - reason
+          type: object
+          properties:
+            jobId:
+              type: string
+              description: The job id to cancel.
+            reason:
+              type: string
+              description: The reason for cancelling the job.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TaskCancelJob.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

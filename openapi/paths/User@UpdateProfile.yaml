@@ -1,0 +1,59 @@
+post:
+  tags:
+    - User Management
+  summary: >-
+    Change cloud user properties and set the value of additional
+    attributes.(Early Access)
+  description: |-
+    <strong><font color = #46B8DA> Early access </font>
+                This API is an early access API. It is possible that it may change in near future.</strong>
+                User must be a cloud user.
+                Specified user must be you, you must be a system administrator or have user management permissions.
+                Specifying 'ServiceUser' will override the 'InEveryBodyRole' property if both are provided.
+                This api also updates additional attributes which are present in the system.
+                All the parameters other than that mentioned in the body args are treated as additional attributes.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            HomeNumber:
+              type: string
+              description: User home number.
+            DisplayName:
+              type: string
+              description: User display name.
+            ID:
+              type: string
+              description: UUID of the cloud user to change (default=current user).
+            OfficeNumber:
+              type: string
+              description: User office number.
+            MobileNumber:
+              type: string
+              description: User mobile number.
+            Mail:
+              type: string
+              description: User email.
+            Description:
+              type: string
+              description: User description.
+            Name:
+              type: string
+              description: >-
+                User name. format:username@suffix.  You must be a system
+                administrator or have user management permissions to change this
+                field.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserUpdateProfile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

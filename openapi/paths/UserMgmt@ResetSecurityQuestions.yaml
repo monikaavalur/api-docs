@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Resets (clears) security questions for a user
+  description: |-
+    <p><ul><li>This endpoint is used to reset all the security questions.</li>
+                <li>Refer guides section https://identity-developer.cyberark.com/docs/multiple-secret-question-enrollment </li></ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Id:
+              type: string
+              description: >-
+                The unique ID of the user for whom the security question should
+                be reset or cleared. The unique ID is generated when the user is
+                created
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtResetSecurityQuestions.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

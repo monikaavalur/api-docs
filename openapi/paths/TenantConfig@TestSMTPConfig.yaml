@@ -1,0 +1,54 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Test the tenant Simple Mail Transport Protocol configuration.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Host
+            - Pass
+            - Port
+            - SSL
+            - SmtpConfigEnabled
+            - UseConnectors
+            - User
+          type: object
+          properties:
+            Connectors:
+              type: array
+              description: The connectors for SMTP to use.
+              items:
+                type: string
+            Port:
+              type: boolean
+              description: The SMTP port.
+            Host:
+              type: boolean
+              description: The SMTP host.
+            SSL:
+              type: boolean
+              description: Enabled SSL SMTP.
+            Pass:
+              type: boolean
+              description: The SMTP password.
+            User:
+              type: boolean
+              description: The SMTP user.
+            SmtpConfigEnabled:
+              type: boolean
+              description: Is SMTP enabled.
+            UseConnectors:
+              type: boolean
+              description: Does SMTP use connectors.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigTestSMTPConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

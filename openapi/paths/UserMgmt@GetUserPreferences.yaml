@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Get the user preferences.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtGetUserPreferences.yaml
+  x-idap-anon: false

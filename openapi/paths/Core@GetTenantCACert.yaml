@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the public part of the tenant CA certificate.
+  parameters:
+    - name: filename
+      in: query
+      description: File name containing the certificate.
+      required: true
+      schema:
+        type: string
+    - name: tenantId
+      in: query
+      description: The tenant id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetTenantCACert.yaml
+  x-idap-anon: true

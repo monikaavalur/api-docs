@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Application Management
+  summary: Get information for an application.
+  parameters:
+    - name: _RowKey
+      in: query
+      description: App key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageGetApplication.yaml
+  x-idap-anon: false

@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets a list of U2f devices for the current user.
+  parameters:
+    - name: type
+      in: query
+      description: The authenticator type
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/U2fGetU2fDevicesForUser.yaml
+  x-idap-anon: false

@@ -1,0 +1,21 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: Did the certificates get deleted.
+    items:
+      type: object
+      properties:
+        Thumbprint:
+          type: object
+          description: Thumbprint that failed to remove a certificate.
+        name:
+          type: object
+          description: The name of the certificate.
+        ErrorMsg:
+          type: object
+          description: The exception error message.
+      description: A list of thumbprints that failed to remove a certificate.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,57 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update organization permission assignment
+  description: Must be system administrator to perform this operation.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - OrgId
+          type: object
+          properties:
+            Grant:
+              type: array
+              description: >-
+                DataEntity containing the list of principal, principal type and
+                right to grant
+              items:
+                type: object
+                properties:
+                  Right:
+                    type: string
+                    description: The admin right(s) of entity.
+                  Principal:
+                    type: string
+                    description: Entity with row access rights.
+                  PrincipalType:
+                    type: string
+                    description: The type of entity.
+                description: A access right.
+            OrgId:
+              type: string
+              description: ID of the organization to update
+            Revoke:
+              type: array
+              description: DataEntity containing the list of principal and right to revoke
+              items:
+                type: object
+                properties:
+                  Right:
+                    type: string
+                    description: The admin right(s) of entity.
+                  Principal:
+                    type: string
+                    description: Entity with row access rights.
+                description: A access right.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgUpdatePermission.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

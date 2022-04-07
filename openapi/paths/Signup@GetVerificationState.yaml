@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get verification status
+  description: >-
+    Use verificationid as input and this will return verifcation status of
+    signup verification.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - VerificationId
+          type: object
+          properties:
+            VerificationId:
+              type: string
+              description: verificationid for signup verification
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SignupGetVerificationState.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

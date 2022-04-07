@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Dummy
+  description: Use for a ping test to verify connectors.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SysInfoDummy.yaml
+  x-idap-anon: true

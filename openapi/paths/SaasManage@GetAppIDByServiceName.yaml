@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Gets the ID of an app from its service name
+  parameters:
+    - name: name
+      in: query
+      description: service name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageGetAppIDByServiceName.yaml
+  x-idap-anon: false

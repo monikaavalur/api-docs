@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Fetch technical support user.
+  description: You must be a system administrator or have user management permissions.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceGetTechSupportUser.yaml
+  x-idap-anon: false

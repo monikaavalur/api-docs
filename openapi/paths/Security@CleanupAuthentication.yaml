@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Authentication
+  summary: >-
+    Terminate an incomplete session started with StartAuthentication or
+    StartChallenge.
+  description: Does not affect completed authentication sessions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - SessionId
+            - TenantId
+          type: object
+          properties:
+            TenantId:
+              type: string
+              description: >-
+                Tenant ID/suffix returned by the call that started the
+                authentication session
+            SessionId:
+              type: string
+              description: >-
+                Session ID returned by the call that started the authentication
+                session
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityCleanupAuthentication.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

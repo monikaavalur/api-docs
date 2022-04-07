@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get All organizations units
+  parameters:
+    - name: format
+      in: query
+      description: The result format, if "Query" is specified, will return Query format
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgListAll.yaml
+  x-idap-anon: false

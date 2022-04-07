@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the certificate authority certificate chain.
+  parameters:
+    - name: filename
+      in: query
+      description: Certificate file name.
+      required: true
+      schema:
+        type: string
+    - name: tenantId
+      in: query
+      description: Tenant id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetCaCertChain.yaml
+  x-idap-anon: true

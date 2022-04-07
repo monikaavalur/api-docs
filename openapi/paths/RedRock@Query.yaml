@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Runs a query.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Args
+            - Script
+          type: object
+          properties:
+            Args:
+              type: object
+              properties:
+                PageNumber:
+                  type: integer
+                  description: The page number.
+                PageSize:
+                  type: integer
+                  description: The page size.
+                SortBy:
+                  type: string
+                  description: What to sort by.
+              description: The script arguments
+            Script:
+              type: string
+              description: The query to run.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RedRockQuery.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

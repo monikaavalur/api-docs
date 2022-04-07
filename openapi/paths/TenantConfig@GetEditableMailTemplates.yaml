@@ -1,0 +1,14 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Get editable mail templates.
+  description: Please use the generic GetEditableMessageTemplates instead.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetEditableMailTemplates.yaml
+  deprecated: true
+  x-idap-anon: false

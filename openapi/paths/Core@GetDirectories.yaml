@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Additional APIs
+  summary: List the directory contents of a directory.
+  description: >-
+    The resulting list of subdirectories include the full path to each
+    directory.
+  parameters:
+    - name: path
+      in: query
+      description: The path of the directory to list
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetDirectories.yaml
+  x-idap-anon: false

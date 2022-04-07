@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Issues a user certificate. (Deprecated, please use OAuth2 instead.)
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreIssueUserCert.yaml
+  deprecated: true
+  x-idap-anon: false

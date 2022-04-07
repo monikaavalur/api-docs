@@ -1,0 +1,47 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get domains and organizational units.
+  description: >-
+    This API is overloaded to get domains and OUs in a domain across AD
+    directories with and without cache
+                API variations (excluding useCache variations)
+                1. id = null, directoryServiceUuid = null - fetches domains seen by cloud across directory services
+                2. id = null, directoryServiceUuid != null - fetches domains specified by directory service uuid
+                3. id != null, directoryServiceUuid = null - failure case
+                4. id != null, directoryServiceUuid != null - gets ou under domain specified by id using directory service uuid passed in
+  parameters:
+    - name: id
+      in: query
+      description: AD domain identifier
+      required: true
+      schema:
+        type: string
+    - name: directoryServiceUuid
+      in: query
+      description: Directory service UUID
+      required: true
+      schema:
+        type: string
+    - name: useCache
+      in: query
+      description: >-
+        Used when loading OUs for domains to load from cache or not(variation#
+        4)
+      required: true
+      schema:
+        type: string
+    - name: getAdminAccountStatus
+      in: query
+      description: Include in the return admin account status.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetOUTreeContents.yaml
+  x-idap-anon: false

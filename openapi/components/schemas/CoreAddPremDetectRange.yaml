@@ -1,0 +1,14 @@
+type: object
+properties:
+  Result:
+    type: boolean
+    description: Did the IP range add succeed.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "Did the IP range add succeed.", type: "boolean"
+                  }
+                  

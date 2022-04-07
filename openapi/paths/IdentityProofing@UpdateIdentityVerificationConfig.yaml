@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update Identity Verification Configuration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ConnectionSettings
+            - IDVScript
+            - WorkflowSettings
+          type: object
+          properties:
+            WorkflowSettings:
+              type: array
+              description: List of workflow approvers defined
+              items:
+                type: object
+                properties: {}
+            IDVScript:
+              type: string
+              description: IDV Script Text
+            ConnectionSettings:
+              type: object
+              properties: {}
+              description: connection settings defined by the user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/IdentityProofingUpdateIdentityVerificationConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

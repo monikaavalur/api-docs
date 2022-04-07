@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Deletes the APNS Developer certificate details used to send push
+    notifications to the Mobile
+  description: >-
+    You need to have APNSCertificate management rights to use this API. Please
+    note that the push notifications will no longer be able to be sent unless
+    you set a new APNS cert using SetApnsCertForClientApp API
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ClientAppKey
+          type: object
+          properties:
+            ClientAppKey:
+              type: string
+              description: >-
+                Client key is a unique identifier for the client application
+                that needs to be registered for APNS notifications
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobileDeleteApnsCertForClientApp.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

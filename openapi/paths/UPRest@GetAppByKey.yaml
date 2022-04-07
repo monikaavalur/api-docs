@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Get an application's data.
+  parameters:
+    - name: appkey
+      in: query
+      description: Application key
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            markAppVisited:
+              type: string
+              description: Should the application be mark as visited.
+              default: 'false'
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestGetAppByKey.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

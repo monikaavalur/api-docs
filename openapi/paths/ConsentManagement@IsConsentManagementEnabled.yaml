@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: To Find if Consent Management is enabled
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/ConsentManagementIsConsentManagementEnabled.yaml
+  x-idap-anon: false

@@ -1,0 +1,31 @@
+post:
+  tags: []
+  summary: Returns Out of band login status
+  parameters:
+    - name: sessionId
+      in: query
+      description: The session associated to Oob login.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - sessionId
+          type: object
+          properties:
+            sessionId:
+              type: string
+              description: The session id to check if login state changed.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityOobAuthStatus.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

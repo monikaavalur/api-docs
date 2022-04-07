@@ -1,0 +1,45 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: List of access files.
+    items:
+      type: object
+      properties:
+        Principal:
+          type: string
+          description: Entity with file access rights.
+        PrincipalType:
+          type: string
+          description: The type of entity.
+        PrincipalName:
+          type: string
+          description: The principal name.
+        GrantStr:
+          type: string
+          description: The name of the right being granted.
+        Grant:
+          type: integer
+          description: What right to grant.
+        StartTime:
+          type: string
+          description: Start time of the access right.
+        EndTime:
+          type: string
+          description: End time of the access right.
+        AceID:
+          type: string
+          description: The access right id.
+        Inherited:
+          type: boolean
+          description: Is inheritence being used (default=false).
+        ObjectType:
+          type: string
+          description: The object type.
+        PrincipalObjectType:
+          type: string
+          description: The principal object type.
+      description: An access file.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

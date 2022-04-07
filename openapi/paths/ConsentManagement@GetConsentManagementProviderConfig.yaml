@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: To get Consent Management Configuration
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/ConsentManagementGetConsentManagementProviderConfig.yaml
+  x-idap-anon: false

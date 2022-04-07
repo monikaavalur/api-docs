@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the tenant's config value for a key.
+  parameters:
+    - name: key
+      in: query
+      description: What key you want from the tenants config.
+      required: true
+      schema:
+        type: string
+    - name: dflt
+      in: query
+      description: The return if the config doesn't contain the requested key.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetTenantConfig.yaml
+  x-idap-anon: false

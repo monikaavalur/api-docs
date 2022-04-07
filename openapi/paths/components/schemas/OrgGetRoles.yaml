@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: List of role and associated rights in redrock result format
+  Error:
+    type: object
+    description: Error message text on failure, may be null

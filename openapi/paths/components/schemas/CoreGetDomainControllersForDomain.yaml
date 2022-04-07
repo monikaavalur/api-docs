@@ -1,0 +1,44 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: >-
+      A list of domain controllers in the directory service in the specified
+      domain.
+    items:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: Controller name
+        WhiteListed:
+          type: boolean
+          description: Is this domain controller usable.
+        IPAddress:
+          type: string
+          description: What's the ip address of this domain controller.
+        SiteName:
+          type: string
+          description: The site name for this domain controller.
+        Roles:
+          type: string
+          description: The role for this domain controller.
+        OSVersion:
+          type: string
+          description: What operating version runs on this domain controller.
+        GC:
+          type: boolean
+          description: ''
+        CurrentTime:
+          type: string
+          description: What's the current time.
+        ControllerException:
+          type: string
+          description: Domain controller exception.
+        IsOnline:
+          type: boolean
+          description: Is this domain controller online.
+      description: A domain controller.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

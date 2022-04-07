@@ -1,0 +1,23 @@
+post:
+  tags:
+    - Role Management
+  summary: Delete a list of Roles.
+  description: You must be a system administrator or have role management permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+            description: Json string list of role UUIDs to delete.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageDeleteRoles.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

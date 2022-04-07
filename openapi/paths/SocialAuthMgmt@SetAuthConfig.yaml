@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the social user authentication configuration.
+  description: Requires directory service administrator rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - EnableFacebookLogin
+            - EnableGoogleLogin
+            - EnableLinkedInLogin
+            - EnableMicrosoftLogin
+            - EnableTwitterLogin
+            - Version
+          type: object
+          properties:
+            EnableMicrosoftLogin:
+              type: boolean
+              description: Is Microsoft login enabled.
+            Version:
+              type: string
+              description: The configuration version.
+            EnableTwitterLogin:
+              type: boolean
+              description: Is Twitter login enabled.
+            EnableGoogleLogin:
+              type: boolean
+              description: Is Google login enabled.
+            EnableLinkedInLogin:
+              type: boolean
+              description: Is LinkedIn login enabled.
+            EnableFacebookLogin:
+              type: boolean
+              description: Is Facebook login enabled.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMgmtSetAuthConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

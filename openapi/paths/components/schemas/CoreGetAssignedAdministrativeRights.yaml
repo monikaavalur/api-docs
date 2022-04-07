@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: |2-
+
+                   Standard Redrock data format, with the following columns:
+                       Description : localized name of the administrative right
+                       Path : The file that describes the administrative right
+                  
+                   
+  Error:
+    type: object
+    description: Error message text on failure, may be null

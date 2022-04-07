@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get gateway management information.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: string
+              description: The application unique identifier to probe.
+            ConfigureGatewayState:
+              type: string
+              description: The security certificate to decrypt the payload.
+              default: null
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayGetGatewayManagementInfo.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

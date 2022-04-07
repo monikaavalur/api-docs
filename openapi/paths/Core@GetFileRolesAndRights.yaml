@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: List the roles and rights of a file.
+  parameters:
+    - name: path
+      in: query
+      description: The file to examine.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetFileRolesAndRights.yaml
+  x-idap-anon: false

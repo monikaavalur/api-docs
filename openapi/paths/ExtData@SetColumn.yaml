@@ -1,0 +1,41 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the value of an extended column.
+  description: |-
+    The value can either be a string, date, bool, double or integer.
+                It must match the column definition.
+                To clear a value set it to null.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Column
+            - ID
+            - Table
+            - Value
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the row to set
+            Value:
+              type: string
+              description: Value of the column
+            Column:
+              type: string
+              description: Name of the column
+            Table:
+              type: string
+              description: Name of the table to modify
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExtDataSetColumn.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,38 @@
+post:
+  tags:
+    - User Management
+  summary: Change the state of a cloud user from disabled to active or vice versa
+  description: >-
+    <p><ul><li>Invoke this API when you want to change the user state from
+    disabled to active or vice versa</li>
+                 <li>Only system administrator, users with user management rights, or the user itself can invoke this API.</li>
+                 <li>The API will fail, if the user itself will try to change its user state.</li></ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - state
+            - uuid
+          type: object
+          properties:
+            uuid:
+              type: string
+              description: >-
+                The unique ID of the user. The unique ID is generated when the
+                user is created
+            state:
+              type: boolean
+              description: >-
+                Boolean value to change the user state. True = Active and False
+                = Suspended
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceChangeUserState.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

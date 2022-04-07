@@ -1,0 +1,67 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Add an account for a resource
+  description: >-
+    The CaseSensitiveCheck parameter is not applicable to Domain and Windows
+    resource accounts.
+                Either "Host" or "DomainID" or "DatabaseID" need to be provided.
+                Either "Password" or "SshKeyId" need to be provided.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - DatabaseID
+            - DomainID
+            - Host
+            - Password
+            - SshKeyId
+            - User
+          type: object
+          properties:
+            IsManaged:
+              type: boolean
+              description: True to create managed account
+              default: false
+            Password:
+              type: string
+              description: Password for the user
+            SshKeyId:
+              type: string
+              description: Ssh Id for authentication
+            Host:
+              type: string
+              description: ID of the resource
+            DomainID:
+              type: string
+              description: ID of the domain
+            CaseSensitiveCheck:
+              type: boolean
+              description: >-
+                True to allow adding new accounts even if accounts with similar
+                names (only differ by letter cases) already exist. Default is
+                false.
+            UseWheel:
+              type: boolean
+              description: True to use proxy account
+              default: false
+            DatabaseID:
+              type: string
+              description: ID of the database
+            User:
+              type: string
+              description: User name for the account
+            Description:
+              type: string
+              description: Description for the account
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageAddAccount.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

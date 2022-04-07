@@ -1,0 +1,52 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      ErrorID:
+        type: string
+        description: ErrorID
+      ErrorCode:
+        type: string
+        description: ErrorID
+      MessageID:
+        type: string
+        description: MessageID
+      Result:
+        type: object
+        properties:
+          ChallengeId:
+            type: string
+            description: >-
+              This is a random generated ID that is used to identify the
+              challenge (Authentication profile) uniquely.  
+        description: 'The result received from the Identity cloud. '
+      InnerExceptions:
+        type: string
+        description: ErrorID
+      Message:
+        type: string
+        description: Message
+      success:
+        type: boolean
+        description: 'Success '
+      IsSoftError:
+        type: string
+        description: ErrorID
+    description: Below is the response structure if the API request is successful.
+  Error:
+    type: object
+    properties:
+      AuthCookie:
+        type: string
+        description: AThreadDescriptor AuthCookie is null
+      InvalidProfileName:
+        type: string
+        description: The profile name cannot be identified by the CyberArk Identity.
+      InvalidArguments:
+        type: string
+        description: 'Invalid arguments passed to the server. '
+      NullArguments:
+        type: string
+        description: Unexpected null arguments passed to the server.
+    description: Below is the list of errors received by the API.

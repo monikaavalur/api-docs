@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get all radius clients.
+  description: You must be a system administrator or have radius administrator permissions.
+  parameters:
+    - name: isQueryResponse
+      in: query
+      description: True to convert the result to UIQueryResponse format
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusGetClients.yaml
+  x-idap-anon: false

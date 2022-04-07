@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update Consent Management Configuration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ConnectionSettings
+            - ConsentScriptData
+          type: object
+          properties:
+            ConsentScriptData:
+              type: string
+              description: Consent Management Script Text
+            ConnectionSettings:
+              type: object
+              properties: {}
+              description: connection settings defined by the user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/ConsentManagementUpdateConsentManagementConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

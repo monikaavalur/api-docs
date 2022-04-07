@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Get administrator information for a domain
+  description: You must be a system administrator.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Domains
+          type: object
+          properties:
+            Domains:
+              type: array
+              description: List of domains to get information on
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageGetAdministrativeAccounts.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,8 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: Download urls include Windows and Mac agent urls, CBE urls
+  Error:
+    type: object
+    description: Error message text on failure, may be null

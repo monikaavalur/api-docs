@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get Consent Management Script and script editor helper info
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ConsentManagementGetScriptWithMetaData.yaml
+  x-idap-anon: false

@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Authorization
+  summary: Continues user authentication.
+  description: Continued after receiving authentication results from the identity provider.
+  parameters:
+    - name: ExtIdpAuthChallengeState
+      in: query
+      description: The current Idp challenge state.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ExtIdpAuthChallengeState
+          type: object
+          properties:
+            ExtIdpAuthChallengeState:
+              type: string
+              description: The Idp authentication challenge state.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityResumeFromExtIdpAuth.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

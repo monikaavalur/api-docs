@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets all user settings of setting type.
+  parameters:
+    - name: ID
+      in: query
+      description: The user name.
+      required: true
+      schema:
+        type: string
+    - name: SettingType
+      in: query
+      description: The setting type to get.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetUserSettings.yaml
+  x-idap-anon: false

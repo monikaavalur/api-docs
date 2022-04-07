@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Checks to see if user has execute rights on a list of tasks.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - tasks
+          type: object
+          properties:
+            tasks:
+              type: array
+              description: A list of tasks.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityTaskChecks.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

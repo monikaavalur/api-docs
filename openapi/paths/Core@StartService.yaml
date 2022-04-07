@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Starts the named service on the connector.
+  parameters:
+    - name: proxyId
+      in: query
+      description: What connector to start the service on.
+      required: true
+      schema:
+        type: string
+    - name: serviceName
+      in: query
+      description: The name of the service to start.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreStartService.yaml
+  x-idap-anon: false

@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get policy block.
+  parameters:
+    - name: name
+      in: query
+      description: The policy block to get.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetPolicyBlock.yaml
+  x-idap-anon: false

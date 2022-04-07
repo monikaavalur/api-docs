@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets a list of U2f devices.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/U2fGetU2fDevices.yaml
+  x-idap-anon: false

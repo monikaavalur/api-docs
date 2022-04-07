@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set the connector Iwa Settings for proxyUuid.
+  parameters:
+    - name: proxyUuid
+      in: query
+      description: The connector Uuid
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            RadiusServerConfig:
+              type: string
+              description: The server connector Uuid for this proxy.
+            RadiusConfig:
+              type: string
+              description: The connector Uuid for this proxy.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreSetProxyIwaSettings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

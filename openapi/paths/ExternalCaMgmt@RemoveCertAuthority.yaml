@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Remove a certificate authority.
+  parameters:
+    - name: externalCaId
+      in: query
+      description: The certificate authoridy id to remove.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExternalCaMgmtRemoveCertAuthority.yaml
+  x-idap-anon: false

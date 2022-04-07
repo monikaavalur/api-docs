@@ -1,0 +1,16 @@
+type: object
+properties:
+  Result:
+    type: boolean
+    description: >-
+      Success, or failure if the plinks file was unable to be updated for any
+      reason.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "Success, or failure if the plinks file was unable to be updated for any reason.", type: "boolean"
+                  }
+                  

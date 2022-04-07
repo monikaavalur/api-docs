@@ -1,0 +1,91 @@
+post:
+  tags:
+    - User Management
+  summary: Create new users in the Cloud Directory Service.
+  description: |-
+    You must be a system administrator or have user management permissions.
+                Specifying 'ServiceUser' will override the 'InEveryBodyRole' property if both are provided.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Rows
+          type: object
+          properties:
+            Rows:
+              type: array
+              description: List of users to create.
+              items:
+                type: object
+                properties:
+                  InEverybodyRole:
+                    type: boolean
+                    description: Place user in Everybody role (default=true).
+                  SendSmsInvite:
+                    type: boolean
+                    description: >-
+                      Send user an sms invite to enroll their mobile device in
+                      the protal (default=false).
+                  InSysAdminRole:
+                    type: boolean
+                    description: Place user in System Adminstrator role (default=false).
+                  Description:
+                    type: string
+                    description: Description of user (default=null).
+                  Name:
+                    type: string
+                    description: Name of user.
+                  MobileNumber:
+                    type: string
+                    description: >-
+                      User's mobile number (default=null); note this field is
+                      required if SendSmsInvite is true.
+                  Password:
+                    type: string
+                    description: >-
+                      URL encoded password of the user (default=randomly
+                      generated strong password).
+                  CmaRedirectedUserUuid:
+                    type: string
+                    description: Idaptive mobile authenticator redirected user uuid.
+                  ServiceUser:
+                    type: boolean
+                    description: User is a service user (default=false).
+                  OfficeNumber:
+                    type: string
+                    description: User's office number (default=null).
+                  ReportsTo:
+                    type: string
+                    description: Uuid of user this user reports to (default=null).
+                  SendEmailInvite:
+                    type: boolean
+                    description: Send user an email invite to the portal (default=true).
+                  HomeNumber:
+                    type: string
+                    description: User's home number (default=null).
+                  DisplayName:
+                    type: string
+                    description: Display name of user (default=null).
+                  ForcePasswordChangeNext:
+                    type: boolean
+                    description: Force password change at first login (default=true).
+                  PasswordNeverExpire:
+                    type: boolean
+                    description: User's password never expires (default=false).
+                  Mail:
+                    type: string
+                    description: >-
+                      Email of user (default=null); note this field is required
+                      if 'SendEmailInvite' is true.
+                description: Information describing the user to be created.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceCreateUsers.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Resets the Idaptive OATH profile.
+  description: Please use Oath/ResetCloudOathProfile.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Uuid
+          type: object
+          properties:
+            Uuid:
+              type: string
+              description: >-
+                The unique identifier for the user who's default OATH profile
+                will be reset.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathResetCentrifyOathProfile.yaml
+  deprecated: true
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

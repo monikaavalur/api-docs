@@ -1,0 +1,61 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Saves a list of policy links.
+  description: Deprecated - use SetPlinksv2() instead...
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Plinks
+          type: object
+          properties:
+            Plinks:
+              type: array
+              description: The list of policy links to set.
+              items:
+                type: object
+                properties:
+                  Filters:
+                    type: array
+                    description: The policy link filters.
+                    items:
+                      type: string
+                  AllowedPolicies:
+                    type: array
+                    description: The policy link allowed policies.
+                    items:
+                      type: string
+                  LinkType:
+                    type: string
+                    description: The policy link type.
+                  I18NDescriptionTag:
+                    type: string
+                    description: Localized version of the description.
+                  PolicySet:
+                    type: string
+                    description: The policy link policy set.
+                  EnableCompliant:
+                    type: boolean
+                    description: The policy link enable compliant.
+                  Description:
+                    type: string
+                    description: The policy link description.
+                  Params:
+                    type: array
+                    description: The policy link parameters.
+                    items:
+                      type: string
+                description: A policy link.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicySetPlinks.yaml
+  deprecated: true
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,41 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Create a manual set.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Name
+            - ObjectType
+          type: object
+          properties:
+            SubObjectType:
+              type: string
+              description: The collection object type.
+            ObjectType:
+              type: string
+              description: The collection object type.
+            Add:
+              type: string
+              description: Defines what collection member this item has.
+            Description:
+              type: string
+              description: Description of the collection.
+            Parent:
+              type: string
+              description: This collections parent id.
+            Name:
+              type: string
+              description: The collection name.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionCreateManualCollection.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

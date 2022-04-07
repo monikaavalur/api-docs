@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get lower case file name.
+  description: |-
+    Our js files don't match the class names so we get requests for 
+                FooBar.js but the file is called foobar.js.
+                
+                Hence this method (js upload forces all files to lower case too).
+                
+                vfslow/...... points here
+  parameters:
+    - name: path
+      in: query
+      description: Path to the file.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/VfsGetFileLower.yaml
+  x-idap-anon: true

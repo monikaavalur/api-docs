@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: List the roles and rights of a directory.
+  parameters:
+    - name: path
+      in: query
+      description: The directory to examine.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetDirectoryRolesAndRights.yaml
+  x-idap-anon: false

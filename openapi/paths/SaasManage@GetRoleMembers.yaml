@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Deprecated -- Fetch a Role's principals.
+  description: |-
+    Deprecated -- Use /roles/GetRoleMembers instead
+                You must be a system administrator or have role management permissions.
+  parameters:
+    - name: Name
+      in: query
+      description: Role UUID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageGetRoleMembers.yaml
+  deprecated: true
+  x-idap-anon: false

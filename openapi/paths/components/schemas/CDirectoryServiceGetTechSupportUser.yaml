@@ -1,0 +1,19 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Uuid:
+        type: string
+        description: Support user UUID
+      PasswordExp:
+        type: string
+        description: Support user expire date
+        format: date-time
+      Name:
+        type: string
+        description: Support user name
+    description: Support user information
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the user identifier attribute types.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusGetUserIdentifierAttributes.yaml
+  x-idap-anon: false

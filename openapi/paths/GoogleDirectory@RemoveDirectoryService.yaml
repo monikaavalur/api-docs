@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates the directory service configuration.
+  parameters:
+    - name: directoryServiceUuid
+      in: query
+      description: The unique identifier for the directory service.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GoogleDirectoryRemoveDirectoryService.yaml
+  x-idap-anon: false

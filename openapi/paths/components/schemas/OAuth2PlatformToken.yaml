@@ -1,0 +1,30 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      expires_in:
+        type: integer
+        description: How long is the token good.
+      scope:
+        type: string
+        description: The scope of the token.
+      access_token:
+        type: string
+        description: The token unique identifier.
+      token_type:
+        type: string
+        description: The type of token.
+      id_token:
+        type: string
+        description: The token id.
+      refresh_token:
+        type: string
+        description: The token refresh.
+      state:
+        type: string
+        description: The state of the token.
+    description: The token
+  Error:
+    type: object
+    description: Error message text on failure, may be null

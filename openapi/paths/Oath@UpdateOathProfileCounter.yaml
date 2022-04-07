@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update the oath profile counter.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Counter
+            - Uuid
+          type: object
+          properties:
+            Uuid:
+              type: string
+              description: The unique identifier for the profile.
+            Counter:
+              type: integer
+              description: The value to use when setting the profile counter.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathUpdateOathProfileCounter.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

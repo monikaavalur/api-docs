@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Authentication
+  summary: >-
+    Allows OAuth2 clients to perform on-demand step-up authentication
+    challenges.
+  description: Uses custom policy key modifiers to choose auth rules and profiles.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - PolicyModifier
+            - User
+          type: object
+          properties:
+            User:
+              type: string
+              description: Username of the user to challenge on behalf of.
+            PolicyModifier:
+              type: string
+              description: >-
+                The policy modifier key to use for deterministic selection of an
+                Authentication Profile.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityOnDemandChallenge.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Power off a device (Mobile + OSX)
+  parameters:
+    - name: deviceID
+      in: query
+      description: Device ID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobilePowerOff.yaml
+  x-idap-anon: false

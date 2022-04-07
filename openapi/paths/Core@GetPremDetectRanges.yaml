@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the IP Ranges local to the customer network.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetPremDetectRanges.yaml
+  x-idap-anon: false

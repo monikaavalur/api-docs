@@ -1,0 +1,16 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Runs a risk check for the current user.
+  description: >-
+    You must be logged in and the tenant must have the Adaptive MFA entitlement
+    enabled.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtAnalyzeAdaptiveMfaRisk.yaml
+  x-idap-anon: false

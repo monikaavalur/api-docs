@@ -1,0 +1,14 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get all of the directory service settings
+  description: Caller should have read access
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CDirectoryServiceGetDirectoryServiceSettings.yaml
+  x-idap-anon: false

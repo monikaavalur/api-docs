@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Returns a list of tenant snapshots, starting with today's (if it exists) and
+    working back in time.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            NumDays:
+              type: integer
+              description: The number of days of data to return.
+            RRFormat:
+              type: boolean
+              description: Return data in database format.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RedRockGetTenantSnapshots.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

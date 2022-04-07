@@ -1,0 +1,52 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates the directory service configuration.
+  description: |-
+    If CustomConfigEnabled is true 
+                then ApplicationClientId and ApplicationClientSecret are expected.
+  parameters:
+    - name: directoryServiceUuid
+      in: query
+      description: The unique identifier for the directory service.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - CustomConfigEnabled
+            - IdpName
+            - TrustedRedirectUris
+          type: object
+          properties:
+            ApplicationClientId:
+              type: string
+              description: The application client id.
+            TrustedRedirectUris:
+              type: array
+              description: A list of trusted redirect uri's.
+              items:
+                type: string
+            ApplicationClientSecret:
+              type: string
+              description: The application client secret information.
+            IdpName:
+              type: string
+              description: The name of the directory service to update.
+            CustomConfigEnabled:
+              type: boolean
+              description: Does this request include custom configuration information.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/GoogleDirectoryUpdateDirectoryServiceConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

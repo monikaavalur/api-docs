@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Add and update application tags for the current user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - appkey
+            - tagnames
+          type: object
+          properties:
+            appkey:
+              type: string
+              description: Application key
+            tagnames:
+              type: array
+              description: list of tag names
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestUpsertTagsForApp.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

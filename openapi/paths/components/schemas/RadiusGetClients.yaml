@@ -1,0 +1,30 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      ClientAllowNewLinesInPrompts:
+        type: boolean
+        description: Allow embedded new-line characters when sending prompt to the client
+      ClientName:
+        type: string
+        description: Client name
+      ClientAddress:
+        type: string
+        description: Client IP address
+      ClientDescription:
+        type: string
+        description: Client description
+      ClientCulture:
+        type: string
+        description: Client culture
+      ClientVendorId:
+        type: integer
+        description: Client radius vendor ID
+      ClientSecret:
+        type: string
+        description: Client secret
+    description: List of radius clients; each user contains the following properties.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

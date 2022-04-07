@@ -1,0 +1,45 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates a table's extended columnar schema.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Columns
+            - Table
+          type: object
+          properties:
+            Columns:
+              type: array
+              description: A list of extended columns to update
+              items:
+                type: object
+                properties:
+                  Title:
+                    type: string
+                    description: The column title.
+                  Type:
+                    type: string
+                    description: The column type.
+                  Description:
+                    type: string
+                    description: The column description.
+                  Name:
+                    type: string
+                    description: The column name.
+                description: An extended column.
+            Table:
+              type: string
+              description: Name of the table to modify
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExtDataUpdateSchema.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

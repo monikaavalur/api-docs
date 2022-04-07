@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Get security questions for the current user
+  description: >-
+    <p><ul><li>Once you've added all of the questions you can then get the list
+    of security questions available for the tenant by invoking the
+    endpoint.</li>
+                <li>Refer guides section https://identity-developer.cyberark.com/docs/multiple-secret-question-enrollment </li></ul></p>
+  parameters:
+    - name: id
+      in: query
+      description: >-
+        The unique ID of the user for whom the security question should be
+        retrieved. The unique ID is generated when the user is created.
+      schema:
+        type: string
+    - name: addAdminQuestions
+      in: query
+      description: >-
+        This flag specifies if the admin defined security questions have to be
+        sent in the API response or not.The default value is false.
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtGetSecurityQuestions.yaml
+  x-idap-anon: false

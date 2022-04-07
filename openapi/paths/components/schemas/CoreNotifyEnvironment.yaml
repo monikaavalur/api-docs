@@ -1,0 +1,16 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: >-
+      Message showing the connector Uuid and UTC time NotifyEnvironment was
+      called.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "Message showing the connector Uuid and UTC time NotifyEnvironment was called.", type: "string"
+                  }
+                  

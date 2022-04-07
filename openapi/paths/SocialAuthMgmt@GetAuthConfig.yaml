@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the social user authentication configuration.
+  description: Requires administrator rights.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMgmtGetAuthConfig.yaml
+  x-idap-anon: false

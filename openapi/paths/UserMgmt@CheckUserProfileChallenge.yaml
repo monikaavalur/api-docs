@@ -1,0 +1,16 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Check if a user profile challenge is required for the current user.
+  description: >-
+    Responds with challenge exception if a challenge is necessary, or success:
+    true if it is not.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtCheckUserProfileChallenge.yaml
+  x-idap-anon: false

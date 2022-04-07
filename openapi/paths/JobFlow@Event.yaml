@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Additional APIs
+    - Workflow Management
+  summary: Sends a workflow event to a workflow
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            jobid:
+              type: string
+              description: ID of the job to send the event to
+            sync:
+              type: boolean
+              description: >-
+                If true, starts the workflow synchronously. If false, workflow
+                will be started asynchronously
+            args:
+              type: object
+              properties: {}
+              description: Arguments required for the event being sent
+            event:
+              type: string
+              description: Name of the event to send
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/JobFlowEvent.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

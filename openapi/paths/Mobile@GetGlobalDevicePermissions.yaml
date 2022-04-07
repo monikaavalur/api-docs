@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets list of global permissions associated with device
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            RRFormat:
+              type: boolean
+              description: Query response return.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobileGetGlobalDevicePermissions.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the tenant Telephony Credits Notification configuration.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/TenantConfigGetTelephonyCreditsNotificationConfig.yaml
+  x-idap-anon: false

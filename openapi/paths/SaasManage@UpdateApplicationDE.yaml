@@ -1,0 +1,44 @@
+post:
+  tags:
+    - Application Management
+  summary: Update an application.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            ShowRegistration:
+              type: boolean
+              description: Whether to show registration link
+            _RowKey:
+              type: string
+              description: Application key
+            Handler:
+              type: string
+              description: Application handler
+            IconUri:
+              type: string
+              description: Icon path
+            AppRoles:
+              type: object
+              properties: {}
+              description: To assign or un-assign roles for accessing the application
+            Description:
+              type: string
+              description: Application description
+            Name:
+              type: string
+              description: Application name
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageUpdateApplicationDE.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

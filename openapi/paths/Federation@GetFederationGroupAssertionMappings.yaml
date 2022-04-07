@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Directory Service Management
+  summary: Get federation group assertion mappings.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - FederationUuid
+          type: object
+          properties:
+            FederationUuid:
+              type: string
+              description: What federation to get the group assertion mappings from.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/FederationGetFederationGroupAssertionMappings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

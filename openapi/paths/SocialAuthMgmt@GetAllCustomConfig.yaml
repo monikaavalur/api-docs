@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the social configurations for all identity providers.
+  description: |-
+    Requires administrator rights.
+                Requesting secret as plain text requires directory services administrator rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            GetSecretAsPlainText:
+              type: boolean
+              description: Get the secret as plain text.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMgmtGetAllCustomConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

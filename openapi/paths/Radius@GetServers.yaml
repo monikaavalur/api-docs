@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the list of RADIUS servers
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusGetServers.yaml
+  x-idap-anon: false

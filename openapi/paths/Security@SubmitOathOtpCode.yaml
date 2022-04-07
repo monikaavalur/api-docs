@@ -1,0 +1,43 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Submit OATH OTP code for the specify user
+  description: The request must be made using a tenant-specific URL.
+  parameters:
+    - name: otpCode
+      in: query
+      description: OATH One time password.
+      required: true
+      schema:
+        type: string
+    - name: userUuid
+      in: query
+      description: Uuid for the authentication user.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - otpCode
+            - userUuid
+          type: object
+          properties:
+            otpCode:
+              type: string
+              description: OATH One time password.
+            userUuid:
+              type: string
+              description: Uuid for the authentication user.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecuritySubmitOathOtpCode.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

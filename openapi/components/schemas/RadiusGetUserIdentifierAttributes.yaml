@@ -1,0 +1,10 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: The list of user identifier attribute types.
+    items:
+      type: string
+  Error:
+    type: object
+    description: Error message text on failure, may be null

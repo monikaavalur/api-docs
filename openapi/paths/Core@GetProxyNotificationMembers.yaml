@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Role Management
+  summary: Fetch a Proxy Notification Members.
+  description: You must be a system administrator
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetProxyNotificationMembers.yaml
+  x-idap-anon: false

@@ -1,0 +1,18 @@
+post:
+  tags:
+    - Additional APIs
+  summary: 'EnablePremDetectRange: Enable OnPrem Detect Range'
+  parameters:
+    - name: uuid
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreEnablePremDetectRange.yaml
+  x-idap-anon: false

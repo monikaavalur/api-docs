@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the rights on a set.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the collection, set to null to get global permissions.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionGetCollectionRights.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

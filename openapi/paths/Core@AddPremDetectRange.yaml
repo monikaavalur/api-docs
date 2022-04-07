@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Adds an IP Range local to the customer network.
+  description: Deprecated --  Use /Core/UpdatePremDetectRange
+  parameters:
+    - name: value
+      in: query
+      description: IP range to add.
+      required: true
+      schema:
+        type: string
+    - name: oldvalue
+      in: query
+      description: An old IP range to remove. If there is one.
+      required: true
+      schema:
+        type: string
+    - name: label
+      in: query
+      description: What label to give this IP range.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreAddPremDetectRange.yaml
+  deprecated: true
+  x-idap-anon: false

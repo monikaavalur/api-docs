@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: For social authentication, this is the Microsoft call back.
+  parameters:
+    - name: code
+      in: query
+      description: Not used.
+      required: true
+      schema:
+        type: string
+    - name: state
+      in: query
+      description: Not used.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMicrosoftActAuthCallback.yaml
+  x-idap-anon: true

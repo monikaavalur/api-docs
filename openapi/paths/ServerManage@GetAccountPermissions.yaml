@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets list of permissions associated with an account
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the account, set to null to get global account permissions
+            RRFormat:
+              type: boolean
+              description: Return data in database format.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageGetAccountPermissions.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

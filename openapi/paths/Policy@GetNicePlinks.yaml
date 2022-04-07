@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Policy Management
+  summary: Gets a list of policy links.
+  description: |-
+    RevStamp is required for both requesting and setting policy links.
+                Return is a dictionary(plink name, plink fields as below) with RevStamp as the last entry.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetNicePlinks.yaml
+  x-idap-anon: false

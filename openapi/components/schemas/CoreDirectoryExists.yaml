@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: A boolean value indicating whether the directory exists or not.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

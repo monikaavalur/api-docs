@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Workflow Management
+  summary: Gets list of workflow jobs associated with the current user
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              type: string
+              description: >-
+                Type of jobs to retrieve: specify request for a list of all the
+                jobs requested by the current user, or approve for a list of all
+                jobs pending the current users approval
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/JobFlowGetMyJobs.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

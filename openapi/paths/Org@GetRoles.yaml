@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Organization Management
+  summary: Get roles of specific organization
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - OrgId
+          type: object
+          properties:
+            OrgId:
+              type: string
+              description: ID of the organization to update
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgGetRoles.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

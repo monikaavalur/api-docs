@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Device Management
+  summary: Enroll an iOS Mobile Device
+  description: |-
+    <strong><font color = #46B8DA> Early access </font>
+                This API is an early access API. It is possible that it may change in near future.</strong>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Udid
+          type: object
+          properties:
+            Udid:
+              type: string
+              description: Device Unique Identifier of the mobile device
+            Model:
+              type: string
+              description: Model name of the mobile device
+            OSVersion:
+              type: string
+              description: Version of OS running on the mobile device
+            Name:
+              type: string
+              description: Name of the mobile device
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/DeviceEnrollIosDevice.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

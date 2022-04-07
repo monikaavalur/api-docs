@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      execute:
+        type: boolean
+        description: Does user have execute rights on this task.
+      task:
+        type: string
+        description: A task.
+    description: The list of tasks with the task check result.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

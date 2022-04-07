@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Create or remove administrator accounts
+  description: You must be a system administrator.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Domains
+          type: object
+          properties:
+            Password:
+              type: string
+              description: Password of user to update or create.
+            UserUuid:
+              type: string
+              description: UUID or user. This or User must be supplied
+            User:
+              type: string
+              description: Username of user. This or UserUuid must be supplied
+            Domains:
+              type: array
+              description: List of domains the administrator is or should be a part of
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageSetAdministrativeAccounts.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

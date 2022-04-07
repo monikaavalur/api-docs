@@ -1,0 +1,66 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      expires_in:
+        type: integer
+        description: How long is the token good
+      scope:
+        type: string
+        description: The scope of the token
+      access_token:
+        type: string
+        description: The token unique identifier
+      token_type:
+        type: string
+        description: The type of token
+      id_token:
+        type: string
+        description: The token Id
+      refresh_token:
+        type: string
+        description: The token refresh
+      state:
+        type: string
+        description: The state of the token
+    description: The response object consists of below properties
+  Error:
+    type: object
+    properties:
+      InvalidClientId:
+        type: string
+        description: pending oauth ClientId does not match current ClientId
+      InvalidAuthRequest:
+        type: string
+        description: auth mode not allowed
+      UnAuthorized:
+        type: string
+        description: Invalid user request
+      MisMatchedURI:
+        type: string
+        description: 'pending redirect uri does not match current redirect uri '
+      InvalidScope:
+        type: string
+        description: unknown scope requested
+      InvalidTokenRequest:
+        type: string
+        description: unknown token
+      AccessDenied:
+        type: string
+        description: Invalid client creds or client not allowed
+      InvalidRequest:
+        type: string
+        description: unknown app
+      InvalidRedirectURI:
+        type: string
+        description: >-
+          current req redirect uri is expected to be empty but it is actually
+          not
+      InvalidToken:
+        type: string
+        description: Wrong type of token (not refresh token)
+      InvalidAuthPublicRequest:
+        type: string
+        description: auth mode not allowed (public client)
+    description: The below error message is displayed incase of failure

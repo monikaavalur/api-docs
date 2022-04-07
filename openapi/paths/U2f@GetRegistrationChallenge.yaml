@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get registration challenge.
+  parameters:
+    - name: userDefinedName
+      in: query
+      description: The user defined name.
+      required: true
+      schema:
+        type: string
+    - name: authenticatortype
+      in: query
+      description: The type of authenticator
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/U2fGetRegistrationChallenge.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

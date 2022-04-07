@@ -1,0 +1,31 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Provides the public elements of the key
+  description: >-
+    This API provides information on the public elements of the key in use for
+    token signing.<li> As part of the request we need to pass Application Id
+    which is configured.</li>
+                <li>Returns public key that can be used to verify the signatures of tokens that you receive from your authorization server.</li><li> See the OAuth2 spec https://oauth.net/2/ </li>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ApplicationId:
+              type: object
+              properties: {}
+              description: >-
+                The id used to determine the application configured in the
+                tenant.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2Keys.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

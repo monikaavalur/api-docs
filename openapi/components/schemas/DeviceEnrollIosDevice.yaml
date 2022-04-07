@@ -1,0 +1,28 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      WelcomePageInfo:
+        type: object
+        properties:
+          IconBackgroundColor:
+            type: string
+            description: Background color of the company icon
+          IconUrl:
+            type: string
+            description: Url of the company icon
+          Icon:
+            type: string
+            description: Company icon
+          WelcomeText:
+            type: string
+            description: Welcome text to show to the user
+        description: Information to show to user after enrollment
+      UserCert:
+        type: string
+        description: Unique certificate created againt the user
+    description: Enrollment Details
+  Error:
+    type: object
+    description: Error message text on failure, may be null

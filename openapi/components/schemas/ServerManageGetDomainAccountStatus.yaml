@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Status:
+        type: string
+        description: Password status of user
+      PVID:
+        type: string
+        description: Id of the user
+    description: DataEntity with user password status
+  Error:
+    type: object
+    description: Error message text on failure, may be null

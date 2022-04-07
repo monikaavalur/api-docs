@@ -1,0 +1,8 @@
+type: object
+properties:
+  Result:
+    type: boolean
+    description: Did the federation group assertion mappings get updated.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

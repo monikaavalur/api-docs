@@ -1,0 +1,18 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Deprecated -- Checks for user execute rights on the Application Role
+    Management task.
+  description: |-
+    Keeping this API for backward compatibility.
+                Please use TaskCheck.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityDoIHaveRight.yaml
+  deprecated: true
+  x-idap-anon: false

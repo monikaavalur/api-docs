@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Directory Service Management
+  summary: Retrieves the Federated Group Memberships for a specfic user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - User
+          type: object
+          properties:
+            User:
+              type: string
+              description: UUID of the user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationGetFederatedGroupsForUser.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

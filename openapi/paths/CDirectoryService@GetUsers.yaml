@@ -1,0 +1,12 @@
+post:
+  tags:
+    - User Management
+  summary: Get all cloud users.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceGetUsers.yaml
+  x-idap-anon: false

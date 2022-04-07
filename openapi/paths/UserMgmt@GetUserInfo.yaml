@@ -1,0 +1,25 @@
+post:
+  tags:
+    - User Management
+  summary: Get additional info for a specified user
+  description: >-
+    <p><ul><li>Invoke this API to get the user information for a given
+    user.</li>
+                 <li>Only system administrator, users with user management rights, or the user itself can invoke this API.</li>
+                 <li>NOTE: This is a high CPU intensive call, so it should be used appropriately. (Cache the result as needed).</li></ul></p>
+  parameters:
+    - name: ID
+      in: query
+      description: >-
+        The unique ID of the user to fetch attributes for. The unique ID is
+        generated when the user is created.(default=current user)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtGetUserInfo.yaml
+  x-idap-anon: false

@@ -1,0 +1,24 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Parameters:
+        type: string
+        description: What parameters to use.
+      Query:
+        type: string
+        description: Query used to find the files.
+      Map:
+        type: boolean
+        description: Is there a map (default=false).
+      Description:
+        type: string
+        description: The file contents description.
+      Name:
+        type: string
+        description: File name.
+    description: A file extension filtered list of files found in the path.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

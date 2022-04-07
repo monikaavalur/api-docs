@@ -1,0 +1,18 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+    - Directory Service Management
+  summary: Refresh current user's cached identity.
+  description: >-
+    User cached identity in the cloud is reloaded from their directory service. 
+    Useful when user details have changed in their remote directory service, but
+    have not yet been pushed to the cloud.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityRefreshToken.yaml
+  x-idap-anon: false

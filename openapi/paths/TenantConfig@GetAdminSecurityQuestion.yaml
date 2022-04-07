@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Get a specific admin security question.
+  description: >-
+    <p><ul><li>You can get the details of a particular admin-defined question by
+    invoking the endpoint.</li>
+                <li>Refer guides section https://identity-developer.cyberark.com/docs/multiple-secret-question-enrollment </li></ul></p>
+  parameters:
+    - name: Id
+      in: query
+      description: >-
+        The unique ID of the security question created by the admin. We get this
+        ID when the security question is created.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetAdminSecurityQuestion.yaml
+  x-idap-anon: false

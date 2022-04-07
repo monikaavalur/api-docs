@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update a certificate authority.
+  parameters:
+    - name: externalCaId
+      in: query
+      description: The certificate authoridy id to update.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - externalCa
+          type: object
+          properties:
+            externalCa:
+              type: object
+              properties: {}
+              description: >-
+                The file containing the certificate authority, in the
+                form-data.  (Not as a parameter.)
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExternalCaMgmtUpdateCertAuthority.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

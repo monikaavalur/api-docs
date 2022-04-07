@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get certificate authorities for the tenant.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExternalCaMgmtGetCertAuthorities.yaml
+  x-idap-anon: false

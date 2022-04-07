@@ -1,0 +1,47 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Returns streaming job history data via a redrock style interface.
+  description: Expects RedRock style json arguments.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Args
+          type: object
+          properties:
+            Args:
+              type: object
+              properties:
+                FilterValue:
+                  type: string
+                  description: Look for job names that start with this value.
+                PageNumber:
+                  type: integer
+                  description: Used for calculating Count/FullCount return values.
+                Token:
+                  type: string
+                  description: The user token.
+                  default: null
+                FilterQuery:
+                  type: object
+                  properties:
+                    JobHidden:
+                      type: boolean
+                      description: Look at hidden jobs.
+                  description: If present allows display of hidden jobs.
+                PageSize:
+                  type: integer
+                  description: How big a should the page be.
+              description: RedRock style json arguments.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TaskGetJobHistory.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

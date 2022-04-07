@@ -1,0 +1,57 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Updates security questions for a user
+  description: >-
+    <p><ul><li>This API can be used by the admin/user to add multiple security
+    question.</li>
+                <li>This API can also be used to update or delete security questions added by the admin/user.</li>
+                <li>Refer guides section https://identity-developer.cyberark.com/docs/multiple-secret-question-enrollment </li></ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Added
+          type: object
+          properties:
+            Added:
+              type: array
+              description: >-
+                List of key-value pair entities specifying questions to add.
+                Each question entity has the following properties: <ul><li>Key -
+                'QuestionText' (string, text of user question) and Value -
+                'Example - BirthDate'</li><li>Key - 'Answer' (string, text of
+                answer) and Value - 'Example - 1st Feb 2000'</li><li>Key -
+                'Type' (string, type of question (user/admin)) and Value -
+                'Example - Admin'</li></ul>
+              items:
+                type: object
+                properties: {}
+            Id:
+              type: string
+              description: >-
+                The unique ID of the user. The unique ID is generated when the
+                user is created. (or) the username can be entered too.
+            Deleted:
+              type: array
+              description: >-
+                – List of the unique IDs of the security questions that need to
+                be deleted. The unique IDs are generated when the user adds the
+                security question.
+              items:
+                type: string
+            Replace:
+              type: boolean
+              description: Replace all existing questions with this update.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtUpdateSecurityQuestions.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Delete user after permission check (DEPRECATED)
+  parameters:
+    - name: id
+      in: query
+      description: User UUID or Name to delete.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceDelete.yaml
+  deprecated: true
+  x-idap-anon: false

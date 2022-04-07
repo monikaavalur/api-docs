@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Send a test message template.
+  parameters:
+    - name: templatePath
+      in: query
+      description: The message template path.
+      required: true
+      schema:
+        type: string
+    - name: templateType
+      in: query
+      description: The message template type.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigSendTestMessageTemplate.yaml
+  x-idap-anon: false

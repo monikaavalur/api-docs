@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Delete a cloud user. (DEPRECATED)
+  description: |-
+    (Deprecated - use UserMgmt/RemoveUser instead.)
+                You must be a system administrator or have user management permissions.  User must exist, and cannot be the current user.
+                Cloud users will be deleted; users from other directory services will be removed from the cloud.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID or Name to delete
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceDeleteUser.yaml
+  deprecated: true
+  x-idap-anon: false

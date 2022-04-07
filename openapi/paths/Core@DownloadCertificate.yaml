@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Downloads a certificate.
+  parameters:
+    - name: thumbprint
+      in: query
+      description: Thumbprint to the requested certificate.
+      required: true
+      schema:
+        type: string
+    - name: filename
+      in: query
+      description: File to save the certificate in.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDownloadCertificate.yaml
+  x-idap-anon: false

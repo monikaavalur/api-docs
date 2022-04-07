@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set a cloud user's picture file.
+  description: >-
+    Specified user must be you, you must be a system administrator or have user
+    management permissions.
+                    The file is attached to the call so need to figure out how to document that without bodyargs
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - File
+          type: object
+          properties:
+            File:
+              type: object
+              properties: {}
+              description: >-
+                File containing the users picture, in the form-data.  (Not as a
+                parameter.)
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceSetUserPicture.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

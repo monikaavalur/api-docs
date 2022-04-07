@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Get the account status for an administrator
+  description: You must be a system administrator.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            UserUuid:
+              type: string
+              description: UUID or user. This or User must be supplied
+            User:
+              type: string
+              description: Username of user. This or UserUuid must be supplied
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageGetDomainAccountStatus.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

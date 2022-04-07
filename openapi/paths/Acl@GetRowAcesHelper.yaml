@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets the row access rights based on the input parameters.
+  parameters:
+    - name: reduceSys
+      in: query
+      description: Don't assume administrators have sysadmin permission.
+      required: true
+      schema:
+        type: string
+    - name: inherit
+      in: query
+      description: Use inheritance.
+      required: true
+      schema:
+        type: string
+    - name: table
+      in: query
+      description: The table to look for the item.
+      required: true
+      schema:
+        type: string
+    - name: rk
+      in: query
+      description: The item of interest's row key.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetRowAcesHelper.yaml
+  x-idap-anon: false

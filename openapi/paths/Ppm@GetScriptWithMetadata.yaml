@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get PPM Scipt and script editor helper info
+  description: You must be a system administrator or have user management permissions.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PpmGetScriptWithMetadata.yaml
+  x-idap-anon: false

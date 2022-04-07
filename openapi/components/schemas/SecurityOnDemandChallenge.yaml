@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: >-
+      Login success (or error) message or an Authentication package to guide
+      client through the MFA process.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

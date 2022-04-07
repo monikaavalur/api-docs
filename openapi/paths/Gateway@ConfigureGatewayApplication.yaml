@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Configures a gateway application.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: string
+              description: The application unique identifier.
+            ServiceName:
+              type: string
+              description: The service name.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayConfigureGatewayApplication.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

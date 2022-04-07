@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: The tenant brand information.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/BrandInfo.yaml
+  x-idap-anon: false

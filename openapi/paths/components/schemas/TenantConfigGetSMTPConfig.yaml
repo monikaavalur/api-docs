@@ -1,0 +1,35 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Connectors:
+        type: array
+        description: The connectors for SMTP to use.
+        items:
+          type: string
+      Port:
+        type: boolean
+        description: The SMTP port.
+      Host:
+        type: boolean
+        description: The SMTP host.
+      SSL:
+        type: boolean
+        description: Enabled SSL SMTP.
+      Pass:
+        type: boolean
+        description: The SMTP password.
+      User:
+        type: boolean
+        description: The SMTP user.
+      SmtpConfigEnabled:
+        type: boolean
+        description: Is SMTP enabled.
+      UseConnectors:
+        type: boolean
+        description: Does SMTP use connectors.
+    description: The tenant SMTP configuration.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

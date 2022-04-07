@@ -1,0 +1,69 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Resynchronize a TOTP or HOTP token.
+  description: |-
+    Resynchronizing requires two consecutive token codes
+                (which helps to ensure that the caller is in physical possesion of the token, not just of a
+                single copied token code).  Assuming that the supplied token codes can be found, TOTP resync
+                will compute a new interval delta value that will be stored with the token, and HOTP resync
+                will find the matching counter value (always looking forward, never backward) and update
+                the counter stored with the token.
+                
+                Caller must either own the OATH token or be an administrator
+  parameters:
+    - name: firstCode
+      in: query
+      description: >-
+        The first of two consecutive token codes that will be used to
+        resynchronize the token.
+      required: true
+      schema:
+        type: string
+    - name: secondCode
+      in: query
+      description: >-
+        The second of two consecutive token codes that will be used to
+        resynchronize the token.
+      required: true
+      schema:
+        type: string
+    - name: tokenId
+      in: query
+      description: The UUID of the token to be resynchronized.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - firstCode
+            - secondCode
+            - tokenId
+          type: object
+          properties:
+            firstCode:
+              type: string
+              description: >-
+                The first of two consecutive token codes that will be used to
+                resynchronize the token
+            secondCode:
+              type: string
+              description: >-
+                The second of two consecutive token codes that will be used to
+                resynchronize the token
+            tokenId:
+              type: string
+              description: The UUID of the token to be resynchronized
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathResynchronizeOathToken.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

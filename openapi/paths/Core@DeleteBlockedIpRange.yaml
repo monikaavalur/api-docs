@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes a Blocked IP Range.
+  parameters:
+    - name: uuid
+      in: query
+      description: Uuid of IP range to remove
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteBlockedIpRange.yaml
+  x-idap-anon: false

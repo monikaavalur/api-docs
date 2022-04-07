@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Remove the slack Member id for a user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            ID:
+              type: string
+              description: User UUID or name to set Slack member id for
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtRemoveSlackMemberId.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes a file.
+  parameters:
+    - name: path
+      in: query
+      description: File to delete.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteFile.yaml
+  x-idap-anon: false

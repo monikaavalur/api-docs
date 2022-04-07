@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the social configuration for the requested identity provider.
+  description: Requires administrator rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - IdpName
+          type: object
+          properties:
+            GetSecretAsPlainText:
+              type: boolean
+              description: Get the secret as plain text.
+              default: false
+            IdpName:
+              type: string
+              description: >-
+                The identity provider name (Facebook, Google, Twitter, LinkedIn,
+                Microsoft).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMgmtGetCustomConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

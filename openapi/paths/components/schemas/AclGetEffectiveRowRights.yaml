@@ -1,0 +1,21 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of user rights.
+    items:
+      type: object
+      properties:
+        Table:
+          type: string
+          description: Database table name.
+        RowKey:
+          type: string
+          description: The unique identifier.
+        GrantStr:
+          type: string
+          description: The right being granted.
+      description: A user right.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

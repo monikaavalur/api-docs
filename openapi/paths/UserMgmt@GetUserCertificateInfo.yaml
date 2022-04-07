@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Get certificate info for a given user.
+  description: >-
+    Returns  Thumbprint and certificate type information for all certificates
+    issued to the user.
+                Specified user must be you or you must be a system administrator or have user management permissions.
+  parameters:
+    - name: user
+      in: query
+      description: The name or uuid of the user to fetch certificate info for.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtGetUserCertificateInfo.yaml
+  x-idap-anon: false

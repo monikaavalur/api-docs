@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Gets a list of domain controllers for the directory service Uuid in domain
+    name.
+  parameters:
+    - name: directoryServiceUuid
+      in: query
+      description: The directory service Uuid to look for.
+      required: true
+      schema:
+        type: string
+    - name: domainName
+      in: query
+      description: The domain name get out of the directory service.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetDomainControllersForDomain.yaml
+  x-idap-anon: false

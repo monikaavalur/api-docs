@@ -1,0 +1,14 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: The certificate authority id.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The certificate authority id.", type: "string"
+                  }
+                  

@@ -1,0 +1,15 @@
+type: object
+properties:
+  ErrorID:
+    type: string
+    description: Unique support identifier for this occurrence of an error
+  Result:
+    type: object
+    properties: {}
+    description: Array of daily usage snapshots
+  Message:
+    type: string
+    description: Error message text on failure, may be null
+  success:
+    type: boolean
+    description: Indicates API success or failure

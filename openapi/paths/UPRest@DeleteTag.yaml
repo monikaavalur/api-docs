@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Application Management
+  summary: Delete a tag
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - tagname
+          type: object
+          properties:
+            tagname:
+              type: string
+              description: tag name
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestDeleteTag.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

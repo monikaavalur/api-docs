@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Disables zero or more features for an enrolled machine.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentDisableFeatures.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

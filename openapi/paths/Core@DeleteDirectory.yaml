@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes a directory.
+  parameters:
+    - name: path
+      in: query
+      description: Path of the directory up for removal.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteDirectory.yaml
+  x-idap-anon: false

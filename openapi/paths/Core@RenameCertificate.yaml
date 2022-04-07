@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Rename certificate with thumbprint to newName.
+  parameters:
+    - name: thumbprint
+      in: query
+      description: Thumbprint of the certificate to rename.
+      required: true
+      schema:
+        type: string
+    - name: newName
+      in: query
+      description: New name for the certificate.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreRenameCertificate.yaml
+  x-idap-anon: false

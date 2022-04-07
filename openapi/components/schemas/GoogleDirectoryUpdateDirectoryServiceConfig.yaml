@@ -1,0 +1,14 @@
+type: object
+properties:
+  Result:
+    type: boolean
+    description: Did the directory service update work.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "Did the directory service update work.", type: "boolean"
+                  }
+                  

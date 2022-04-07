@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets a list of tenants for the customer.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - pass
+            - user
+          type: object
+          properties:
+            pass:
+              type: string
+              description: The user password.
+            user:
+              type: string
+              description: The user to gather information about.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RegistrationCustomerInfo.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

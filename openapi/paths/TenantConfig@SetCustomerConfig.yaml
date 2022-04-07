@@ -1,0 +1,141 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set a tenant configuration.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            OtpCodeLength:
+              type: integer
+              description: Defines the Otp code length for this tenant.
+            TenantUrlDeprecationEnabled:
+              type: boolean
+              description: >-
+                Determines whether or not legacy centrify urls can be used to
+                access the tenant. 
+            Icon:
+              type: string
+              description: The tenant icon.
+            EnableUmc:
+              type: boolean
+              description: Enable Umc for this tenant.
+            SendPasswordChangeConfirmation:
+              type: boolean
+              description: Enable sending password change confirmation for this tenant.
+            LoginBannerMessage:
+              type: string
+              description: The login banner message for this tenant.
+            StoreCorporateAppUserCredsInVault:
+              type: boolean
+              description: Store corporate app user credentials in the password vault.
+            LoginSampleText:
+              type: string
+              description: The tenant login sample text.
+            PortalImage:
+              type: string
+              description: The tenant portal image.
+            LoginBannerMessageL10nEnabled:
+              type: boolean
+              description: The localized version of the tenant login banner message.
+            CompanySupportLink:
+              type: string
+              description: The tenant company support link.
+            ThemeColor:
+              type: string
+              description: The tenant theme color.
+            GlobalImage:
+              type: string
+              description: The tenant global image.
+            ZsoCertLifeTime:
+              type: integer
+              description: >-
+                Defines the number of days for which the ZSO certificate will be
+                valid
+            MfaAttributeMapping:
+              type: array
+              description: The tenant mfa attibute mappings.
+              items:
+                type: object
+                properties: {}
+            LoginBackgroundImage:
+              type: string
+              description: The tenant login background image.
+            StorePersonalAppUserCredsInVault:
+              type: boolean
+              description: Store personal app user credentials in the password vault.
+            CompanyName:
+              type: string
+              description: The tenant company name.
+            IsOriginValidationEnabled:
+              type: boolean
+              description: Enable origin validation for this tenant.
+            reCaptchaThreshold:
+              type: integer
+              description: The number of failed login attempts before showing ReCAPTCHA.
+            WelcomeMessage:
+              type: string
+              description: The tenant welcome message.
+            ZsoCertRenewalWindow:
+              type: integer
+              description: >-
+                Defines the number of days before expiry date the certificate
+                gets renewed
+            EmailImage:
+              type: string
+              description: The tenant email image.
+            LoginImage:
+              type: string
+              description: The tenant login image.
+            IsOriginValidationOnGetEnabled:
+              type: boolean
+              description: Enable origin validation on get requests for this tenant.
+            ForgotUsernameAllowed:
+              type: boolean
+              description: Enable forgotten user name for this tenant.
+            NavigationColor:
+              type: string
+              description: The tenant navigation color.
+            IsPasswordPersistanceEnabled:
+              type: boolean
+              description: Enable password persistance for this tenant.
+            FastSearchEnabledEntities:
+              type: array
+              description: Enable fast search entities.
+              items:
+                type: string
+            PrivacyPolicyLink:
+              type: string
+              description: The tenant privacy policy link.
+            AllowCors:
+              type: array
+              description: ''
+              items:
+                type: string
+            BackgroundColor:
+              type: string
+              description: The tenant background color.
+            EnableQRCode:
+              type: boolean
+              description: Enable QR code for authentication.
+            CustomerCompany:
+              type: string
+              description: The tenant company.
+            DisplayLoginBanner:
+              type: boolean
+              description: Display the login banner for this tenant.
+            TermsOfUseLink:
+              type: string
+              description: The tenant terms of use link.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigSetCustomerConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Creates a cname with prefix specified for the tenant.
+  description: If the cname is the only user created, it is set as preferred cname.
+  parameters:
+    - name: cnamePrefix
+      in: query
+      description: Prefix of cname to create
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantCnamesRegister.yaml
+  x-idap-anon: false

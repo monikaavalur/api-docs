@@ -1,0 +1,33 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      HasGlobalRight:
+        type: boolean
+        description: Whether current user have right to perform task on global objects.
+      ManagingOrganizations:
+        type: array
+        description: >-
+          List or organization units that current user have right to perform the
+          specific task
+        items:
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of organization
+            Path:
+              type: string
+              description: The full path of organization
+            Description:
+              type: string
+              description: description of organization
+            Name:
+              type: string
+              description: The name of organization
+          description: The organization unit.
+    description: The result.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

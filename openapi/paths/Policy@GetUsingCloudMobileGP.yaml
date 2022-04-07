@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Policy Management
+  summary: Get using cloud mobile group policy.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetUsingCloudMobileGP.yaml
+  x-idap-anon: false

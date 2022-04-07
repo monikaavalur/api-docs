@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Policy Management
+  summary: Gets a list of Authentication profiles.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AuthProfileGetProfileList.yaml
+  x-idap-anon: false

@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Remove a connector referred to by proxyUuid.
+  parameters:
+    - name: proxyUuid
+      in: query
+      description: Uuid of the connector being removed.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteProxy.yaml
+  x-idap-anon: false

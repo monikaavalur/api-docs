@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the localized value of the tag.
+  parameters:
+    - name: tag
+      in: query
+      description: The tag to get.
+      required: true
+      schema:
+        type: string
+    - name: locale
+      in: query
+      description: The tag's culture.
+      required: true
+      schema:
+        type: string
+    - name: qualifier
+      in: query
+      description: The qualifier that applies to the tag.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetLocTag.yaml
+  x-idap-anon: false

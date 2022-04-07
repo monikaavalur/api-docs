@@ -1,0 +1,24 @@
+post:
+  tags:
+    - User Management
+  summary: Remove a user from the cloud.
+  description: >-
+    You must be a system administrator or have user management permissions. 
+    Will delete cloud users.  Users for other directory services are only
+    removed from the cloud.
+                This API will fail if the id specified is the current user.
+  parameters:
+    - name: ID
+      in: query
+      description: The name or UUID of the user to remove.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtRemoveUser.yaml
+  x-idap-anon: false

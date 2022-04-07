@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Fetch a Role's principals.
+  description: You must be a system administrator or have role management permissions.
+  parameters:
+    - name: Name
+      in: query
+      description: Role UUID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RolesGetRoleMembers.yaml
+  x-idap-anon: false

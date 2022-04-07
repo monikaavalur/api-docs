@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Validate the otp code.
+  parameters:
+    - name: uuid
+      in: query
+      description: Unique identifier for the profile.
+      required: true
+      schema:
+        type: string
+    - name: otpCode
+      in: query
+      description: Oath profile password.
+      required: true
+      schema:
+        type: string
+    - name: useOathDefaults
+      in: query
+      description: Should oath defaults be used.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathValidateOtpCode.yaml
+  x-idap-anon: false

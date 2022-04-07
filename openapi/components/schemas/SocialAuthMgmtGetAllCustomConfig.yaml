@@ -1,0 +1,12 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of identity provider configurations.
+    items:
+      type: object
+      properties: {}
+      description: An identity profider configuration.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

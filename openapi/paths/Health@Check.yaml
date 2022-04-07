@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: 'Simple health check for load balancers: Is this node active?'
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/HealthCheck.yaml
+  x-idap-anon: true

@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: >-
+    VerifyIdentityOTP:  Verify if the One Time Passcode matched with the stored
+    value
+  parameters:
+    - name: id
+      in: query
+      description: user uuid
+      required: true
+      schema:
+        type: string
+    - name: guid
+      in: query
+      description: GUID for the storage ID
+      required: true
+      schema:
+        type: string
+    - name: code
+      in: query
+      description: One Time Passcode
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceVerifyIdentityOTP.yaml
+  x-idap-anon: false

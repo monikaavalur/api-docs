@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the history of a single job.
+  parameters:
+    - name: jobId
+      in: query
+      description: The job id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TaskGetSingleJobHistory.yaml
+  x-idap-anon: false

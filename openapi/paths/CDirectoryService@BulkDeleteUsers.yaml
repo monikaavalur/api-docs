@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Delete a list of users with permission check.
+  description: Deprecated -- use UserMgmt/RemoveUsers() instead.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Users
+          type: object
+          properties:
+            Users:
+              type: string
+              description: List of users for removal.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceBulkDeleteUsers.yaml
+  deprecated: true
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

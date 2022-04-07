@@ -1,0 +1,8 @@
+type: object
+properties:
+  Result:
+    type: integer
+    description: The permissions on the collection.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

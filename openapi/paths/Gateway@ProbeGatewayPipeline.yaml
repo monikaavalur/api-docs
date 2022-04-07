@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Probes the gateway for the specified app to test the endpoint host
+    certificate.
+  description: |-
+    If it's not trusted by either the proxy or us, we need to know what to do 
+                 (Exception for the given cert, or fail).
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: string
+              description: The application unique identifier to probe.
+            ConfigureGatewayState:
+              type: string
+              description: The security certificate to decrypt the payload.
+              default: null
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayProbeGatewayPipeline.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

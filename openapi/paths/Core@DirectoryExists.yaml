@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Check for the existence of a directory.
+  parameters:
+    - name: path
+      in: query
+      description: The path of the directory to check
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDirectoryExists.yaml
+  x-idap-anon: false

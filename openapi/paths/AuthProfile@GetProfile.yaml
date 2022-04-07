@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Policy Management
+  summary: Gets an authentication profile.
+  description: >-
+    The profile get uses the uuid passed in by method call or as part of the
+    payload.
+  parameters:
+    - name: uuid
+      in: query
+      description: Profile UUID
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - uuid
+          type: object
+          properties:
+            uuid:
+              type: string
+              description: >-
+                The authentication profile uuid either passed in by method call
+                or as part of the payload.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AuthProfileGetProfile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

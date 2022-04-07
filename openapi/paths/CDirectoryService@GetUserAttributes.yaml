@@ -1,0 +1,12 @@
+post:
+  tags:
+    - User Management
+  summary: Get details for the current user.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceGetUserAttributes.yaml
+  x-idap-anon: false

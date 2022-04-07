@@ -1,0 +1,50 @@
+post:
+  tags:
+    - Policy Management
+  summary: Saves an authentication profile.
+  description: >-
+    If the profile contains a UUID an update is performed, otherwise it's a
+    write.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - settings
+          type: object
+          properties:
+            settings:
+              type: object
+              properties:
+                Challenges:
+                  type: array
+                  description: Selected authentication mechanisms.
+                  items:
+                    type: string
+                AdditionalData:
+                  type: object
+                  properties: {}
+                  description: DataEntity with additional data (default=null).
+                Uuid:
+                  type: string
+                  description: Profile UUID.
+                SingleChallengeMechanisms:
+                  type: string
+                  description: Selected single authentication mechanisms.
+                DurationInMinutes:
+                  type: integer
+                  description: How many minutes the profile is valid.
+                Name:
+                  type: string
+                  description: Profile name.
+              description: The authentication profile.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AuthProfileSaveProfile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

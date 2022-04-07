@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Application Management
+  summary: Add and update secured item tags for the current user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - itemkey
+            - tagnames
+          type: object
+          properties:
+            tagnames:
+              type: array
+              description: list of tag names
+              items:
+                type: string
+            itemkey:
+              type: string
+              description: Secured item key
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestUpsertTagsForSecuredItem.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

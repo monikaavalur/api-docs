@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets the access rights for a row.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - RowKey
+            - Table
+          type: object
+          properties:
+            RowKey:
+              type: string
+              description: The unique identifier.
+            ReduceSysadmin:
+              type: boolean
+              description: >-
+                Prevent generic cloud admin accounts from having access
+                (default=false).
+            Inherit:
+              type: boolean
+              description: Use inheritance (default=true).
+            Table:
+              type: string
+              description: The sql table to examine.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetRowAces.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

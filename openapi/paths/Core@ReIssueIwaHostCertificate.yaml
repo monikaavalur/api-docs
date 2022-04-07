@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Re issue the certificate for the connector.
+  parameters:
+    - name: proxyUuid
+      in: query
+      description: The connector Uuid.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreReIssueIwaHostCertificate.yaml
+  x-idap-anon: false

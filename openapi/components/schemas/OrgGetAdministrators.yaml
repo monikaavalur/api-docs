@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: List of administrators in redrock result format
+  Error:
+    type: object
+    description: Error message text on failure, may be null

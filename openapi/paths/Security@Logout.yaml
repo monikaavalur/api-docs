@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Logout current user.
+  description: |-
+    The user will be redirected to redirectUrl if it is present.
+                RedirectUrl can be external or relative.
+  parameters:
+    - name: redirectUrl
+      in: query
+      description: Where to go next.
+      required: true
+      schema:
+        type: string
+    - name: allowIWA
+      in: query
+      description: Allow windows authentication.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityLogout.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Authentication
+  summary: Start a step-up challenge for sensitive apps
+  description: >-
+    <p>The API is used to start the step-up authentication for sensitive
+    applications. 
+                <ul><li>This API is invoked when a user is trying to access a sensitive application that requires additional challenges to be fulfilled.</li>
+                <li>The challenge ID parameter received from the “/ChallengeUser” API is sent as a request parameter.</li></ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ChallengeStateId
+            - Version
+          type: object
+          properties:
+            Version:
+              type: string
+              description: 'Version of the data being sent. Options: 1.0'
+            ChallengeStateId:
+              type: string
+              description: Challenge Id returned by Challenge user API.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityStartChallenge.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

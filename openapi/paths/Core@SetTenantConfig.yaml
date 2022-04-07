@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the value of a tenant configuration key.
+  parameters:
+    - name: key
+      in: query
+      description: The tenant configuration key to set.
+      required: true
+      schema:
+        type: string
+    - name: value
+      in: query
+      description: The tenant configuration value.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreSetTenantConfig.yaml
+  x-idap-anon: false

@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Returns login Data configurement.
+  parameters:
+    - name: customerid
+      in: query
+      description: The customer context to use.
+      required: true
+      schema:
+        type: string
+    - name: debug
+      in: query
+      description: Use debug.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/HomeGetLoginData.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

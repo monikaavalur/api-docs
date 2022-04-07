@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Returns focused snapshot data, potentially in red-rock report format.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Area
+          type: object
+          properties:
+            Area:
+              type: string
+              description: Area to fetch in tabular detail.
+            NumDays:
+              type: integer
+              description: >-
+                The last number of days of data to return (looking back from
+                today).
+            RRFormat:
+              type: boolean
+              description: Return data in database format.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RedRockGetTenantSnapshotDetails.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

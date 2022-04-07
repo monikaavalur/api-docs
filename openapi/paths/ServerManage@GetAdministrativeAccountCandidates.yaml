@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Get administrator information
+  description: You must be a system administrator.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Ascending:
+              type: string
+              description: Sort in ascending order, default true
+            Filter:
+              type: string
+              description: All or part of username
+            SortBy:
+              type: string
+              description: Field to sort by, default Name
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/ServerManageGetAdministrativeAccountCandidates.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,41 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates the set members.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - args
+          type: object
+          properties:
+            args:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: The uuid of the collection to be modified.
+                Add:
+                  type: array
+                  description: A list of members to add to the set.
+                  items:
+                    type: string
+                    description: A member.
+                Remove:
+                  type: array
+                  description: A list of members to remove from the set.
+                  items:
+                    type: string
+                    description: A member.
+              description: The request to be updated.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionUpdateMembersCollection.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

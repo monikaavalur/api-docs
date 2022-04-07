@@ -1,0 +1,35 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of editable message templates.
+    items:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The message template name.
+        Type:
+          type: string
+          description: The message template type.
+        TemplateName:
+          type: string
+          description: The template name.
+        DisplayType:
+          type: string
+          description: The message template display type.
+        ModifiedLanguages:
+          type: array
+          description: A list of languages available for the message template.
+          items:
+            type: string
+        Substitutions:
+          type: array
+          description: A list of substitutable templates.
+          items:
+            type: object
+            properties: {}
+      description: An editable message template.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

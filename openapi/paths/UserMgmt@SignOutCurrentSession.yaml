@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Sign out for the current session
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSignOutCurrentSession.yaml
+  x-idap-anon: false

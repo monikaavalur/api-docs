@@ -1,0 +1,49 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      ErrorID:
+        type: string
+        description: ErrorID
+      ErrorCode:
+        type: string
+        description: ErrorID
+      MessageID:
+        type: string
+        description: MessageID
+      Result:
+        type: object
+        properties:
+          Status:
+            type: string
+            description: Status of the endpoint
+          IdpRedirectUrl:
+            type: string
+            description: Idp Redirect Url
+        description: Result
+      InnerExceptions:
+        type: string
+        description: ErrorID
+      Message:
+        type: string
+        description: Message
+      success:
+        type: boolean
+        description: success
+      IsSoftError:
+        type: string
+        description: ErrorID
+    description: Provides status whether social authentication started or not
+  Error:
+    type: object
+    properties:
+      UnknownIdp:
+        type: string
+        description: >-
+          Encountered unexpected error and could not process authentication
+          request.
+      InvalidURI:
+        type: string
+        description: Redirect URI found in the request is not trusted or valid.
+    description: Error message text on failure

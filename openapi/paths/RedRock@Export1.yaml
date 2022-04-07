@@ -1,0 +1,54 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Export the results of a query to a file.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Delimiter
+            - Filename
+            - Script
+            - Type
+          type: object
+          properties:
+            Parameters:
+              type: object
+              properties:
+                PageNumber:
+                  type: integer
+                  description: The page number.
+                PageSize:
+                  type: integer
+                  description: The page size.
+                SortBy:
+                  type: string
+                  description: What to sort by.
+              description: The query arguments.
+            SkipHeader:
+              type: boolean
+              description: Make the header line in the output file.
+              default: false
+            Type:
+              type: string
+              description: Type of file to create (csv, excel).
+            Filename:
+              type: string
+              description: The name to give the output file.
+            Script:
+              type: string
+              description: The query to run.
+            Delimiter:
+              type: string
+              description: The file content delimiter.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RedRockExport1.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

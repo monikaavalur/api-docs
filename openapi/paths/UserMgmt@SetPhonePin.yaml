@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Set the phone pin for a user
+  description: <p>Using this endpoint we can set phonepin for the user.</p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+            - phonepin
+          type: object
+          properties:
+            ID:
+              type: string
+              description: >-
+                The unique ID of the user. The unique ID is generated when the
+                user is created.
+            phonepin:
+              type: string
+              description: >-
+                Enter a pin that the user needs to enter for the phone call MFA.
+                The minimum digits required for the pin are 4. This can be
+                controlled in the user policy.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSetPhonePin.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

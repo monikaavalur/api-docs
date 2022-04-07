@@ -1,0 +1,27 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of LDAP enabled cloud connectors for the tenant.
+    items:
+      type: object
+      properties:
+        proxyName:
+          type: string
+          description: The name of the connector.
+        name:
+          type: string
+          description: The machine name.
+        version:
+          type: string
+          description: The connectors version.
+        lastPing:
+          type: string
+          description: The last time the connector was seen on the network.
+        proxyId:
+          type: string
+          description: The connectors unique identifier.
+      description: A cloud connector
+  Error:
+    type: object
+    description: Error message text on failure, may be null

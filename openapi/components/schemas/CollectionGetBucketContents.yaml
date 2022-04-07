@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: All attributes of the bucket.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,42 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set custom configuration.
+  description: Requires directory service administrator rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - CustomConfigEnabled
+            - IdpName
+            - TrustedRedirectUris
+          type: object
+          properties:
+            TrustedRedirectUris:
+              type: array
+              description: A list of trusted Uris for this client.
+              items:
+                type: string
+            ApplicationClientSecret:
+              type: object
+              properties: {}
+              description: The application client secret.
+            IdpName:
+              type: string
+              description: >-
+                The identity provider name (Facebook, Google, Twitter, LinkedIn,
+                Microsoft).
+            CustomConfigEnabled:
+              type: boolean
+              description: Enable custom configuration.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMgmtSetCustomConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

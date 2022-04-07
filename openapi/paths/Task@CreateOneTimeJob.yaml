@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Create a one time job.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Description
+            - Name
+            - ScheduledTimeTicks
+            - ScriptArgs
+            - ScriptPath
+            - TimeoutSeconds
+          type: object
+          properties:
+            ScriptArgs:
+              type: object
+              properties: {}
+              description: The arguments for the script.
+            TimeoutSeconds:
+              type: integer
+              description: How many seconds to give the job as a timeout.
+            ScriptPath:
+              type: string
+              description: The path to the script to run for the job.
+            ScheduledTimeTicks:
+              type: integer
+              description: How long from now to schedule the job.
+            Description:
+              type: string
+              description: The job description.
+            Name:
+              type: string
+              description: The job name.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TaskCreateOneTimeJob.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

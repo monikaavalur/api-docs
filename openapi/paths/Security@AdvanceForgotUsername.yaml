@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Authentication
+  summary: Advances a forgot username session (similar to MFA advance authentication).
+  description: >-
+    Handles and mfa-like package with a single challenge (special case
+    'ForgotUsername' package).
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Action
+            - Answer
+            - TenantId
+          type: object
+          properties:
+            TenantId:
+              type: string
+              description: The tenant id.
+            Action:
+              type: string
+              description: The payload key action.
+            Answer:
+              type: string
+              description: The answer.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityAdvanceForgotUsername.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: update user application for the current user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - appkey
+            - notes
+          type: object
+          properties:
+            appkey:
+              type: string
+              description: Application key
+            notes:
+              type: string
+              description: Application Notes
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestUpdateUserApplication.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

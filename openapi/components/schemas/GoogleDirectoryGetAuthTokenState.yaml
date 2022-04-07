@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: The IDP authorization state.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The IDP authorization state.", type: "object"
+                  }
+                  

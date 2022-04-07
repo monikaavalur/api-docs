@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Set script of dynamic role
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+            - Script
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the role to create or update
+            Script:
+              type: string
+              description: Javascript which returns a boolean value
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RolesSetDynamicRoleScript.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

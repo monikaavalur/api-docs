@@ -1,0 +1,50 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: |2-
+
+                      description: "An EnvironmentInfo object describing the directory service or domain name requested.",
+                      type: "object",
+                      properties:
+                      {
+                          CurrentDtUtc: { description: "Current UTC time.", type: "string" },
+                          MsSpentForDiscovery: { description: "The time spent to discover the topology in Milliseconds.", type: "integer" },
+                          CurrentUserDomain: { description: "Current user domain.", type: "string" },
+                          CurrentForest: { description: "Forest this environment resides in.", type: "string" },
+                          CurrentDomain: { description: "Domain of this environment.", type: "string" },
+                          CurrentSite: { description: "This environment's site.", type: "string" },
+                          MachineSid: { description: "The machine unique identifier.", type: "string" },
+                          Joined: { description: "Is the environment domain joined." , type: "boolean" },
+                          DirectoryServiceUuid: { description: "The environment's directory service Uuid.", type: "string" },
+                          ProxyUuid: { description: "The environment's connector Uuid.", type: "string" },
+                          CloudReceiptTimestampUtc: { description: "The UTC time of cloud reciept.", type: "string" },
+                          Forests 
+                          { 
+                              description: "A list of forests in this environment.",
+                              type: "array",
+                              items:
+                              {
+                                  description: "A ForestInfo in this environment.",
+                                  item: "object", 
+                                  properties:
+                                  {
+                                      Name: { description: "The forest name.", item: "string" },
+                                      IsCurrentForest: { description: "Is this forest in the current forest.", item: "boolean" },
+                                      ForestMode: { description: "The forest mode.", item: "string" },
+                                      RootDomainName: { description: "The root domain name.", item: "string" },
+                                      ForestTrusts: { description: "List of TrustInfo objects.", type: "array", items: { type: "object" },
+                                      Domains: { description: "List of DomainInfo objects.", type: "array", items: { type: "object" },
+                                      Sites: { description: "List of SiteInfo objects.", type: "array", items: { type: "object" },
+                                      Links: { description: "List of LinkInfo objects.", type: "array", items: { type: "object" },
+                                      ForestException { description: "Exception descriptions for this forest.", item: "string" }
+                                  }
+                              }
+                          },
+                          HasOnlineWhitelistedController: {description: "Is there at least one online whitelisted controller for this connector?", type: "boolean" },
+                          EnvironmentInfoException: { description: "Exception descriptions for this environment.", item: "string" }
+                  
+  Error:
+    type: object
+    description: Error message text on failure, may be null

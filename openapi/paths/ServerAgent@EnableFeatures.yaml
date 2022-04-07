@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- EnableFeatures
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentEnableFeatures.yaml
+  deprecated: true
+  x-idap-anon: false

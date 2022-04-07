@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: >-
+    Gets the scripting property to attribute mapping from an LDAP enabled
+    directory service.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - directoryServiceUuid
+          type: object
+          properties:
+            directoryServiceUuid:
+              type: string
+              description: The LDAP service unique identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceGetScriptingPropertyToAttributeMappings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

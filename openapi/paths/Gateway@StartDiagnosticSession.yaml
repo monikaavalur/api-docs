@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Start a diagnostic session.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: string
+              description: The application unique identifier to diagnose.
+            EmailAddresses:
+              type: string
+              description: Comma or semi-colon delimited list of email addresses.
+            ContentTypes:
+              type: string
+              description: Comma or semi-colon delimited list of content types.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayStartDiagnosticSession.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

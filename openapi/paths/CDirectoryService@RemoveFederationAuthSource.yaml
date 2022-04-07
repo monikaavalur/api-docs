@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Removes AuthSource from all users for a given Federation
+  description: |-
+    You must be a system administrator or have user management permissions.
+                Will perform the updates to users asyncronously (will return before updates are complete).
+  parameters:
+    - name: federationUuid
+      in: query
+      description: Federation UUID to remove from Auth Source for all users.
+      required: true
+      schema:
+        type: string
+    - name: sendInvites
+      in: query
+      description: Send email invitation to updated users (default=false)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CDirectoryServiceRemoveFederationAuthSource.yaml
+  x-idap-anon: false

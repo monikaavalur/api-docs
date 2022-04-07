@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Looks for the multi auth customer response.
+  description: Invoked by 3rd party services answering twilio messages.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ResponseXml:
+              type: string
+              description: The multi auth digit response from the customer.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityTwilioPhoneChallengeNotAnswered.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

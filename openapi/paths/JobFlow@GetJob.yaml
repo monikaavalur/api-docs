@@ -1,0 +1,23 @@
+post:
+  tags:
+    - Workflow Management
+  summary: Gets a workflow job
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            jobid:
+              type: string
+              description: ID of the job to delete
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/JobFlowGetJob.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

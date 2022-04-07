@@ -1,0 +1,20 @@
+post:
+  tags:
+    - User Management
+  summary: Bulk imports users from csv file.
+  parameters:
+    - name: importType
+      in: query
+      description: Import Type of CSV file. Defaults to BulkUser
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CDirectoryServiceGetBulkImportWithExtAtt.yaml
+  x-idap-anon: false

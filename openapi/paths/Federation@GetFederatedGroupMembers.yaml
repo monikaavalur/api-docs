@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Directory Service Management
+  summary: Retreives a list of users that are members of a specific federated group.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Group
+          type: object
+          properties:
+            Group:
+              type: string
+              description: UUID of the group
+            PageNumber:
+              type: integer
+              description: >-
+                Zero indexed page number of the results to fetch (use 0 when
+                requesting all rows).
+            PageSize:
+              type: integer
+              description: Number of records to return (use 0 when requesting all rows).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationGetFederatedGroupMembers.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

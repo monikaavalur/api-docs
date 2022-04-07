@@ -1,0 +1,21 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Sid:
+        type: string
+        description: The unique identifier for the message.
+      Token:
+        type: string
+        description: The Twilio authentication token.
+      FromNumber:
+        type: string
+        description: The from number for Twilio messages.
+      SmsConfigEnabled:
+        type: string
+        description: Is Twilio configured.
+    description: The tenant Twilio configuration.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

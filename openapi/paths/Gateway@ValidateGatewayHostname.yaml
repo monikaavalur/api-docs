@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Validate gateway hostname.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: string
+              description: The application unique identifier to validate.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayValidateGatewayHostname.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

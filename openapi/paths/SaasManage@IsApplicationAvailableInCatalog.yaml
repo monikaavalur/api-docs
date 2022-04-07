@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Checks if Application is still available in the catalog.
+  parameters:
+    - name: appKey
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/SaasManageIsApplicationAvailableInCatalog.yaml
+  x-idap-anon: false

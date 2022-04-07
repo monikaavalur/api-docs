@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Sets a property to attribute mapping on an LDAP enabled directory service.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - directoryServiceUuid
+            - propertyToAttributeMappings
+          type: object
+          properties:
+            directoryServiceUuid:
+              type: string
+              description: The LDAP service unique identifier.
+            propertyToAttributeMappings:
+              type: object
+              properties: {}
+              description: The property to attribute mapping to set.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceSetPropertyToAttributeMappings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

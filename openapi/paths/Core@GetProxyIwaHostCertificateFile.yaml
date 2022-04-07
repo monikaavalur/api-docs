@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the connector Iwa host certificate file.
+  parameters:
+    - name: proxyUuid
+      in: query
+      description: The connector unique identifier.
+      required: true
+      schema:
+        type: string
+    - name: filename
+      in: query
+      description: Certificate file name.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetProxyIwaHostCertificateFile.yaml
+  x-idap-anon: false

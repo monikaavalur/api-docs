@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Uploads a certificate.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - File
+          type: object
+          properties:
+            File:
+              type: object
+              properties: {}
+              description: >-
+                File containing the certificate, in the form-data.  (Not as a
+                parameter.)
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreUploadCertificate.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

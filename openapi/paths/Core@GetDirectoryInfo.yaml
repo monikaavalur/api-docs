@@ -1,0 +1,18 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets directory information for the path.
+  parameters:
+    - name: path
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetDirectoryInfo.yaml
+  x-idap-anon: false

@@ -1,0 +1,45 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: List of all cloud users.
+    items:
+      type: object
+      properties:
+        Uuid:
+          type: string
+          description: User UUID.
+        Name:
+          type: string
+          description: User name.
+        DisplayName:
+          type: string
+          description: User display name.
+        Description:
+          type: string
+          description: User description.
+        Mail:
+          type: string
+          description: User email.
+        OfficeNumber:
+          type: string
+          description: User office phone number.
+        MobileNumber:
+          type: string
+          description: User mobile phone number.
+        HomeNumber:
+          type: string
+          description: User home phone number.
+        ReportsTo:
+          type: string
+          description: User reports to user UUID.
+        PictureUri:
+          type: string
+          description: File system path to user picture file.
+        PreferredCulture:
+          type: string
+          description: User preferred culture.
+      description: A cloud user.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

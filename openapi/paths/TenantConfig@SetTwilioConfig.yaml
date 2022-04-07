@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set the tenant Twilio configuration.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - FromNumber
+            - Sid
+            - SmsConfigEnabled
+            - Token
+          type: object
+          properties:
+            Sid:
+              type: string
+              description: The unique identifier for the message.
+            Token:
+              type: string
+              description: The Twilio authentication token.
+            FromNumber:
+              type: string
+              description: The from number for Twilio messages.
+            SmsConfigEnabled:
+              type: string
+              description: Is Twilio configured.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigSetTwilioConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

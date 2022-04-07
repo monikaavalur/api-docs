@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets the collection access rights based on the input parameters.
+  parameters:
+    - name: table
+      in: query
+      description: The table to look in for the item.
+      required: true
+      schema:
+        type: string
+    - name: rowkey
+      in: query
+      description: The unique identifier for the item.
+      required: true
+      schema:
+        type: string
+    - name: reduceSysadmin
+      in: query
+      description: Prevent generic cloud admin accounts from having access.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetCollectionAcesHelper.yaml
+  x-idap-anon: false

@@ -1,0 +1,34 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Confirms the User Consent when invoked from UI
+  description: >-
+    This API would be called when user confirms the consent from the dialog
+    present on the UI. See the OAuth2 spec https://oauth.net/2/
+  parameters:
+    - name: bounce
+      in: query
+      description: Value used to determine if authentication has occured.
+      required: true
+      schema:
+        type: string
+    - name: result
+      in: query
+      description: Has user denied confirmation.
+      required: true
+      schema:
+        type: string
+    - name: scopes
+      in: query
+      description: Comma delimited list of scope ids.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2Confirm.yaml
+  x-idap-anon: false

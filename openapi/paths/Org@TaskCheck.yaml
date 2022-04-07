@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Check if current user can perform specific task
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Task
+          type: object
+          properties:
+            Task:
+              type: string
+              description: The administrative task
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgTaskCheck.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

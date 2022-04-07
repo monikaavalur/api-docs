@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Directory Service Management
+  summary: Gets a list of federated groups.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationGetGroups.yaml
+  x-idap-anon: false

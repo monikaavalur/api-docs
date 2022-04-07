@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Gets user roles and administrative rights.
+  description: >-
+    The list consists of all user roles and associated administrative rights
+    associated with a role.
+  parameters:
+    - name: id
+      in: query
+      description: UUID of User
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/UserMgmtGetUsersRolesAndAdministrativeRights.yaml
+  x-idap-anon: false

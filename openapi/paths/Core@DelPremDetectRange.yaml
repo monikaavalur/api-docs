@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Deletes an IP Range local to the customer network.
+  description: Deprecated -- Use /core/DeletePremDetectRange instead
+  parameters:
+    - name: value
+      in: query
+      description: IP range to remove.
+      required: true
+      schema:
+        type: string
+    - name: uuid
+      in: query
+      description: Uuid of IP range to remove
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDelPremDetectRange.yaml
+  deprecated: true
+  x-idap-anon: false

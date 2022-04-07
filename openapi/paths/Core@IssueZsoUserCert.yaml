@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Issues a Zso user certificate
+  parameters:
+    - name: certFileName
+      in: query
+      description: Certificate file name.
+      required: true
+      schema:
+        type: string
+    - name: certPass
+      in: query
+      description: Certificate password.
+      required: true
+      schema:
+        type: string
+    - name: deviceId
+      in: query
+      description: Id of the device to provide the certificate for.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreIssueZsoUserCert.yaml
+  x-idap-anon: false

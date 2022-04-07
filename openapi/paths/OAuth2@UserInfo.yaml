@@ -1,0 +1,19 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Returns Claims about the authenticated End-User
+  description: >-
+    <ul> This API is used for authentication where Access Token should be sent
+    as Bearer token in Authorization header.<li> In response, Claims will be
+    returned based on the scopes associated with Access Token.</li><li>For
+    further information on UserInfo Request, check <a
+    href="https://openid.net/specs/openid-connect-core-1_0.html#rfc.section.5.3">here</a>
+    </li>
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2UserInfo.yaml
+  x-idap-anon: false

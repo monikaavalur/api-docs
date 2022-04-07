@@ -1,0 +1,64 @@
+post:
+  tags:
+    - User Management
+  summary: >-
+    Create a new user in the Cloud Directory Service using minimal user
+    information.
+  description: You must be a system administrator or have user management permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Mail
+            - Name
+          type: object
+          properties:
+            HomeNumber:
+              type: string
+              description: User home phone number (default=null)
+            AccountExp:
+              type: string
+              description: Date/time account expires (default=never)
+              format: date-time
+            ReportsTo:
+              type: string
+              description: User reports to user UUID (default=null)
+            PasswordNeverExpire:
+              type: string
+              description: >-
+                Does the user's password never expire (must be 'True' or
+                'False)? (default=False)
+            DisplayName:
+              type: string
+              description: User display name (default=null)
+            OfficeNumber:
+              type: string
+              description: User office phone number (default=null)
+            MobileNumber:
+              type: string
+              description: User mobile phone number (default=null)
+            InEverybodyRole:
+              type: string
+              description: >-
+                Is user in the Everybody role (must be 'True' or 'False)?
+                (default=True)
+            Mail:
+              type: string
+              description: Email of user
+            Description:
+              type: string
+              description: User description (default=null)
+            Name:
+              type: string
+              description: Name of user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceCreateUserQuick.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Fetch a cloud user's picture.
+  description: >-
+    Specified user must be you or you must be a system administrator or have
+    user management permissions.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID or name to fetch picture for
+      required: true
+      schema:
+        type: string
+    - name: directoryServiceUuid
+      in: query
+      description: UUID of the user's directory service (default=null)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        file:
+          schema:
+            $ref: ../components/schemas/UserMgmtGetUserPicture.yaml
+  x-idap-anon: false

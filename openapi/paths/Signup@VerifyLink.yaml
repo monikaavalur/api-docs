@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: 'Mandatory link Verification support: Verifies magic link sent in email'
+  description: |-
+    Invoked by 3rd party services for answering magic link.
+                Supports the click on link scenario.
+  parameters:
+    - name: codeId
+      in: query
+      description: unique value generated during mandatory verification
+      required: true
+      schema:
+        type: string
+    - name: answer
+      in: query
+      description: The answer to verify against.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SignupVerifyLink.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

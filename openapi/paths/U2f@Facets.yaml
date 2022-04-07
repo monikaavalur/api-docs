@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the trusted facet list for the tenant.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/U2fFacets.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

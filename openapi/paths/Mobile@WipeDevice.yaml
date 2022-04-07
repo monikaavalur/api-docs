@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Wipe a device (Mobile + OSX)
+  parameters:
+    - name: deviceID
+      in: query
+      description: Device ID
+      required: true
+      schema:
+        type: string
+    - name: passcode
+      in: query
+      description: Passcode for OSX devices
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobileWipeDevice.yaml
+  x-idap-anon: false

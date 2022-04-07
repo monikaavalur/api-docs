@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: DEPRECATED -- This API is deprecated and should not be used.
+  description: Please use UpdateSecurityQuestions and/or ResetSecurityQuestions instead.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSetSecurityQuestion.yaml
+  deprecated: true
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+    - Directory Service Management
+  summary: Refresh a user's cached identity.
+  description: >-
+    You must be a system administrator or have user management permissions. 
+    User cached identity in the cloud is reloaded from their directory service.
+                Useful when user details have changed in their remote directory service, but have not yet been pushed to the cloud.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID to refresh
+      required: true
+      schema:
+        type: string
+    - name: directoryServiceUuid
+      in: query
+      description: UUID of the user's directory service (default=null)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceRefreshToken.yaml
+  x-idap-anon: false

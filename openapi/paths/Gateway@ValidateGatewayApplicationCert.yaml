@@ -1,0 +1,47 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Validate gateway application certificate.
+  parameters:
+    - name: _RowKey
+      in: query
+      description: The application unique identifier.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - CertificatePwd
+            - GatewayCert
+          type: object
+          properties:
+            ConfigureGatewayState:
+              type: object
+              properties:
+                GatewayCert:
+                  type: string
+                  description: A gateway security certificate.
+                GatewayCertPassword:
+                  type: string
+                  description: The gateway security certificate password.
+              description: The security certificate used for an application gateway.
+            GatewayCert:
+              type: object
+              properties: {}
+              description: A gateway security certificate.
+            CertificatePwd:
+              type: string
+              description: The gateway security certificate password.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayValidateGatewayApplicationCert.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: User's picture file if one is available
+  Error:
+    type: object
+    description: Error message text on failure, may be null

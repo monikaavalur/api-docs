@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Resets the Idaptive OATH profile.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Uuid
+          type: object
+          properties:
+            Uuid:
+              type: string
+              description: >-
+                The unique identifier for the user who's default OATH profile
+                will be reset.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathResetCloudOathProfile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,47 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Grant permissions on a set
+  description: >-
+    You must be a system administrator or have 'Grant' permission on the
+    collection or have global 'Grant' permission on collections.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Grants
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the collection, Set to null for global permissions
+            Grants:
+              type: object
+              properties:
+                Rights:
+                  type: string
+                  description: 'Permissions:  Edit, Delete, Grant'
+                Principal:
+                  type: string
+                  description: User name or role name
+                PrincipalId:
+                  type: string
+                  description: Uuid of the principal
+                PType:
+                  type: string
+                  description: 'Principal type: User, Role etc..'
+              description: >-
+                Array of permissions to be set. Each item must include 
+                Principal: User name or role name, PType: User, Role..,  Rights:
+                Grant, Edit.. 
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionSetCollectionPermissions.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

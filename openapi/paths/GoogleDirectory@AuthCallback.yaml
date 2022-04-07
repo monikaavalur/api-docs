@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Call back for the google directory service.
+  description: >-
+    Set this callback URL at
+    https://console.developers.google.com/apis/credentials/
+  parameters:
+    - name: code
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: state
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: error
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GoogleDirectoryAuthCallback.yaml
+  x-idap-anon: true

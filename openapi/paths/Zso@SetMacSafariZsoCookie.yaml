@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the Mac Safari Zso cookie.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ZsoSetMacSafariZsoCookie.yaml
+  x-idap-anon: true

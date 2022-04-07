@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Returns a file name that is unique in the directory.
+  description: |-
+    If there is a collision, integers will be added. 
+                Example: path "~/", name "MyFile.txt"
+                If MyFile.txt already exists in ~/, this endpoint will return MyFile (1).txt, 
+                assuming MyFile (1).txt also doesn't exist.
+  parameters:
+    - name: path
+      in: query
+      description: The path to check for a unique file name
+      required: true
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: The name of the file. Should include the file extension.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetUniqueFileName.yaml
+  x-idap-anon: false

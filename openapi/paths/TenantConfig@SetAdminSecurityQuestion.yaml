@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Add admin security question
+  description: >-
+    <p><lu><li>Invoke this API if you want to setup a security question which
+    would be prompted to the end-user while logging in to CyberArk
+    Identity.</li>
+                <li>Only system administrator, users with user management rights, or the user itself can invoke this API.</li>
+                <li>Refer guides section https://identity-developer.cyberark.com/docs/multiple-secret-question-enrollment </li></ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Question
+          type: object
+          properties:
+            Culture:
+              type: string
+              description: Culture of the question to add.
+              default: all
+            Question:
+              type: string
+              description: 'The security question to be added. Ex: What is your birthplace?'
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigSetAdminSecurityQuestion.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

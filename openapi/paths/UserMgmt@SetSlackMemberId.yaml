@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set the Slack Member id for a user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+            - slackmemberid
+          type: object
+          properties:
+            ID:
+              type: string
+              description: User UUID or name to set Slack Member Id for
+            slackmemberid:
+              type: string
+              description: Slack Member Id
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSetSlackMemberId.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

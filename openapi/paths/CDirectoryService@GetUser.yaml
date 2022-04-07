@@ -1,0 +1,26 @@
+post:
+  tags:
+    - User Management
+  summary: Get details for a specified cloud user.
+  description: >-
+    Specified user must be you, you must be a system administrator, or have user
+    management permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ID:
+              type: string
+              description: UUID of the cloud user to fetch (default=current user).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceGetUser.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

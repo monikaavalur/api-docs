@@ -1,0 +1,35 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      DirectoryServiceUuid:
+        type: string
+        description: UUID of the Directory Service owning the role
+      Principals:
+        type: array
+        description: >-
+          List of priciapls who are members of the role.  Each principal is of
+          the form t=id, where 't' is one of 'u' (user), 'g' (group), or 'r'
+          (role) and 'id' is the principal name.
+        items:
+          type: string
+      RoleType:
+        type: string
+        description: Role type, one of Everybody or PrincipalList
+      Uuid:
+        type: string
+        description: Role UUID
+      ReadOnly:
+        type: boolean
+        description: Is role read only?
+      Description:
+        type: string
+        description: Role description
+      Name:
+        type: string
+        description: Role name
+    description: Role information
+  Error:
+    type: object
+    description: Error message text on failure, may be null

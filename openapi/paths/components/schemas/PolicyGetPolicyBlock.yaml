@@ -1,0 +1,48 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      RiskAnalysisLevels:
+        type: object
+        properties: {}
+        description: The risk analysis mapping.
+      AuthProfiles:
+        type: array
+        description: A list of authentication profiles.
+        items:
+          type: object
+          properties: {}
+      PolicyModifiers:
+        type: array
+        description: The policy modifiers.
+        items:
+          type: string
+      RevStamp:
+        type: string
+        description: The policy revision stamp.
+      RadiusClientList:
+        type: array
+        description: The list of radius clients.
+        items:
+          type: object
+          properties: {}
+    description: The policy block.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The policy block.",
+                      type: "object",
+                      properties:
+                      {
+                          AuthProfiles: { description: "A list of authentication profiles.", type: "array", items: { type: "object" } },
+                          RiskAnalysisLevels: { description: "The risk analysis mapping.", type: "object" },
+                          PolicyModifiers: { description: "The policy modifiers.", type: "array", items: { type: "string" } },
+                          RevStamp: { description: "The policy revision stamp.", type: "string" },
+                          RadiusClientList: { description: "The list of radius clients.", type: "array", items: { type: "object" } }
+                      }
+                  }
+                  

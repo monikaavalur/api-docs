@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Retrieves the file from the virtual file system.
+  parameters:
+    - name: path
+      in: query
+      description: The file to get.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/StaticVfsGetFile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Login using a tenant Certificate authority certificate.
+  description: Certificate to use must be attached to the HTTP REST request.
+  parameters:
+    - name: redirectUrl
+      in: query
+      description: URL to redirect to; must begin with the appropriate tenant host name.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ZsoCertLogin.yaml
+  x-idap-anon: true

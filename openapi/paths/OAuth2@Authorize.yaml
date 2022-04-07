@@ -1,0 +1,67 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Authenticates a request.
+  description: >-
+    <p><ul>This API is the first endpoint which should be invoked in order
+    proceed with flows like implicit, authorization code and authroization code
+    with PKCE flows. 
+                <li>The response_type is set to code to indicate that an authorize code should be returned.</li>
+                <li>This request authenticates the user and returns tokens along with an authorization grant to the client application as a part of the callback response.</li>
+                <li>Refer guide <a href="https://identity-developer.cyberark.com/docs/oauth">OAuth Flows</a></li>
+                <li>See the <a href="https://oauth.net/2/">OAuth2 spec</a></li></ul>
+  parameters:
+    - name: bounce
+      in: query
+      description: This Value is used to determine if authentication has occured.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - client_id
+            - redirect_uri
+            - response_type
+            - scope
+          type: object
+          properties:
+            scope:
+              type: string
+              description: >-
+                scopes associated with access tokens determine which claims are
+                available when they are used to access. openid is required for
+                authentication requests. <ul>Possible values:
+                <li>openid</li><li>profile</li><li>email</li><li>phone</li><li>address</li><li>all</li><li>groups</li></ul> 
+            redirect_uri:
+              type: string
+              description: >-
+                Callback URI where the authorization code or tokens should be
+                sent. It must match the value preregistered in CyberArk during
+                client registration.
+            code_challenge_method:
+              type: string
+              description: >-
+                It is the method used to derive the code challenge for PKCE flow
+                like value 'S256'
+            code_challenge:
+              type: string
+              description: It is the base64 URL-encoded SHA-256 hash of the code verifier
+            client_id:
+              type: string
+              description: It is the clientId which shoul be preregistered in CyberArk.
+            response_type:
+              type: string
+              description: It can be any combination of code, token, and id_token
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2Authorize.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

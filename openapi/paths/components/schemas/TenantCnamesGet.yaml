@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: >-
+      Resulting set contains Cname and type of Cname. Cname type can be one of
+      following - System, Preferred, Other
+  Error:
+    type: object
+    description: Error message text on failure, may be null

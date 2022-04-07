@@ -1,0 +1,57 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Multi factor authentication login for user.
+  description: Please use StartAuthentication/AdvanceAuthentication.
+  parameters:
+    - name: user
+      in: query
+      description: Current user.
+      required: true
+      schema:
+        type: string
+    - name: customerId
+      in: query
+      description: Customer identifier.
+      required: true
+      schema:
+        type: string
+    - name: persist
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: elevate
+      in: query
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - RecId
+            - nextMechId
+          type: object
+          properties:
+            nextMechId:
+              type: string
+              description: The id to the next authentication mechanism.
+            RecId:
+              type: string
+              description: Record id.
+            PFType:
+              type: string
+              description: The phone type.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityMultiAuthLogin.yaml
+  deprecated: true
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

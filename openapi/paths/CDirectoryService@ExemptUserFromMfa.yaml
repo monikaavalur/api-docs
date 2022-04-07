@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Exempt a specified user from MFA login for a period of time.
+  description: >-
+    You must be a system administrator or have user management permissions. 
+    User is exempt from MFA login for a specified amount of time.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID to except from MFA
+      required: true
+      schema:
+        type: string
+    - name: timespan
+      in: query
+      description: Amount of time to exempt the user from MFA (default=10 minutes)
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceExemptUserFromMfa.yaml
+  x-idap-anon: false

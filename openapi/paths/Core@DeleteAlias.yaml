@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Removes a suffix.
+  parameters:
+    - name: alias
+      in: query
+      description: The suffix to remove.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Suffix
+          type: object
+          properties:
+            Suffix:
+              type: string
+              description: A suffix.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteAlias.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

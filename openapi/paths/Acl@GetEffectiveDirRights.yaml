@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets a list of directory rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Paths
+          type: object
+          properties:
+            Paths:
+              type: array
+              description: A list of directories.
+              items:
+                type: string
+                description: A directory path.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetEffectiveDirRights.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

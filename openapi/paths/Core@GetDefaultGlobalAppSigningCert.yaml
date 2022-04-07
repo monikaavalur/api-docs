@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the public part of the default global app signing certificate.
+  parameters:
+    - name: certFileName
+      in: query
+      description: Certificate file.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetDefaultGlobalAppSigningCert.yaml
+  x-idap-anon: true

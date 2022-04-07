@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Delete a set of certificates.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Thumbprints
+          type: object
+          properties:
+            Thumbprints:
+              type: array
+              description: A list of certificate thumbprints to delete.
+              items:
+                type: string
+                description: A certificate thumbprint.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteCertificate.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

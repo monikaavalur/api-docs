@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get IDV Scipt and script editor helper info
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/IdentityProofingGetScriptWithMetaData.yaml
+  x-idap-anon: false

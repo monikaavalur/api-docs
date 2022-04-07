@@ -1,0 +1,21 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: |2-
+
+                    List of config table values verbatim...
+                    {
+                      description: "Admin Security Question",
+                      properties: 
+                      {
+                        _PartitionKey: { description: "Tenant ID", type: "string" },
+                        ID: { "description": "Config value key", type: "string" }
+                        Value: { "description": "Configuration setting", type: "string" }
+                      }
+                    }
+                  
+  Error:
+    type: object
+    description: Error message text on failure, may be null

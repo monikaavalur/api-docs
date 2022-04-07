@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes the tenant configuration key.
+  parameters:
+    - name: key
+      in: query
+      description: The tenant configuration key to delete.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteTenantConfig.yaml
+  x-idap-anon: false

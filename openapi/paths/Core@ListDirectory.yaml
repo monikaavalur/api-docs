@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: List the file contents of a directory.
+  parameters:
+    - name: path
+      in: query
+      description: The path of the directory to list
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreListDirectory.yaml
+  x-idap-anon: false

@@ -1,0 +1,18 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of directory rights.
+    items:
+      type: object
+      properties:
+        Path:
+          type: string
+          description: The directory name.
+        GrantStr:
+          type: string
+          description: The right being granted.
+      description: A directory right.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Saves an Security Image Name in DB.
+  description: Update Cookie if User UUID and ImageUUID not present
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - settings
+          type: object
+          properties:
+            settings:
+              type: object
+              properties:
+                Uuid:
+                  type: string
+                  description: User UUID.
+                imageName:
+                  type: string
+                  description: image name.
+              description: The image details.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecuritySetUserSecurityImage.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

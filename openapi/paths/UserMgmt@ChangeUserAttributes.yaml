@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Update user attributes
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            CmaRedirectedUserUuid:
+              type: string
+              description: Redirected user uuid. Send null to remove existing value.
+            ID:
+              type: string
+              description: User UUID or name to set redirection for
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtChangeUserAttributes.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

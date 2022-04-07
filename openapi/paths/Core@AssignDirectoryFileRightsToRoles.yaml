@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Assigns directoryfile rights to roles.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Permission
+            - path
+          type: object
+          properties:
+            Permission:
+              type: object
+              properties:
+                Role:
+                  type: string
+                  description: What role to grant to the directoryfile.
+                Rights:
+                  type: string
+                  description: What rights to allow the role.
+              description: What rights and roles to assign the directoryfile.
+            path:
+              type: string
+              description: The directoryfile to assign rights and roles to.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreAssignDirectoryFileRightsToRoles.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

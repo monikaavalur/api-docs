@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Delete an account
+  description: >-
+    You must be a system administrator or have 'Delete' permission on the
+    account or have global 'Delete' permission on accounts.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            ID:
+              type: string
+              description: Id of the account to be deleted
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageDeleteAccount.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

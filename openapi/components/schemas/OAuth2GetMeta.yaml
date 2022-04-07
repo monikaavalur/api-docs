@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: ContentResult that describes the service name meta data.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,40 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Starts a user authentication session for QR code authentication.
+  description: >-
+    The authentication package returned is a complex structure that guides the
+    caller through the authentication process. Multiple calls to
+    AdvanceAuthentication
+                may be required to complete the process.
+                If QR tenant config is disabled, this will result in failure.
+                Pod or tenant feature flag can be used to disable this feature. It is disabled by default.
+                Authorization cookie is required in Header arguments
+  parameters:
+    - name: guid
+      in: query
+      description: The guid associated to login QR code.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - guid
+          type: object
+          properties:
+            guid:
+              type: string
+              description: The guid to start authentication on.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityStartQRCodeAuthentication.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

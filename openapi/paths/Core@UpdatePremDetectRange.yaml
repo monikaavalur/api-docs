@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates an IP Range local to the customer network.
+  parameters:
+    - name: value
+      in: query
+      description: IP range to add.
+      required: true
+      schema:
+        type: string
+    - name: label
+      in: query
+      description: What label to give this IP range.
+      required: true
+      schema:
+        type: string
+    - name: uuid
+      in: query
+      description: >-
+        Existing IP range's uuid if modifying. Creates new entry if empty
+        (Optional)
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreUpdatePremDetectRange.yaml
+  x-idap-anon: false

@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Remove a service from the Lightweight Directory Access Protocol (LDAP).
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - DirectoryServiceUuid
+          type: object
+          properties:
+            DirectoryServiceUuid:
+              type: string
+              description: The LDAP service unique identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceDeleteLDAPDirectoryServiceConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

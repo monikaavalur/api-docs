@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Change radius config for a connector.
+  description: You must be a system administrator or have radius administrator permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Port
+            - connectorUuid
+          type: object
+          properties:
+            Port:
+              type: integer
+              description: Radius listen port
+            ReceiveTimeout:
+              type: integer
+              description: Radius receive timeout in milliseconds (default=1000)
+            connectorUuid:
+              type: string
+              description: Connector uuid to set config for
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusSetConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

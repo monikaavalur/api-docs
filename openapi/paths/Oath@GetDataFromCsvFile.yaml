@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets data from a csv file.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - FileName
+          type: object
+          properties:
+            FileName:
+              type: object
+              properties: {}
+              description: File containing the data to be read.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathGetDataFromCsvFile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

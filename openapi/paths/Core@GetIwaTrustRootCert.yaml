@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the Iwa trust root certificate.
+  parameters:
+    - name: filename
+      in: query
+      description: The certificate file name.
+      required: true
+      schema:
+        type: string
+    - name: tenantId
+      in: query
+      description: The tenant id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetIwaTrustRootCert.yaml
+  x-idap-anon: true

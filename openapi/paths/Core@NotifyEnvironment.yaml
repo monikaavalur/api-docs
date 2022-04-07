@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Calls the NotifyEnvironment method on the connector.
+  parameters:
+    - name: proxyId
+      in: query
+      description: What connector to make the call on.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreNotifyEnvironment.yaml
+  x-idap-anon: false

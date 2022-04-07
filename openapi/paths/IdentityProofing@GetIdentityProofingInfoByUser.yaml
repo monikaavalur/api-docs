@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: To get identity Proofing Info of a user
+  parameters:
+    - name: Uuid
+      in: query
+      description: User id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/IdentityProofingGetIdentityProofingInfoByUser.yaml
+  x-idap-anon: false

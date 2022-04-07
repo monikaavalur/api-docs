@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Performs the action after confirming permission to do so.
+  parameters:
+    - name: action
+      in: query
+      description: The action to be performed.
+      required: true
+      schema:
+        type: string
+    - name: userId
+      in: query
+      description: Option parameter to apply collection scope to authorization check
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CDirectoryServiceStandardJsonResultWithPermissionCheck.yaml
+  x-idap-anon: false

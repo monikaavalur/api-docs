@@ -1,0 +1,26 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      googleKey:
+        type: string
+        description: The google key.
+      CustomReCaptchaSiteKey:
+        type: string
+        description: The site key is used to invoke the reCAPTCHA service on your site.
+      GoogleKeyEnabled:
+        type: boolean
+        description: Is the google key enabled for this tenant.
+      CustomReCaptchaSecretKey:
+        type: string
+        description: >-
+          The secret key authorizes communication between your application
+          backend and the reCAPTCHA server to verify the user's response.
+      IsCustomCaptchaSettingsEnabled:
+        type: boolean
+        description: Enabling this option to use custom reCAPTCHA settings for your tenant.
+    description: The google client key for the tenant.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

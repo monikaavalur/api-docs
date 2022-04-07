@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Checks to see if user has execute rights on the task.
+  parameters:
+    - name: Task
+      in: query
+      description: The task.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityTaskCheck.yaml
+  x-idap-anon: false

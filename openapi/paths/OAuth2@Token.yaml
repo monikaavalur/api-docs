@@ -1,0 +1,33 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Gets a token based on grant type.
+  description: >-
+    <p><ul><li>Client invokes this endpoint to exchange the access code for an
+    access token by passing the full redirect URI in the redirect_uri parameter
+    using form serialization.</li> 
+                 <li>The access code is specified in the URI's code query parameter and the grant_type is set to authorization_code</li>
+                 <li>See the OAuth2 spec https://oauth.net/2/ </li></ul></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - grant_type
+          type: object
+          properties:
+            grant_type:
+              type: string
+              description: >-
+                Grant what type of token. <ul>Possible values:
+                <li>authorization_code</li><li>client_credentials</li><li>password</li><li>refresh_token</li><li>code</li></ul> 
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2Token.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

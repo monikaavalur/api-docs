@@ -1,0 +1,236 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Result:
+        type: object
+        properties:
+          DirectoryServiceId:
+            type: string
+            description: >-
+              The unique ID for the directory service. This ID is created when
+              at the time of the directory service integration with the CyberArk
+              Identity. There is a unique ID available for CDS to.
+          ThirdPartyOathConfigured:
+            type: boolean
+            description: >-
+              Has a third party OATH token been configured for this user? - A
+              Boolean flag that specifies if third-party OATH token has been
+              configured for the user
+          ErrorID:
+            type: string
+            description: >-
+              Error ID if any error is received from the API. By default it is
+              'null'
+          EmailAddress:
+            type: string
+            description: User email address
+          HasPicture:
+            type: boolean
+            description: >-
+              Specifies if there is a picture available for this user in cloud
+              directory service.
+          Settings:
+            type: object
+            properties:
+              uisection:
+                type: object
+                properties:
+                  doNotShowIdaptiveWelcomeWizard:
+                    type: boolean
+                    description: donot show Idaptive Welcome Wizard
+                  floating-nav-part-Settings-expanded:
+                    type: boolean
+                    description: expand floating-nav-part settings
+                  nav-part-Settings-expanded:
+                    type: boolean
+                    description: expand nav-part settings
+                description: UI Settings Section
+              SlackAuthEnabled:
+                type: boolean
+                description: Is Slack Auth Enabled?
+              SecurityKeyConfigured:
+                type: boolean
+                description: Has the user configured a U2F Security Key?
+              HasU2fDeviceWithFacetIdMatched:
+                type: boolean
+                description: Has U2fDevice with FacetId matched?
+              SlackMemberIdSet:
+                type: boolean
+                description: Is Slack MemberId Set?
+              EnablePurchasedLicenseMenu:
+                type: boolean
+                description: Does the user have the right to view licenses?
+              MobileDeviceAuthCapableCount:
+                type: integer
+                description: Mobile Device Auth Capable Count
+              PreferredCulture:
+                type: string
+                description: >-
+                  User's preferred culture if any in culture code format (e.g.
+                  fr)
+              DisplayPreferredCulture:
+                type: string
+                description: >-
+                  User's preferred culture if any in display format (e.g. French
+                  - français) 
+              MfaSetupWizardSettings:
+                type: object
+                properties:
+                  ShowU2fInMfaSetupWizard:
+                    type: boolean
+                    description: Want to show U2f in Mfa Setup Wizard?
+                  ShowSecurityQuestionInMfaSetupWizard:
+                    type: boolean
+                    description: Want to show security question in Mfa Setup Wizard?
+                  ShowOathPassCodeInMfaSetupWizard:
+                    type: boolean
+                    description: Want to show OathPassCode in Mfa Setup Wizard?
+                  ShowSmsMessageInMfaSetupWizard:
+                    type: boolean
+                    description: Want to show SmsMessage in Mfa Setup Wizard?
+                  RequiredFactorSetupCount:
+                    type: integer
+                    description: Required Factor Setup Count
+                  ShowMfaSetupWizard:
+                    type: boolean
+                    description: Want to show Mfa Setup Wizard?
+                description: Contains settings that guide MFA setup
+              OnDeviceAuthenticatorConfigured:
+                type: boolean
+                description: Is OnDeviceAuthenticator configured?
+            description: >-
+              Contains internal state for the Portal Web UI; this property can
+              be ignored.
+          LastPasswordChangeDate:
+            type: string
+            description: The date-time when the user has last changed the password.
+            format: date-time
+          DisplayName:
+            type: string
+            description: Display name of the user.
+          ErrorCode:
+            type: string
+            description: >-
+              Error code if any error is received from the API. By default it is
+              'null'
+          PasswordExpDate:
+            type: string
+            description: The expiry date-time of the user's password.
+            format: date-time
+          MobileNumber:
+            type: string
+            description: User mobile phone number
+          Exception:
+            type: string
+            description: >-
+              Exception message if any exception is received from the API. By
+              default it is 'null'
+          SelfUnlocked:
+            type: string
+            description: Self Unlock
+          LastLastLoginDate:
+            type: string
+            description: >-
+              Date-time user prior last logged in to the CyberArk Identity
+              portal
+            format: date-time
+          DirectoryServiceLocalizedName:
+            type: string
+            description: Directory service name localized to user's preferred language
+          DirectoryServiceName:
+            type: string
+            description: Directory service name
+          Message:
+            type: string
+            description: Error message for failure response. By default it is 'null'
+          DirectoryServiceType:
+            type: string
+            description: >-
+              The directory service type to which the user belongs. Ex- CDS
+              (Cloud directory service).
+          IsSysAdmin:
+            type: boolean
+            description: Specifies if the user is a system administrator.
+          SecurityQuestion:
+            type: string
+            description: >-
+              Specifies if any security question has been added to the user. The
+              value will be 'yes' if the question is added. Else it will be
+              'null'.
+          IsSoftError:
+            type: boolean
+            description: >-
+              SoftError if true indicates this is not actually an exception but
+              an UI warning popup.
+          CanChangePassword:
+            type: boolean
+            description: >-
+              A Boolean flag that specifies whether the user can change the
+              password.
+          Name:
+            type: string
+            description: User name
+          Id:
+            type: string
+            description: >-
+              The unique ID of the user. The unique ID is generated when the
+              user is created.
+          SecurityQuestionsLastUpdate:
+            type: string
+            description: Date-time user has last updated the security question
+            format: date-time
+          PasswordResetFlag:
+            type: integer
+            description: >-
+              An integer that specifies if the password reset is required for
+              the user. <p><ul>The integer can be interpreted as below: <li>0:
+              no reset needed</li><li>1: Reset required</li><li>2: Reset
+              optional</li><li>3: Reset warning</li></ul>
+          PhonePinLastChangeDate:
+            type: string
+            description: Date-time user last set their phone PIN
+            format: date-time
+          SqEnabled:
+            type: boolean
+            description: >-
+              Specifies if the security question MFA setup has been enabled for
+              the user.
+          TenantId:
+            type: string
+            description: The ID of the tenant to which the user belongs.
+          LastLoginDate:
+            type: string
+            description: Date-time user last logged in
+            format: date-time
+          InnerExceptions:
+            type: string
+            description: InnerExceptions
+          PasswordChangeSoftDays:
+            type: integer
+            description: >-
+              Days before a user should be warned to change a near to expiring
+              password
+          MessageID:
+            type: string
+            description: Message Id for failure response. By default it is 'null'
+          PasswordChangeHardHours:
+            type: integer
+            description: >-
+              Hours before a user should be prompted to change an near to
+              expiring password
+        description: The user information is returned as the response to the API
+      success:
+        type: boolean
+        description: The success will be true or false
+    description: Return object for a successful API call.
+  Error:
+    type: object
+    properties:
+      InvalidUserId:
+        type: string
+        description: User with given Id not found.
+    description: >-
+      Error message text on failure. Below message would be returned if provided
+      user is invalid.

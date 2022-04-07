@@ -1,0 +1,40 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Swap gateway configurations.
+  description: Moves the gateway from application A to application B and visa-versa.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - appKeyA
+            - appKeyB
+          type: object
+          properties:
+            ConfigureGatewayState:
+              type: object
+              properties:
+                GatewayCert:
+                  type: string
+                  description: A gateway security certificate.
+                GatewayCertPassword:
+                  type: string
+                  description: The gateway security certificate password.
+              description: The security certificate used for application B's gateway.
+            appKeyA:
+              type: string
+              description: An application unique identifier.
+            appKeyB:
+              type: string
+              description: An application unique identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewaySwapGatewayConfigs.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

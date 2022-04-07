@@ -1,0 +1,32 @@
+post:
+  tags:
+    - User Management
+  summary: Remove one or more users.
+  description: >-
+    You must be a system administrator or have user management permissions. 
+    Will delete cloud users.  Users for other directory services are only
+    removed from the cloud.
+                This API will fail if any of the ids specified are the current user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Users
+          type: object
+          properties:
+            Users:
+              type: array
+              description: List of user UUIDs to send invitations to
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtRemoveUsers.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

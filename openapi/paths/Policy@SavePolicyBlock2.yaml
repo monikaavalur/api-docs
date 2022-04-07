@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated; use SavePolicyBlock3.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - path
+            - settings
+          type: object
+          properties:
+            path:
+              type: string
+              description: The path to the block.
+            settings:
+              type: object
+              properties: {}
+              description: The settings for the new policy block.
+            newpolicy:
+              type: boolean
+              description: Is this a new policy.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicySavePolicyBlock2.yaml
+  deprecated: true
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Downloads the certificate authority public key file.
+  parameters:
+    - name: externalCaId
+      in: query
+      description: The certificate authority id to download.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExternalCaMgmtDownloadCertAuthority.yaml
+  x-idap-anon: false

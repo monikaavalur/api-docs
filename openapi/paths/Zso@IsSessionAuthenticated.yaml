@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Checks to see if sessionId is authenticated.
+  parameters:
+    - name: sessionId
+      in: query
+      description: The session id to check.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ZsoIsSessionAuthenticated.yaml
+  x-idap-anon: true

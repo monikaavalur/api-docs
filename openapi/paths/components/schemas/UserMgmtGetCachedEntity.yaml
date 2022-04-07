@@ -1,0 +1,47 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Uuid:
+        type: string
+        description: The entities unique identifier.
+      Email:
+        type: string
+        description: The entities email address.
+      CanonicalName:
+        type: string
+        description: The entities canonical name.
+      Sid:
+        type: string
+        description: The entities sid.
+      DistinguishedName:
+        type: string
+        description: The entities distinguished name.
+      type:
+        type: string
+        description: The entities classification.
+      SamAccountName:
+        type: string
+        description: The entities sam account name.
+    description: The cached entity.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The cached entity.", 
+                      type: "object",
+                      properties:
+                      {
+                          type: { description: "The entities classification.", type: "string" },
+                          Uuid: { description: "The entities unique identifier.", type: "string" },
+                          CanonicalName: { description: "The entities canonical name.", type: "string" },
+                          DistinguishedName: { description: "The entities distinguished name.", type: "string" },
+                          Email: { description: "The entities email address.", type: "string" },
+                          Sid: { description: "The entities sid.", type: "string" },
+                          SamAccountName:  { description: "The entities sam account name.", type: "string" }
+                      }
+                  }
+                  

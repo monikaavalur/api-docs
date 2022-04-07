@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: To get Identity Provider Configuration
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/IdentityProofingGetIdentityVerificationProviderConfig.yaml
+  x-idap-anon: false

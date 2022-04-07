@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the default certificate for the current tenant.
+  parameters:
+    - name: type
+      in: query
+      description: Certificate type.
+      required: true
+      schema:
+        type: string
+    - name: thumbprint
+      in: query
+      description: Certificate thumbprint to make default.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreSetDefaultCertificate.yaml
+  x-idap-anon: false

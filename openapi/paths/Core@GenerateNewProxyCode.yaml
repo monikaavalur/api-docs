@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Generates a new registration code.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            maxUses:
+              type: integer
+              description: Maximum number of uses for the generated connector.
+            validLength:
+              type: integer
+              description: How long is the connector valid (0=infinite).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGenerateNewProxyCode.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

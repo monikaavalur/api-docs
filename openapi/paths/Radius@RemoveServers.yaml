@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Remove radius servers.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - HostAddress
+          type: object
+          properties:
+            HostAddress:
+              type: array
+              description: A list of radius hosts to remove.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusRemoveServers.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

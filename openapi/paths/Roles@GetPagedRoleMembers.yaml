@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Get the users for the specfied role id and return the paged results.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Name
+          type: object
+          properties:
+            FilterValue:
+              type: string
+              description: filter the users containing this value
+            PageNumber:
+              type: integer
+              description: number of users to skip
+            Ascending:
+              type: string
+              description: the order of the sorting
+            FilterBy:
+              type: array
+              description: filter the users - search query - by these cols
+              items:
+                type: string
+            PageSize:
+              type: integer
+              description: number of users to fetch
+            SortBy:
+              type: string
+              description: sort the users by this property value
+            Name:
+              type: string
+              description: UUID of the role
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RolesGetPagedRoleMembers.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

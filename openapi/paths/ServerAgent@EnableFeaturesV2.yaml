@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Enables zero or more features for an enrolled machine.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - AccountName
+            - Features
+            - ResourceName
+            - Uuid
+          type: object
+          properties:
+            AgentAuthRoles:
+              type: string
+              description: >-
+                Comma separated string of CIP Roles to give Agent Auth
+                permission to on the PAS system corresponding to the machine. No
+                permissions are granted if null or the empty string is provided
+              default: null
+            Features:
+              type: string
+              description: 'Comma separated string representing features to enable: '
+            Uuid:
+              type: string
+              description: >-
+                UUID of the agent profile corresponding to the machine to enable
+                features for
+            ResourceName:
+              type: string
+              description: Name of the PAS system corresponding to the machine
+            AccountName:
+              type: string
+              description: Name of the agent profile corresponding to the machine
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentEnableFeaturesV2.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

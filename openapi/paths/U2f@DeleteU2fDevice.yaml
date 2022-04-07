@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes the U2f device.
+  parameters:
+    - name: keyHandle
+      in: query
+      description: The device key to delete.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/U2fDeleteU2fDevice.yaml
+  x-idap-anon: false

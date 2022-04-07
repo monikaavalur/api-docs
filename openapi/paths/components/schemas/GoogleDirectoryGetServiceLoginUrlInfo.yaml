@@ -1,0 +1,14 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: The state id and service login url.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The state id and service login url.", type: "string"
+                  }
+                  

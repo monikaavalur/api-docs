@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the federation metadata.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - FederationType
+            - domain
+          type: object
+          properties:
+            domain:
+              type: string
+              description: The domain to gather federation metadata from.
+            FederationType:
+              type: string
+              description: What type of federation metadata to gather.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationFederationMetadata.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

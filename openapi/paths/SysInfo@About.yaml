@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Describe the system.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SysInfoAbout.yaml
+  x-idap-anon: false

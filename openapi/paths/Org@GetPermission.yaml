@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get administrative right definition for specific organization
+  description: Must have AdminUI task permission to perform this operation.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - OrgId
+          type: object
+          properties:
+            OrgId:
+              type: string
+              description: ID of the organization to update
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgGetPermission.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

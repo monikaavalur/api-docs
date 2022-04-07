@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: List of set id's that refer to passedin id.
+    items:
+      type: string
+      description: A set id.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

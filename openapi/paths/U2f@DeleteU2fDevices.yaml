@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Delete a list of U2f devices.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - KeyHandles
+          type: object
+          properties:
+            KeyHandles:
+              type: array
+              description: A list of handles to U2f devices.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/U2fDeleteU2fDevices.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

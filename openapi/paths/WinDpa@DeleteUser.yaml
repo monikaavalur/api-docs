@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: To delete a local user on target windows machine
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - RequestId
+            - TargetMachine
+            - UserName
+          type: object
+          properties:
+            TargetMachine:
+              type: string
+              description: Machine FQDN
+            UserName:
+              type: string
+              description: User to be deleted
+            RequestId:
+              type: string
+              description: Correlation ID to the external system
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/WinDpaDeleteUser.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

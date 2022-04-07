@@ -1,0 +1,20 @@
+post:
+  tags:
+    - User Management
+  summary: Send SMS invitation to a specified user.
+  description: You must be a system administrator or have user management permissions.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID to send invitation to
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSendSmsInvite.yaml
+  x-idap-anon: false

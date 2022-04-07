@@ -1,0 +1,44 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Create a dynamic set.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - name
+            - objecttype
+          type: object
+          properties:
+            sql:
+              type: string
+              description: Query used to create the collection.
+            filters:
+              type: string
+              description: Filters to use when generating thew collection.
+            objecttype:
+              type: string
+              description: The object type.
+            subobjecttype:
+              type: string
+              description: The object's sub type.
+            description:
+              type: string
+              description: Description of the collection.
+            name:
+              type: string
+              description: The collection name.
+            parent:
+              type: string
+              description: The collection's parent.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionCreateDynamicCollection.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

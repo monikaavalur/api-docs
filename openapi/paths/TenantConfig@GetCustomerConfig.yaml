@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get tenant configuration.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetCustomerConfig.yaml
+  x-idap-anon: false

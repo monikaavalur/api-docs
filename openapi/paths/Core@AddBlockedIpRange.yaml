@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Adds a Blocked IP Range.
+  description: Deprecated -- Use /core/UpdateBlockedIpRange instead
+  parameters:
+    - name: value
+      in: query
+      description: IP Range to block.
+      required: true
+      schema:
+        type: string
+    - name: oldvalue
+      in: query
+      description: An old IP range to remove. If there is one.
+      required: true
+      schema:
+        type: string
+    - name: label
+      in: query
+      description: What label to give this blocked IP range.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreAddBlockedIpRange.yaml
+  deprecated: true
+  x-idap-anon: false

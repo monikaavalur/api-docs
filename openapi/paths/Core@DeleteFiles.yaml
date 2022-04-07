@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes a set of files.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - paths
+          type: object
+          properties:
+            paths:
+              type: string
+              description: A list of files to remove.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDeleteFiles.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

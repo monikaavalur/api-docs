@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Emails the report from scriptPath to the emailTo address.
+  description: ScriptPath must have a .report extension.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - emailTo
+            - format
+            - parameters
+            - scriptPath
+          type: object
+          properties:
+            format:
+              type: string
+              description: The report format (html, csv, excel).
+            parameters:
+              type: object
+              properties: {}
+              description: The arguments for the script.
+            emailTo:
+              type: string
+              description: Where to send the report.
+            scriptPath:
+              type: string
+              description: The report source.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TaskEmailReport.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

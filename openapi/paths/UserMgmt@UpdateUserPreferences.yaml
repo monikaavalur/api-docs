@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Updates various user preferences for the currently logged in user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            PreferredCulture:
+              type: string
+              description: >-
+                Idaptive supported culture code. Use Core/GetSupportedCultures
+                for a list. Set to an empty string to remove the user's
+                preferred culture.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtUpdateUserPreferences.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

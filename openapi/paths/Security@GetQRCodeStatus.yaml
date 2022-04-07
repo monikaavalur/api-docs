@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Multi-Factor Registration
+  summary: Returns QR Code data
+  parameters:
+    - name: guid
+      in: query
+      description: The guid associated to login QR code.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - guid
+          type: object
+          properties:
+            guid:
+              type: string
+              description: The guid to check if value changed.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityGetQRCodeStatus.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

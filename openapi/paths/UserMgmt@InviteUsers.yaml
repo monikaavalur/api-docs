@@ -1,0 +1,53 @@
+post:
+  tags:
+    - User Management
+  summary: Invite one or more users to the cloud portal.
+  description: You must be a system administrator or have user management permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - EmailInvite
+            - Entities
+          type: object
+          properties:
+            SmsInvite:
+              type: boolean
+              description: >-
+                Send SMS invitations to invited entities if possible
+                (default=false)
+            Entities:
+              type: array
+              description: >-
+                Users or groups to invite; each entry is a dictionary including
+                'Type' (User, Group, Role), 'Guid' (entity UUID), and 'Name'
+                (entity name, only applicable to User entities)
+              items:
+                type: object
+                properties: {}
+            Role:
+              type: string
+              description: >-
+                Add each invited user to this role name if specified
+                (default=null)
+            GroupInvite:
+              type: boolean
+              description: >-
+                For invited groups, send a single email invitation to the group
+                rather than to each user within the group (default=true)
+            EmailInvite:
+              type: boolean
+              description: >-
+                Send email invitations to invited entities if possible
+                (default=true)
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtInviteUsers.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

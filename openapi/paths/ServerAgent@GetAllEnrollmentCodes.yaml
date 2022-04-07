@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get all enrollment codes
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            RRFormat:
+              type: boolean
+              description: Return data in database format.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentGetAllEnrollmentCodes.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

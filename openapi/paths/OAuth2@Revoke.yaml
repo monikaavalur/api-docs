@@ -1,0 +1,46 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: Revokes the access token
+  description: >-
+    ><p>Once, Authorizaton is completed using any of OAuth flows then this
+    endpoint is used to invalidate the access token or refresh token returned
+    from the authorization endpoint.<li>Revoked tokens are considered inactive
+    at the introspection endpoint.</li><li> A client may only revoke its own
+    tokens.</li><li> Refer guides <a
+    href="https://identity-developer.cyberark.com/docs/revoke-a-token">Revoke
+    Token</a></li>
+                <li>See the OAuth2 spec https://oauth.net/2/ </li></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - client_id
+            - client_secret
+            - token
+          type: object
+          properties:
+            token:
+              type: string
+              description: >-
+                Access token which you should be passing which is returned from
+                token endpoint
+            client_id:
+              type: string
+              description: 'The Client ID is a public identifier of your application. '
+            client_secret:
+              type: string
+              description: >-
+                The Client Secret is confidential and should only be used to
+                authenticate your application and make requests to APIs.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2Revoke.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

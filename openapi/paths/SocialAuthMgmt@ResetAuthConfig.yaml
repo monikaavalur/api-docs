@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Resets the social user authentication configuration.
+  description: Requires directory service administrator rights.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SocialAuthMgmtResetAuthConfig.yaml
+  x-idap-anon: false

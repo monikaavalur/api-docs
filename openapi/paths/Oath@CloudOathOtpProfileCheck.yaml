@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Forces the Idaptive oath profile to exist.
+  parameters:
+    - name: userToken
+      in: query
+      description: User for the Idaptive oath profile.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathCloudOathOtpProfileCheck.yaml
+  x-idap-anon: false

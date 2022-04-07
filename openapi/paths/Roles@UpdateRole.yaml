@@ -1,0 +1,59 @@
+post:
+  tags:
+    - Role Management
+  summary: Update specific attributes.
+  description: >-
+    Update the Role name, description, and membership using the following body
+    parameters. Role membership can include Users, Groups, or other Roles. You
+    must have the Role Management Administrative Right to update Role
+    attributes.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Name
+          type: object
+          properties:
+            CheckPrincipalTypes:
+              type: array
+              description: List of Principals Type whether to check (default=null)
+              items:
+                type: string
+            Roles:
+              type: object
+              properties: {}
+              description: >-
+                DataEntity containing two lists (Add and Delete, both optional)
+                of role names or UUIDs to add or remove from the role
+                (default=null)
+            Users:
+              type: object
+              properties: {}
+              description: >-
+                DataEntity containing two lists (Add and Delete, both optional)
+                of user names or UUIDs to add or remove from the role
+                (default=null)
+            Groups:
+              type: object
+              properties: {}
+              description: >-
+                DataEntity containing two lists (Add and Delete, both optional)
+                of group names or UUIDs to add or remove from the role
+                (default=null)
+            Description:
+              type: string
+              description: Description of the role (default=null)
+            Name:
+              type: string
+              description: ID of the role to update
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RolesUpdateRole.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

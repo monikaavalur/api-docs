@@ -1,0 +1,12 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: |2-
+
+                      The same return values as .
+                  
+  Error:
+    type: object
+    description: Error message text on failure, may be null

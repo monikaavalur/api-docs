@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets all given directory service setting values
+  description: Caller should have admin access
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - DefaultSuffix
+          type: object
+          properties:
+            DefaultSuffix:
+              type: string
+              description: The alias to use when suffix is omitted from the userName.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CDirectoryServiceSetDirectoryServiceSettings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

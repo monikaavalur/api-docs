@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: >-
+    Determine if the current user can (or cannot...) satisfy the requisite MFA
+    challenges.
+  parameters:
+    - name: user
+      in: query
+      description: |-
+        The name or uuid of the user to test. Pass an empty string to test the
+                    currently logged-in user.  Note that only administrative users can test other users.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtIsUserLockedOutByPolicy.yaml
+  x-idap-anon: false

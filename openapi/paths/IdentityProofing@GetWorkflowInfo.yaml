@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: To get Workflow Approvers defined for sign-up approval workflow.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/IdentityProofingGetWorkflowInfo.yaml
+  x-idap-anon: false

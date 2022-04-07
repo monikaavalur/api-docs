@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Policy Management
+  summary: Delete an authentication policy modifier.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - PolicyModifier
+          type: object
+          properties:
+            PolicyModifier:
+              type: string
+              description: The policy modifier to delete.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyDeleteAuthPolicyModifier.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

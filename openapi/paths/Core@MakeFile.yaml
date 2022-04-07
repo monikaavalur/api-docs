@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Return given text as a file.
+  parameters:
+    - name: fileName
+      in: query
+      description: The file name to be set in the content-disposition header.
+      required: true
+      schema:
+        type: string
+    - name: text
+      in: query
+      description: The content of the file to return.
+      required: true
+      schema:
+        type: string
+    - name: contentType
+      in: query
+      description: 'Optional: The contentType for the file, or text/plain if not given.'
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreMakeFile.yaml
+  x-idap-anon: false

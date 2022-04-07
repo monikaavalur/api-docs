@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Get meta
+  parameters:
+    - name: serviceName
+      in: query
+      description: Service name to use when gathering meta data.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            customerid:
+              type: object
+              properties: {}
+              description: The id used to determine the tenant.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2GetMeta.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

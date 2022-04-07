@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: List the cnames assigned for the tenant.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantCnamesGet.yaml
+  x-idap-anon: false

@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Unenroll an enrolled Agent.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Delete
+            - Uuid
+          type: object
+          properties:
+            Delete:
+              type: boolean
+              description: >-
+                Remove all reseources, the agent profile, and the service
+                account.
+            Uuid:
+              type: string
+              description: The agent unique identifier.
+            ResourceName:
+              type: string
+              description: The agent resource name.
+            AccountName:
+              type: string
+              description: The agent profile name.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentUnenroll.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

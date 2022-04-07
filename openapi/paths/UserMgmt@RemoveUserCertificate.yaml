@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Remove one or more certificates for a given user.
+  description: >-
+    Specified user must be you or you must be a system administrator or have
+    user management permissions.
+                'certType' will be ignored if 'thumbprint' is specified.
+                If 'thumbprint' is null, all certs of 'cerType' for the user are removed.
+                If both 'thumbprint' and 'certType' are null, all certificates for the user are removed.
+  parameters:
+    - name: user
+      in: query
+      description: The name or uuid of the user to remove certificate(s) for.
+      required: true
+      schema:
+        type: string
+    - name: thumbprint
+      in: query
+      description: Thumbprint of the certificate to remove.
+      schema:
+        type: string
+    - name: certType
+      in: query
+      description: Type of certificates to remove.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtRemoveUserCertificate.yaml
+  x-idap-anon: false

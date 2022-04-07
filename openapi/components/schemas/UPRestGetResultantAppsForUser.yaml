@@ -1,0 +1,81 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Shortcut:
+        type: boolean
+        description: Whether the application has been set for optional installation
+      Url:
+        type: string
+        description: Application Url
+      Description:
+        type: string
+        description: Application description
+      Category:
+        type: string
+        description: Application category
+      AdminTag:
+        type: string
+        description: Application admin tag
+      Name:
+        type: string
+        description: Application name
+      TemplateName:
+        type: string
+        description: Application template name
+      WebAppType:
+        type: string
+        description: Application web-app-type
+      PasswordIsSet:
+        type: boolean
+        description: Whether the password has been set
+      DisplayName:
+        type: string
+        description: Application display name
+      UsernameRO:
+        type: boolean
+        description: Whether user name is read-only
+      WebAppTypeDisplayName:
+        type: string
+        description: Display name of web-app-type
+      AppTypeDisplayName:
+        type: string
+        description: Display name of application type
+      AppType:
+        type: string
+        description: Application type
+      Intranet:
+        type: boolean
+        description: Whether the application is an intranet app
+      AppKey:
+        type: string
+        description: Application key
+      Automatic:
+        type: boolean
+        description: Whether the application has been set for automatic installation
+      Rank:
+        type: integer
+        description: Application rank
+      ID:
+        type: string
+        description: Application ID
+      Icon:
+        type: string
+        description: Path of application icon image
+      AccessList:
+        type: array
+        description: >-
+          How user got acess to the application; each entry is a dictionary
+          including 'Type' (User, Role), 'ID' (role/user UUID), and 'Name' (role
+          name or 'User' if user is granted direct access)
+        items:
+          type: object
+          properties: {}
+      Username:
+        type: string
+        description: Application username
+    description: A list of applications including how the user has access
+  Error:
+    type: object
+    description: Error message text on failure, may be null

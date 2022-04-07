@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Retrieves a boolean policy value.
+  description: If the policy value isn't set returns the default value.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - def
+            - name
+          type: object
+          properties:
+            def:
+              type: boolean
+              description: The default value.
+            name:
+              type: string
+              description: Where in the policy to read.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetPolicyBool.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

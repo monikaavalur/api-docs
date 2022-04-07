@@ -1,0 +1,39 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      TenantId:
+        type: string
+        description: ID of the tenant the machine was enrolled to
+      Owner:
+        type: array
+        description: >-
+          Resolved owner of the agent profile: See the Principal, PrincipalId,
+          and PType fields of 
+        items:
+          type: object
+          properties: {}
+      Cert:
+        type: string
+        description: >-
+          Base64 encoded string representing a PKCS #12 file containing a
+          certificate (and private key) used to authenticate as the service user
+      Uuid:
+        type: string
+        description: UUID of the agent profile
+      SetResults:
+        type: array
+        description: >-
+          Result of adding the system to the sets specified by the Sets
+          argument: 
+        items:
+          type: object
+          properties: {}
+      AccountName:
+        type: string
+        description: Final name of the agent
+    description: The machine enrollment result.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

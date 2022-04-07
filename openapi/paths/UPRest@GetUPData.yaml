@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Gets all available data for the user portal in one call.
+  description: >-
+    This call caches the list of applications but does not cache tag
+    information.
+  parameters:
+    - name: force
+      in: query
+      description: >-
+        Whether to use the cache. If set to true, the call does not use the
+        cache.
+      required: true
+      schema:
+        type: string
+    - name: username
+      in: query
+      description: Target user name.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestGetUPData.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

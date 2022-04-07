@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Process a previously uploaded csv file.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ReturnID
+          type: object
+          properties:
+            ReturnID:
+              type: integer
+              description: The id for the file to be processed.
+            AdminEmail:
+              type: string
+              description: The email address to the oath administrator.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OathSubmitUploadedFile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

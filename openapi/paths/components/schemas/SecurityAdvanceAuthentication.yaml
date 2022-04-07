@@ -1,0 +1,89 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      ErrorID:
+        type: string
+        description: 'The error ID if any. Default value is null. '
+      ErrorCode:
+        type: string
+        description: 'The error code if any. Default value is null. '
+      Exception:
+        type: string
+        description: 'Exception returned by the API. Default value is null. '
+      MessageID:
+        type: string
+        description: Error message ID. Default value is null.
+      Result:
+        type: object
+        properties:
+          EmailAddress:
+            type: string
+            description: 'Email address of the user '
+          Auth:
+            type: string
+            description: 'A one-time authentication token for the user '
+          SourceDsType:
+            type: string
+            description: SourceDsType
+          CustomerID:
+            type: string
+            description: 'Customer ID would be same as the tenant ID '
+          UserId:
+            type: string
+            description: >-
+              This is a random generated ID that is used to identify the user
+              uniquely.
+          DisplayName:
+            type: string
+            description: >-
+              Display name of the user. This value is provided at the time the
+              user is created. 
+          AuthLevel:
+            type: string
+            description: AuthLevel
+          PodFqdn:
+            type: string
+            description: >-
+              The fully qualified domain name for the Pod. Ex:
+              abc-123.my.idaptive.app User 
+          User:
+            type: string
+            description: 'The username of the user  '
+          UserDirectory:
+            type: string
+            description: >-
+              The directory to which the given user belongs. Ex: CDS – If the
+              user belongs to CyberArk Identity cloud directory service 
+          Summary:
+            type: string
+            description: Summary
+          SystemID:
+            type: string
+            description: 'System ID would be same as the tenant ID '
+        description: 'The result received from the Identity cloud. '
+      InnerExceptions:
+        type: string
+        description: 'Inner exceptions if any. Default value is null. '
+      Message:
+        type: string
+        description: 'Error message if any. Default value is null. '
+      success:
+        type: string
+        description: success
+      IsSoftError:
+        type: string
+        description: IsSoftError
+    description: 'Below is the response structure if the API request is successful. '
+  Error:
+    type: object
+    properties:
+      ErrorMessage:
+        type: string
+        description: >-
+          Authentication (login or challenge) has failed. Please try again or
+          contact your system administrator.
+    description: >-
+      The below error message is displayed when the request to the API contains
+      wrong mechanism ID/ session ID/ Answer. 

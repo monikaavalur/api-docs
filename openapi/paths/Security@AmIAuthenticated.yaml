@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Am I authenticated.
+  description: Please use WhoAmI.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityAmIAuthenticated.yaml
+  deprecated: true
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

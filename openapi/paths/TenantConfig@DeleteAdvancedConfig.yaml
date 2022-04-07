@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes a single key record from the config table.
+  description: Reserved for on premises environments.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - key
+            - tenantId
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: The tenant id.
+            key:
+              type: string
+              description: The key to delete.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigDeleteAdvancedConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

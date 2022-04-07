@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the IDP authorization state for the pollingToken.
+  parameters:
+    - name: pollingToken
+      in: query
+      description: The stateId used to gather the IDP authorization state.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GoogleDirectoryGetAuthTokenState.yaml
+  x-idap-anon: false

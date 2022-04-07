@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Create a directory.
+  parameters:
+    - name: path
+      in: query
+      description: The path to the directory to be created.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreCreateDirectory.yaml
+  x-idap-anon: false

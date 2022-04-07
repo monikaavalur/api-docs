@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set the certificate for the Iwa connector.
+  parameters:
+    - name: proxyUuid
+      in: query
+      description: The connector's Uuid
+      required: true
+      schema:
+        type: string
+    - name: passwd
+      in: query
+      description: The password to the cert.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - cert
+          type: object
+          properties:
+            cert:
+              type: string
+              description: The certificate file for the connector.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreSetProxyIwaHostCertificateFile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

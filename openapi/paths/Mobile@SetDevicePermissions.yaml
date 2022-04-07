@@ -1,0 +1,45 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Grant permissions on devices
+  description: >-
+    You must be a system administrator or have 'Grant' permission on the
+    resource or have global 'Grant' permission on resources.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the resource, Set to null for global permissions
+            Grants:
+              type: object
+              properties:
+                Rights:
+                  type: string
+                  description: 'Permissions: Grant, View, Admin, LimitedAdmin'
+                Principal:
+                  type: string
+                  description: User name or role name
+                PrincipalId:
+                  type: string
+                  description: Uuid of the principal
+                PType:
+                  type: string
+                  description: 'Principal type: User, Role etc.. '
+              description: >-
+                Array of permissions to be set. Each item must include 
+                Principal: User name or role name, PType: User, Role..,  Rights:
+                ManageSession, Edit, Delete, Grant, AgentAuth
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobileSetDevicePermissions.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

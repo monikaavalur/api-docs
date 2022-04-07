@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: ActionResult from saving user confirmation.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "ActionResult from saving user confirmation.", type: "object"
+                  }
+                  

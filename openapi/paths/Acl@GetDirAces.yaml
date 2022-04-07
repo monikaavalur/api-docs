@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Authorization
+  summary: Retrieves a list of who has what rights for the directory.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Path
+          type: object
+          properties:
+            Path:
+              type: string
+              description: Path to the folder being examined.
+            Inherit:
+              type: boolean
+              description: Use inheritance (default=true).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetDirAces.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Authorization
+  summary: Check row ACLs.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Rights
+            - RowKey
+            - Table
+          type: object
+          properties:
+            RowKey:
+              type: string
+              description: The unique identifier.
+            Rights:
+              type: boolean
+              description: The right on the item.
+            Table:
+              type: array
+              description: Sql table to examine.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclCheckRowRight.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

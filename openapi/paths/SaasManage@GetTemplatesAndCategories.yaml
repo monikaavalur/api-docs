@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Get information for application templates.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageGetTemplatesAndCategories.yaml
+  x-idap-anon: false

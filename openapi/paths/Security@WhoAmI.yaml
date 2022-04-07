@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Authorization
+  summary: Confirms user authentication state.
+  parameters:
+    - name: challenge
+      in: query
+      description: Not used.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityWhoAmI.yaml
+  x-idap-anon: true

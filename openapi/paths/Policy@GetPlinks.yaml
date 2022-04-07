@@ -1,0 +1,14 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets a list of policy links.
+  description: Deprecated - use GetNicePlinks() instead...
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetPlinks.yaml
+  deprecated: true
+  x-idap-anon: false

@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Application Management
+  summary: Delete an application.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: array
+              description: Application key
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageDeleteApplication.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

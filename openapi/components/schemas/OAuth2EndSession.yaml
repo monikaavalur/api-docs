@@ -1,0 +1,12 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: |2-
+
+                  The response indicates 302 Found if the session was successfully destroyed and the user redirected.
+                  
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,40 @@
+post:
+  tags:
+    - Additional APIs
+    - Application Management
+  summary: Set user credentials for an application.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Password
+            - Username
+            - appkey
+          type: object
+          properties:
+            Password:
+              type: string
+              description: Application password
+            PublicKeyHash:
+              type: string
+              description: SHA256 Hex of the public key used to encrypt the password
+            appkey:
+              type: string
+              description: Application key
+            Username:
+              type: string
+              description: Application user name
+            ConnectorId:
+              type: string
+              description: ID of the connector were a public key used to encrypt exists
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestSetUserCredsForApp.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get supported cultures, returning their code and native name.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetSupportedCultures.yaml
+  x-idap-anon: true

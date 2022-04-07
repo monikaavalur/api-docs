@@ -1,0 +1,8 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: Current tenant id dash just created connector id.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

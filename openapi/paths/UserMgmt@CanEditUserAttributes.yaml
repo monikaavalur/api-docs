@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Check to see if a user can edit attributes.
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID or name to check (default=current user)
+      schema:
+        type: string
+    - name: directoryServiceUuid
+      in: query
+      description: Directory service UUID of the user (default=null)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtCanEditUserAttributes.yaml
+  x-idap-anon: false

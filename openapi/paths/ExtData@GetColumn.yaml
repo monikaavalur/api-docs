@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the value of an extended column.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Column
+            - ID
+            - Table
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the row to set.
+            Column:
+              type: string
+              description: Name of the column.
+            Table:
+              type: string
+              description: Name of the table to modify.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExtDataGetColumn.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

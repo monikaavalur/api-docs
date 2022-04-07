@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get a list of directory contents with a file extension of 'report'.
+  parameters:
+    - name: path
+      in: query
+      description: The path of the directory to look for content.
+      required: true
+      schema:
+        type: string
+    - name: filter
+      in: query
+      description: A file filter, should it be wanted.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetReportsDirectoryContents.yaml
+  x-idap-anon: false

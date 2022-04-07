@@ -1,0 +1,151 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update an account
+  description: Either "Host" or "DomainID" or "DatabaseID" should be provided.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            WorkflowSent:
+              type: boolean
+              description: Informs whether or not this is a workflow change.
+            WorkflowApprover:
+              type: object
+              properties:
+                DirectoryServiceUuid:
+                  type: string
+                  description: Directory service Uuid
+                ObjectType:
+                  type: string
+                  description: 'Approver object type ex: "User"'
+                Name:
+                  type: string
+                  description: Account Name
+                SystemName:
+                  type: string
+                  description: Name of account on system
+                ServiceInstanceLocalized:
+                  type: string
+                  description: Explicitly written Service Instance.
+                Enabled:
+                  type: boolean
+                  description: Is account enabled
+                StatusEnum:
+                  type: string
+                  description: Same as "Status"
+                Status:
+                  type: string
+                  description: 'Account status. Ex: "Active"'
+                DistinguishedName:
+                  type: string
+                  description: Full login name of Approver.
+                ServiceInstance:
+                  type: string
+                  description: Same as ServiceType
+                Type:
+                  type: string
+                  description: 'Account type. ex: "User"'
+                DisplayName:
+                  type: string
+                  description: User display name
+                InternalName:
+                  type: string
+                  description: Internal UUID of account
+                Guid:
+                  type: string
+                  description: Internal UUID of account. Same as InternalName
+                PType:
+                  type: string
+                  description: 'Account type. ex: "User"'
+                EMail:
+                  type: string
+                  description: Account email
+                Principal:
+                  type: string
+                  description: Account Name
+                BackupApprover:
+                  type: object
+                  properties: {}
+                  description: Backup Approver object. Same schema as WorkflowApprover.
+                Locked:
+                  type: boolean
+                  description: Is the user locked.
+                ServiceType:
+                  type: string
+                  description: Directory service type
+              description: For when there is just one workflow approver.
+            Description:
+              type: string
+              description: Description for the account
+            WorkflowApprovers:
+              type: array
+              description: >-
+                An array of WorkflowApprover objects. Refer to WorkflowApprover.
+                Not necessary when removing workflow.
+              items:
+                type: object
+                properties: {}
+            IsManaged:
+              type: boolean
+              description: True to create a managed account
+            DatabaseID:
+              type: string
+              description: ID of the database
+            UseWheel:
+              type: boolean
+              description: True to use proxy account
+            DomainID:
+              type: string
+              description: ID of the domain
+            Host:
+              type: string
+              description: ID of the resource
+            WorkflowEnabled:
+              type: boolean
+              description: >-
+                Determines whether you are removing or adding/updating a
+                workflow
+            User:
+              type: string
+              description: User name for the account
+            BackupApprover:
+              type: object
+              properties: {}
+              description: >-
+                Determines approver if user has no manager. Refer to
+                WorkflowApprover. Use WorkflowApprover object. Only required
+                when NoManagerAction=useBackup
+            ID:
+              type: string
+              description: ID of the account to be updated
+            WorkflowApproversList:
+              type: array
+              description: >-
+                Identical to WorkflowApprovers. Refer to WorkflowApprover.
+                Stored in database, but not used in code.
+              items:
+                type: object
+                properties: {}
+            WorkflowDefaultOptions:
+              type: string
+              description: >-
+                Stringified JSON object detailing default options. Example:
+                {"GrantMin":60}
+            NoManagerAction:
+              type: string
+              description: >-
+                Determines what to do when account/system does not have manager.
+                Not required. "useBackup", "approve" or "deny"
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerManageUpdateAccount.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

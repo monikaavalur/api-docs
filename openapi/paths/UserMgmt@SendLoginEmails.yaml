@@ -1,0 +1,28 @@
+post:
+  tags:
+    - User Management
+  summary: Send invitation emails to one or more users.
+  description: You must be a system administrator.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            ID:
+              type: array
+              description: List of user UUIDs to send invitations to
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtSendLoginEmails.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

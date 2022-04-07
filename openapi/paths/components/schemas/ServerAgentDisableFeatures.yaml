@@ -1,0 +1,17 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      FeatureAAPM:
+        type: object
+        properties: {}
+        description: Whether the AAPM feature was changed or disabled
+      FeatureAgentAuth:
+        type: object
+        properties: {}
+        description: Whether the Agent Auth feature was changed or disabled
+    description: The result of disabling the feature.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

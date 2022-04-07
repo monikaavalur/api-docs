@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the Zso certificate
+  parameters:
+    - name: certFileName
+      in: query
+      description: The certificate file name.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetZsoCertAuthority.yaml
+  x-idap-anon: true

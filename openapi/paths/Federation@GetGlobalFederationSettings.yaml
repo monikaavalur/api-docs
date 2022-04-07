@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get global federation settings.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - FederationType
+          type: object
+          properties:
+            FederationType:
+              type: string
+              description: What type of federation to use when gathering settings.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationGetGlobalFederationSettings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

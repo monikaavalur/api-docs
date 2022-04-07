@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the public part of the cloud certificate authority certificate.
+  description: If not specified uses CloudCA.cer
+  parameters:
+    - name: filename
+      in: query
+      description: The file to use for the cert (default=CloudCA.cer).
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetCloudCACert.yaml
+  x-idap-anon: true

@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Send SendIdentityVerificationOTP to a specified user.
+  description: You must have Identity Verification permissions (set on the role).
+  parameters:
+    - name: ID
+      in: query
+      description: User UUID to send identification verification OTP
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CDirectoryServiceSendIdentityVerificationOTP.yaml
+  x-idap-anon: false

@@ -1,0 +1,11 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: |2-
+       A JSON with Oob login information
+                  
+  Error:
+    type: object
+    description: Error message text on failure, may be null

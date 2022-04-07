@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Policy Management
+  summary: Get the rsop policy for the user and device.
+  parameters:
+    - name: userid
+      in: query
+      description: The user id.
+      required: true
+      schema:
+        type: string
+    - name: deviceid
+      in: query
+      description: The device id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetRsop.yaml
+  x-idap-anon: false

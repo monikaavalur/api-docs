@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Authenticate the ZSO session.
+  parameters:
+    - name: sessionId
+      in: query
+      description: The session id to authenticate.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ZsoAuthenticateSession.yaml
+  x-idap-anon: false

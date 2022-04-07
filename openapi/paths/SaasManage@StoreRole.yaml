@@ -1,0 +1,53 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: Deprecated -- Create a Principal List role.
+  description: |-
+    Deprecated -- Use /roles/StoreRole instead
+                You must be a system administrator or have role management permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Name
+          type: object
+          properties:
+            CheckPrincipalTypes:
+              type: array
+              description: List of Principal Types whether to check (default=null)
+              items:
+                type: string
+            Roles:
+              type: array
+              description: List of role UUIDs or Names to add to the role (default=null)
+              items:
+                type: string
+            Users:
+              type: array
+              description: List of user UUIDs or Names to add to the role (default=null)
+              items:
+                type: string
+            Groups:
+              type: array
+              description: List of group UUIDs or Names to add to the role (default=null)
+              items:
+                type: string
+            Description:
+              type: string
+              description: Description of the role (default=null)
+            Name:
+              type: string
+              description: Name of the role to create
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SaasManageStoreRole.yaml
+  deprecated: true
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

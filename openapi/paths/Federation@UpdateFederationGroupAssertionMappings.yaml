@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Directory Service Management
+  summary: Update federation group assertion mappings.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - FederationUuid
+          type: object
+          properties:
+            FederationUuid:
+              type: string
+              description: What federation to update group assertion mappings on.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/FederationUpdateFederationGroupAssertionMappings.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: Redirect to answer challenge page.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

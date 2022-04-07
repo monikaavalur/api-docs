@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+    - Workflow Management
+  summary: Starts a workflow job
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            args:
+              type: string
+              description: Collection of arguments required by the script
+            script:
+              type: string
+              description: Name of a pre-defined workflow script
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/JobFlowStartJob.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

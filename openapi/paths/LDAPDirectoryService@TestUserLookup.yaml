@@ -1,0 +1,44 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Gets the results of the specified mappings by looking up a user by name.
+  description: >-
+    Using a supplied LDAP configuration OR a the UUID of an existing LDAP
+    directory service (one or the
+                 other is required), this API will attempt to look up a user (specified by login
+                 name) and apply the mappings from the configuration.  This is intended for UI use to enable the
+                 customer to validate their mappings prior to saving the server configuration.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - TestUserName
+            - Version
+          type: object
+          properties:
+            DirectoryServiceUuid:
+              type: string
+              description: the UUID of the directory service being tested (if known).
+            Version:
+              type: integer
+              description: The version number of the configuration being tested.
+            TestUserName:
+              type: string
+              description: The user id of the user to be looked up.
+            Settings:
+              type: string
+              description: >-
+                !!! KNOWN ISSUE - must consult with Tony about how to format
+                this section
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/LDAPDirectoryServiceTestUserLookup.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

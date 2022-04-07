@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Organization Management
+  summary: Get All organizations units
+  parameters:
+    - name: OrgId
+      in: query
+      description: The organization id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgGet.yaml
+  x-idap-anon: false

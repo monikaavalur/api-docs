@@ -1,0 +1,33 @@
+post:
+  tags:
+    - OAuth & OpenID Connect
+  summary: End Session - destroy an OIDC session
+  description: >-
+    <li>This API is used to destroy an OIDC session through RP-initiated logout
+    with the option to redirect users to a pre-determined URL.</li>
+                <li>This endpoint takes an ID token and logs the user out of session if the subject matches the current session. </li><li>A post_logout_redirect_uri may be specified to redirect the browser after the logout is performed.</li>
+                <li>Refer guide <a href="https://identity-developer.cyberark.com/docs/end-a-session">here</a></li>
+  parameters:
+    - name: post_logout_redirect_uri
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: state
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: id_token_hint
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OAuth2EndSession.yaml
+  x-idap-anon: true

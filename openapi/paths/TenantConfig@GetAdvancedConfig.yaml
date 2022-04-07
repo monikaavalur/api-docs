@@ -1,0 +1,16 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Returns tenant's configuration values.
+  description: >-
+    Retrieves the full configuration list for Opie... the combined set of
+    "global" config table rows 
+                and "blessed tenant" rows from config table, so that they can be presented in a UI.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigGetAdvancedConfig.yaml
+  x-idap-anon: false

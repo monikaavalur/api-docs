@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get Authentication Widget as Page
+  parameters:
+    - name: id
+      in: query
+      description: id
+      required: true
+      schema:
+        type: string
+    - name: username
+      in: query
+      description: username
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AuthenticationWidgetsWidgetPage.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

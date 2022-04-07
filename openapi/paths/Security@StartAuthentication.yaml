@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Authentication
+  summary: Starts a user authentication session.
+  description: "<p>Use this API to start the user authentication session to authenticate the user against CyberArk Identity.<ul><li> The API gets invoked when the user wants to authenticate to CyberArk Identity and the user enters username on the login form. </li><li>If the user exists in CyberArk Identity cloud directory, the server returns an array of security challenges to the client, that the user must fulfill for each challenge. </li><li>The user\x92s responses to these mechanisms are processed via the AdvanceAuthentication endpoint.</li></ul></p>"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - User
+            - Version
+          type: object
+          properties:
+            TenantId:
+              type: string
+              description: >-
+                The ID of the tenant to which the user is logging in. If this
+                field is not provided, the username must identify the tenant
+              default: abc-123
+            Version:
+              type: string
+              description: 'Version of the data being sent. Options: 1.0'
+              default: '1.0'
+            User:
+              type: string
+              description: 'The username of the user authenticating to CyberArk Identity '
+              default: Test_user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityStartAuthentication.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

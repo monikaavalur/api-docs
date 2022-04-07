@@ -1,0 +1,42 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets a set of ObjectType.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - CollectionType
+            - NoBuiltIns
+            - ObjectType
+          type: object
+          properties:
+            SubObjectType:
+              type: string
+              description: The sub object type of the colleciton(s).
+            ObjectType:
+              type: integer
+              description: The object type of the collection(s).
+            ReduceSysadmin:
+              type: boolean
+              description: >-
+                Prevent generic cloud admin accounts from having access
+                (default=false).
+            CollectionType:
+              type: string
+              description: The type of collections to look for
+            NoBuiltIns:
+              type: boolean
+              description: (default=false)
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/CollectionGetObjectCollectionsAndFilters.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

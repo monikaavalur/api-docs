@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Reset client app lock pin (Mobile)
+  parameters:
+    - name: deviceID
+      in: query
+      description: Device ID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobileResetClientAppLockPin.yaml
+  x-idap-anon: false

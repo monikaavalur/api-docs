@@ -1,0 +1,48 @@
+post:
+  tags:
+    - Policy Management
+  summary: Sets the using cloud mobile group policy.
+  parameters:
+    - name: value
+      in: query
+      description: Value to use when calling SetUseCloudGP.
+      required: true
+      schema:
+        type: string
+    - name: useCloudCA
+      in: query
+      description: Use cloud certificate authority.
+      required: true
+      schema:
+        type: string
+    - name: hideMobilePolicyForAD
+      in: query
+      description: Hide the mobile policy for active directory.
+      required: true
+      schema:
+        type: string
+    - name: refreshInterval
+      in: query
+      description: The policy refresh interval.
+      required: true
+      schema:
+        type: string
+    - name: gpUpdateInterval
+      in: query
+      description: The policy update interval.
+      required: true
+      schema:
+        type: string
+    - name: activeDirectoryCA
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicySetUsingCloudMobileGP.yaml
+  x-idap-anon: false

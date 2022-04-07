@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Authorization
+  summary: Get a collection of access rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ReduceSysadmin
+            - RowKey
+            - Table
+          type: object
+          properties:
+            RowKey:
+              type: string
+              description: Unique identifier.
+            ReduceSysadmin:
+              type: boolean
+              description: >-
+                Prevent generic cloud admin accounts from having access
+                (default=false).
+            Table:
+              type: array
+              description: The table to access.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetCollectionAces.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

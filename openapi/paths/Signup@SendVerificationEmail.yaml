@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Send an verification email
+  description: >-
+    Based on userid input it will fetch the email address and send confirmation
+    email to respective user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - UserId
+          type: object
+          properties:
+            UserId:
+              type: string
+              description: uuid of the user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SignupSendVerificationEmail.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update organization administrators
+  description: Must be system administrator to perform this operation.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - OrgId
+          type: object
+          properties:
+            Grant:
+              type: array
+              description: ID of users
+              items:
+                type: object
+                properties: {}
+                description: DataEntity containing user names or ID of user
+            OrgId:
+              type: string
+              description: ID of the organization to update
+            Revoke:
+              type: array
+              description: ID of users
+              items:
+                type: string
+                description: ID of user
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgUpdateAdministrators.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

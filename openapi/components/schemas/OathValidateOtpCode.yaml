@@ -1,0 +1,14 @@
+type: object
+properties:
+  Result:
+    type: boolean
+    description: Is the otp code valid.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "Is the otp code valid.", type: "boolean"
+                  }
+                  

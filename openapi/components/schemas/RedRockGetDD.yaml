@@ -1,0 +1,49 @@
+type: object
+properties:
+  ErrorID:
+    type: string
+    description: Unique support identifier for this occurrence of an error
+  Result:
+    type: array
+    description: A list of tables with its columns.
+    items:
+      type: object
+      properties:
+        ToolTip:
+          type: string
+          description: The table tooltip.
+        Description:
+          type: string
+          description: The table description.
+        Columns:
+          type: object
+          properties:
+            Name:
+              type: string
+              description: The column name.
+            Type:
+              type: string
+              description: The column type.
+            ToolTip:
+              type: string
+              description: The column tooltip.
+            Description:
+              type: string
+              description: The column description.
+            ForeignKey:
+              type: string
+              description: The column foreign key.
+            TableKey:
+              type: string
+              description: The column table key.
+            Indexed:
+              type: boolean
+              description: Is the column indexed.
+          description: The table columns.
+      description: A table.
+  Message:
+    type: string
+    description: Error message text on failure, may be null
+  success:
+    type: boolean
+    description: Indicates API success or failure

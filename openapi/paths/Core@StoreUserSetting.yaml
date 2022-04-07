@@ -1,0 +1,52 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Stores the user settings.
+  parameters:
+    - name: ID
+      in: query
+      description: The user name.
+      required: true
+      schema:
+        type: string
+    - name: Target
+      in: query
+      description: What the setting applies to.
+      required: true
+      schema:
+        type: string
+    - name: SettingType
+      in: query
+      description: The setting type.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+            - SettingType
+            - Target
+          type: object
+          properties:
+            ID:
+              type: integer
+              description: The user name.
+            Target:
+              type: integer
+              description: What the setting applies to.
+            SettingType:
+              type: string
+              description: The setting type.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreStoreUserSetting.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

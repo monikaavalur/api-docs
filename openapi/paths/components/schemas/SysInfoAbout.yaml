@@ -1,0 +1,45 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      CompanyName:
+        type: string
+        description: The system company name.
+      TermsOfUseLink:
+        type: string
+        description: The system terms of use link.
+      PodRegion:
+        type: string
+        description: The system region.
+      PodName:
+        type: string
+        description: The system pod name.
+      Version:
+        type: string
+        description: The system version.
+      PortalImage:
+        type: string
+        description: The system image.
+      HostName:
+        type: string
+        description: The system host name.
+      LicensedTo:
+        type: string
+        description: The system on premises licensed to.
+      PodFqdn:
+        type: string
+        description: The system Fqdn.
+      PrivacyPolicyLink:
+        type: string
+        description: The system privacy policy link.
+      OnPremCompanyName:
+        type: string
+        description: The system on premises company name.
+      OnPremLicenseKey:
+        type: string
+        description: The system on premises license key.
+    description: The system information.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

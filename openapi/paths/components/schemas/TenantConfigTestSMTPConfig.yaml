@@ -1,0 +1,8 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: The user email address.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

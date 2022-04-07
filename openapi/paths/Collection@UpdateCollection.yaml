@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update a set.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+          type: object
+          properties:
+            sql:
+              type: string
+              description: Query used to create the set.
+            ID:
+              type: string
+              description: The uuid reference to the set.
+            desccription:
+              type: string
+              description: The set description.
+            name:
+              type: string
+              description: The name of the referenced set.
+            parent:
+              type: string
+              description: This sets parent uuid.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CollectionUpdateCollection.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

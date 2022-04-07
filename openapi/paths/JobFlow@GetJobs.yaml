@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Workflow Management
+  summary: Gets list of workflow jobs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              type: string
+              description: >-
+                Type of jobs to retrieve: specify ask for a list of all the jobs
+                pending approval, or all for all jobs regardless of state
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/JobFlowGetJobs.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

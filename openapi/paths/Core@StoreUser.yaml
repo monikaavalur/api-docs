@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Saves the user information.
+  description: Caller must provide either user name or guid.
+  parameters:
+    - name: name
+      in: query
+      description: Name of the user to store.
+      required: true
+      schema:
+        type: string
+    - name: guid
+      in: query
+      description: Unique identifier of the user being stored.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreStoreUser.yaml
+  x-idap-anon: false

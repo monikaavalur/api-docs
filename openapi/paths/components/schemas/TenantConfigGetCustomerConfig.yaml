@@ -1,0 +1,24 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      LoginBannerMessageL10nEnabled:
+        type: boolean
+        description: Display or not the tenant login banner message.
+      LoginBannerMessage:
+        type: string
+        description: The tenant login banner message.
+      DisplayLoginBanner:
+        type: boolean
+        description: Display or not the tenant login banner.
+      LocalizationMappings:
+        type: array
+        description: The tenant localization mappings.
+        items:
+          type: object
+          properties: {}
+    description: A tenant configuration.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

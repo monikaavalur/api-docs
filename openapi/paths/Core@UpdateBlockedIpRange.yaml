@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates a Blocked IP Range.
+  parameters:
+    - name: value
+      in: query
+      description: IP Range to block.
+      required: true
+      schema:
+        type: string
+    - name: label
+      in: query
+      description: What label to give this blocked IP range.
+      required: true
+      schema:
+        type: string
+    - name: uuid
+      in: query
+      description: >-
+        Uuid if modifying an existing IP range. Creates new entry if empty
+        (Optional)
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreUpdateBlockedIpRange.yaml
+  x-idap-anon: false

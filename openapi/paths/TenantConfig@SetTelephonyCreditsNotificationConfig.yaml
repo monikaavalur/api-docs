@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Set the tenant Telephony Credits Notification configuration.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Emails
+            - Threshold
+          type: object
+          properties:
+            Threshold:
+              type: integer
+              description: Threshold
+            Emails:
+              type: string
+              description: Email
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/TenantConfigSetTelephonyCreditsNotificationConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

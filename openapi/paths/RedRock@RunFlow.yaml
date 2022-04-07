@@ -1,0 +1,34 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Runs a workflow job.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Init
+            - Name
+            - Script
+          type: object
+          properties:
+            Init:
+              type: object
+              properties: {}
+              description: Arguments used when creating the job.
+            Script:
+              type: string
+              description: The script to run.
+            Name:
+              type: string
+              description: The name of the job.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RedRockRunFlow.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

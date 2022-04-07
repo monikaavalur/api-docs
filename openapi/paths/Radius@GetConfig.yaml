@@ -1,0 +1,23 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Fetch Radius config for a specified connector
+  description: >-
+    You must be a system administrator or have radius administrator
+    permissions.  Will return null if
+                connector has no radius config.
+  parameters:
+    - name: connectorUuid
+      in: query
+      description: Connector UUID to fetch radius config for
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusGetConfig.yaml
+  x-idap-anon: false

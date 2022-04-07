@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Authentication
+  summary: Get challenge state ID for Authentication profile
+  description: >-
+    <p>This API is used to get challenge state ID for an authentication
+    profile. 
+                <ul><li>The API is invoked when you want to step up authentication for sensitive applications. </li>
+                <li>Pass the authentication profile name of the profile configured for the application to this API.</li>
+                <li>The ChallengeID is received as a response for this API, and it is used to start the step-up authentication for the app.</li></ul></p>
+  parameters:
+    - name: profileName
+      in: query
+      description: >-
+        Authentication profile name should be provided which is mapped against
+        the application for which step-up authentication should be triggered.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityChallengeUser.yaml
+  x-idap-anon: false

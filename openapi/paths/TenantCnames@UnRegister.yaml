@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deletes the cname for the tenant
+  parameters:
+    - name: customCname
+      in: query
+      description: Cname to remove
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantCnamesUnRegister.yaml
+  x-idap-anon: false

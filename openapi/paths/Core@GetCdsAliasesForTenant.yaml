@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the tenant suffixes excluding 'legacy' versions.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetCdsAliasesForTenant.yaml
+  x-idap-anon: false

@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Additional APIs
+  summary: To get the DpaAdmin user details
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Enabled
+            - ProxyUuid
+            - RequestId
+          type: object
+          properties:
+            ProxyUuid:
+              type: string
+              description: The connector Uuid.
+            Enabled:
+              type: boolean
+              description: >-
+                To enable or disable the Dpa configuration of the specified
+                connector
+            RequestId:
+              type: string
+              description: Correlation ID to the external system
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/WinDpaSetDpaConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

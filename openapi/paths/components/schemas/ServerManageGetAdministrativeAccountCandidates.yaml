@@ -1,0 +1,21 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      Domain:
+        type: string
+        description: Domain name
+      FullyQualifiedName:
+        type: string
+        description: Domain qualified administrator username
+      PVID:
+        type: string
+        description: Domain id
+      Name:
+        type: string
+        description: Domain administrator username
+    description: List of DataEntities with domain data
+  Error:
+    type: object
+    description: Error message text on failure, may be null

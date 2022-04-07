@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Update a federation.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Domains
+            - FederationName
+            - FederationType
+            - FederationUuid
+            - Mappings
+          type: object
+          properties:
+            FederationName:
+              type: string
+              description: The federation name.
+            FederationType:
+              type: string
+              description: What type of federation to create.
+            Mappings:
+              type: array
+              description: What federation mappings to use.
+              items:
+                type: object
+                properties: {}
+            Domains:
+              type: array
+              description: The domains to use for this federation.
+              items:
+                type: string
+            FederationUuid:
+              type: string
+              description: The federation unique identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/FederationUpdateFederation.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

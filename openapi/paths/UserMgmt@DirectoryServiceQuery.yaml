@@ -1,0 +1,63 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+    - Directory Service Management
+  summary: >-
+    Query all directory services for users, groups, and/or roles using a json
+    query string.
+  description: >-
+    Either a 'user', a 'group', or a 'role' query must be specified.  If no
+    directoryServices are specified, all available
+                directory services will be searched.
+  parameters:
+    - name: args
+      in: query
+      description: |-
+        PageOptionBase
+                    {
+                        "PageNumber": 1,
+                        "PageSize": 100000,
+                        "Limit": 100000,
+                        "SortBy": "DisplayName",
+                        "direction": "DESC"
+                    }
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - directoryServices
+            - group
+            - roles
+            - user
+          type: object
+          properties:
+            roles:
+              type: string
+              description: Json query for the roles table
+            group:
+              type: string
+              description: Json query for the dsgroups table
+            directoryServices:
+              type: array
+              description: string list of diretory service uuids to limit search to
+              items:
+                type: object
+                properties: {}
+            user:
+              type: string
+              description: Json query for the dsusers table
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtDirectoryServiceQuery.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

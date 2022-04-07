@@ -1,0 +1,71 @@
+post:
+  tags:
+    - User Management
+  summary: >-
+    Create a new user in the Cloud Directory Service via the SignUp
+    mechanism.(Early Access)
+  description: |-
+    <strong><font color = #46B8DA> Early access </font>
+                This API is an early access API. It is possible that it may change in near future.</strong>
+                The SignUp mechanism enables 3rd party integrations for identity verification, marketing automation, behavioral biometrics among others.
+                You must be a system administrator or have user management permissions.
+                This api also has an option to Auto Login the user.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Name
+          type: object
+          properties:
+            Password:
+              type: string
+              description: >-
+                URL encoded password of the user (default=randomly generated
+                strong password)
+            HomeNumber:
+              type: string
+              description: User's home number (default=null)
+            DisplayName:
+              type: string
+              description: Display name of user (default=null)
+            IsEmailVerificationRequired:
+              type: boolean
+              description: User's recevie email if true (default=false)
+            OfficeNumber:
+              type: string
+              description: User's office number (default=null)
+            ForcePasswordChangeNext:
+              type: boolean
+              description: Force password change at first login (default=true)
+            MobileNumber:
+              type: string
+              description: >-
+                User's mobile number (default=null); note this field is required
+                when either Mail is not provided or Identity Verification has to
+                be done
+            AutoLogin:
+              type: boolean
+              description: User's can autologin if true (default=false)
+            Mail:
+              type: string
+              description: >-
+                Email of user (default=null); note this field is required if
+                either MobileNumber is not provided or 'SendEmailInvite' is true
+                or Identity Verification has to be done.
+            Description:
+              type: string
+              description: Description of user (default=null)
+            Name:
+              type: string
+              description: Name of user. format:username@suffix
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceSignup.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

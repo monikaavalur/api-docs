@@ -1,0 +1,8 @@
+type: object
+properties:
+  Result:
+    type: boolean
+    description: True , If the resource is deleted successfully
+  Error:
+    type: object
+    description: Error message text on failure, may be null

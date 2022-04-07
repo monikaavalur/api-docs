@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Get AD topology and administrator information
+  description: You must be a system administrator.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/ServerManageGetAllADTopologyWithAdministrativeAccounts.yaml
+  x-idap-anon: false

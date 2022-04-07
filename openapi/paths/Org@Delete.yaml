@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Organization Management
+  summary: Delete an organization unit
+  description: Must be system administrator to perform this operation.
+  parameters:
+    - name: OrgId
+      in: query
+      description: The organization id.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgDelete.yaml
+  x-idap-anon: false

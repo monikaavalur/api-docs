@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Move directory 'path' to 'toPath'.
+  parameters:
+    - name: path
+      in: query
+      description: Directory to be moved.
+      required: true
+      schema:
+        type: string
+    - name: toPath
+      in: query
+      description: Destination of directory move.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreMoveDirectory.yaml
+  x-idap-anon: false

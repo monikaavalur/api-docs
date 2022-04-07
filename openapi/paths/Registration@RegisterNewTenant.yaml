@@ -1,0 +1,84 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Register a new tenant.
+  description: This takes some time to complete.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - AdminPass
+            - AdminUser
+            - Brand
+            - CustomerName
+            - CustomerPass
+            - InitialAlias
+          type: object
+          properties:
+            ManagedBy:
+              type: string
+              description: Who/what manages the tenant.
+            InitialStateChangeReason:
+              type: string
+              description: The initial state change reason.
+            Company:
+              type: string
+              description: The tenant company.
+            AdminUser:
+              type: string
+              description: The tenant admin user name.
+            IsMsp:
+              type: boolean
+              description: Is this tenant a managed service partner.
+            Brand:
+              type: string
+              description: The tenant brand.
+            EntitlementIdsToEnable:
+              type: array
+              description: A list of entitlement ids to enable.
+              items:
+                type: string
+            CustomerTenantData:
+              type: object
+              properties: {}
+              description: Additional customer tenant data.
+            CustomerData:
+              type: object
+              properties: {}
+              description: Additional customer data.
+            AuthSource:
+              type: string
+              description: Authorization source.
+            InitialAlias:
+              type: string
+              description: The initial admin user for the tenant.
+            CustomerToken:
+              type: string
+              description: The customer token.
+            CustomerName:
+              type: string
+              description: The customer name/email.
+            AdminPass:
+              type: string
+              description: The tenant admin password.
+            AdditionalConfigSettings:
+              type: object
+              properties: {}
+              description: The additional configuration settings for the tenant.
+            AwsCustomerId:
+              type: string
+              description: The aws customer id.
+            CustomerPass:
+              type: string
+              description: The customer password.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RegistrationRegisterNewTenant.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

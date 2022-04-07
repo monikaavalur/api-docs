@@ -1,0 +1,41 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets a list of row rights.
+  description: Only returns value if current user has at least read-rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Rows
+          type: object
+          properties:
+            Rows:
+              type: array
+              description: Row rights of the user to look for.
+              items:
+                type: object
+                properties:
+                  RowKey:
+                    type: string
+                    description: The unique identifer.
+                  ReduceSysadmin:
+                    type: boolean
+                    description: >-
+                      Prevent generic cloud admin accounts from having access
+                      (default=false).
+                  Table:
+                    type: string
+                    description: Database table name.
+                description: A row of user rights.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetEffectiveRowRights.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

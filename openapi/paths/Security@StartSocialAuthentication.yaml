@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Authentication
+  summary: Start social authentication.
+  description: >-
+    <p>Invoke this API when you want to enable the external users (such as
+    customers or temporary contractors) to use their existing social media
+    credentials to log into the CyberArk Identity user portal. 
+                <ul><li>This Endpoint initiates the Social Authentication for the user. </li>
+                <li>For detailed Configuration refer <a href="https://identity-developer.cyberark.com/docs/social-login-2">Social Login</a></li></p>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - IdpName
+            - PostExtIdpAuthCallbackUrl
+          type: object
+          properties:
+            PostExtIdpAuthCallbackUrl:
+              type: string
+              description: Where the Idp should send the user after authentication.
+            IdpName:
+              type: string
+              description: >-
+                The identity provider name (Facebook, Google, Twitter, LinkedIn,
+                Microsoft).
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SecurityStartSocialAuthentication.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

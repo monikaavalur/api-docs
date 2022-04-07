@@ -1,0 +1,18 @@
+post:
+  tags:
+    - Additional APIs
+  summary: 'DisableBlockedIpRange: Disable blocked IP Range'
+  parameters:
+    - name: uuid
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDisableBlockedIpRange.yaml
+  x-idap-anon: false

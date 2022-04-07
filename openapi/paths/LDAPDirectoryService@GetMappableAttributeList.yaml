@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Gets the list of mappable LDAP attributes.
+  description: >-
+    This is intended for UI use, to fill in the prompts for the names of the
+    attributes in the
+                 customer's mappings.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            operation:
+              type: string
+              description: >-
+                Add or Modify, describes the operation for which this list is
+                being generated
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceGetMappableAttributeList.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

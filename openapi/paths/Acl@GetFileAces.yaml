@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets ACLs on a file.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Inherit
+            - Paths
+          type: object
+          properties:
+            Inherit:
+              type: boolean
+              description: Use inheritance.
+            Paths:
+              type: array
+              description: Path to the file.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetFileAces.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

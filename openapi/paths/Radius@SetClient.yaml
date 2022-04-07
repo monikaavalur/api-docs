@@ -1,0 +1,47 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Add or update a radius client.
+  description: >-
+    You must be a system administrator or have radius administrator
+    permissions.  When updating an existing client,
+                any properties not provided in the body will retain the existing values.  ClientSecret and ClientName are
+                required on all new clients.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ClientAddress
+          type: object
+          properties:
+            ClientAddress:
+              type: string
+              description: Client IP address
+            ClientCulture:
+              type: string
+              description: Client culture
+            ClientName:
+              type: string
+              description: Client name
+            ClientDescription:
+              type: string
+              description: Client description
+            ClientSecret:
+              type: string
+              description: Client secret
+            ClientAllowNewLinesInPrompts:
+              type: boolean
+              description: >-
+                Allow embedded new-line characters when sending prompts to the
+                client
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusSetClient.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

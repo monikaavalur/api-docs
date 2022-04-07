@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: The LDAP service that was just removed.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

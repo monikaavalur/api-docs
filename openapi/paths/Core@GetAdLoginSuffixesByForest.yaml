@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get a list of domains in the forest.
+  parameters:
+    - name: forestRootDomain
+      in: query
+      description: The forest root to get a list of domains in.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetAdLoginSuffixesByForest.yaml
+  x-idap-anon: false

@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Organization Management
+  summary: Create an organization unit
+  description: Must be system administrator to perform this operation.
+  parameters:
+    - name: Name
+      in: query
+      description: The name of new organization.
+      required: true
+      schema:
+        type: string
+    - name: Description
+      in: query
+      description: The description of the new organization.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgCreate.yaml
+  x-idap-anon: false

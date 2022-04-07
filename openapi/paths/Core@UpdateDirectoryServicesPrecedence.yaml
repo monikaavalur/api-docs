@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Updates the directory services stack for a tenant.
+  description: >-
+    This changes the search order of services used when authenticating a
+    customer.
+  parameters:
+    - name: precedence
+      in: query
+      description: String array defining the directory services precedence to use.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreUpdateDirectoryServicesPrecedence.yaml
+  x-idap-anon: false

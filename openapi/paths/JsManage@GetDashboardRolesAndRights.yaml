@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Additional APIs
+    - Role Management
+  summary: List the Dashboard roles and rights.
+  parameters:
+    - name: _RowKey
+      in: query
+      description: The unique identifier for the dashboard role.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/JsManageGetDashboardRolesAndRights.yaml
+  x-idap-anon: false

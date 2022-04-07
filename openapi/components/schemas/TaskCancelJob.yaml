@@ -1,0 +1,10 @@
+type: object
+properties:
+  Result:
+    type: string
+    description: >-
+      What happened with the job cancel request (NotFound, PreEmpted,
+      CancelRequested, NotRequired).
+  Error:
+    type: object
+    description: Error message text on failure, may be null

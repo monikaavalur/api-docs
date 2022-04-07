@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets an Authentication Assurance Level
+  parameters:
+    - name: challenges
+      in: query
+      description: Profile factors
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AuthProfileGetProfileMFAScoring.yaml
+  x-idap-anon: false

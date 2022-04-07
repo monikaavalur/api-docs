@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: The rsop policy.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The rsop policy.", type: "object"
+                  }
+                  

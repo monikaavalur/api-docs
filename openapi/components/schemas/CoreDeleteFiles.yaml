@@ -1,0 +1,24 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: A list of files and the result of their deletion attempt.
+    items:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Result of the file delete attempt.
+        path:
+          type: string
+          description: The file acted upon.
+        PermissionException:
+          type: boolean
+          description: Was there a permission exception.
+        Exception:
+          type: string
+          description: The exception text.
+      description: A file and its deletion attempt result.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

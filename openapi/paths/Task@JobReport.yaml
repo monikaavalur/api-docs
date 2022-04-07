@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Retrieve simple job metrics from the persistent job system.
+  parameters:
+    - name: hoursBack
+      in: query
+      description: How many hours before now to start the report
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TaskJobReport.yaml
+  x-idap-anon: false

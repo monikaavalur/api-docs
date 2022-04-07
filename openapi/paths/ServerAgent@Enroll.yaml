@@ -1,0 +1,14 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Enroll
+  description: Please use EnrollV2 instead.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentEnroll.yaml
+  deprecated: true
+  x-idap-anon: false

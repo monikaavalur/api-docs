@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Retrieves the data dictionary for the tenant.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RedRockGetDD.yaml
+  x-idap-anon: false

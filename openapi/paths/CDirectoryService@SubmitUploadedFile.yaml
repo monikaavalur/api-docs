@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Create a Bulk User Import scheduled task to process the uploaded file.
+  description: Seems to be second part of a two part call.
+  parameters:
+    - name: importType
+      in: query
+      description: Bulk import type to process. Default is Bulk User Import
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - File
+          type: object
+          properties:
+            File:
+              type: object
+              properties: {}
+              description: >-
+                File containing the users to be created by the scheduled task,
+                uploaded in the form-data, not as JSON.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceSubmitUploadedFile.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

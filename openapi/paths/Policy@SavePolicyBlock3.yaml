@@ -1,0 +1,56 @@
+post:
+  tags:
+    - Policy Management
+  summary: Save a new or updated policy.
+  description: >-
+    Replaces and deprecates SavePolicyBlock2, by adding the "rev stamp"
+    functionality that helps 
+                prevent change loss when policies are being edited by multiple users.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - plinks
+            - policy
+          type: object
+          properties:
+            policy:
+              type: object
+              properties:
+                Newpolicy:
+                  type: boolean
+                  description: boolean set to true if this is a new policy (add)
+                Version:
+                  type: integer
+                  description: Policy structure version number.  1, at this time.
+                Path:
+                  type: string
+                  description: path of the policy
+                RevStamp:
+                  type: string
+                  description: >-
+                    Revision stamp returned from latest call to getPolicyBlock. 
+                    This is required if Newpolicy is false.
+                Description:
+                  type: string
+                  description: policy description
+              description: >-
+                JSON object containing the details of the policy being added or
+                updated.
+            plinks:
+              type: array
+              description: Array of plink objects representing the current plinks file.
+              items:
+                type: object
+                properties: {}
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicySavePolicyBlock3.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

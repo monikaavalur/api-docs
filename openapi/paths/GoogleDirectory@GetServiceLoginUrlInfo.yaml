@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the state id and the service login url.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - DirectoryServiceUuid
+            - DomainName
+          type: object
+          properties:
+            DirectoryServiceUuid:
+              type: string
+              description: The unique identifier of the directory service being referenced.
+            DomainName:
+              type: string
+              description: The domain name to look for in the directory service.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GoogleDirectoryGetServiceLoginUrlInfo.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

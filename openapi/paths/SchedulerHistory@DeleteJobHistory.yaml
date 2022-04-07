@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Delete job history.
+  parameters:
+    - name: jobid
+      in: query
+      description: The job who's history needs cleaning up.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/SchedulerHistoryDeleteJobHistory.yaml
+  x-idap-anon: false

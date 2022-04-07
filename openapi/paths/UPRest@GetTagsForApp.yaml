@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Application Management
+  summary: Get the list of application tags for the current user.
+  parameters:
+    - name: appkey
+      in: query
+      description: Application key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestGetTagsForApp.yaml
+  x-idap-anon: false

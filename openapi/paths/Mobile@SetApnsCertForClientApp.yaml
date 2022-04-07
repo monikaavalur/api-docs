@@ -1,0 +1,52 @@
+post:
+  tags:
+    - Additional APIs
+  summary: >-
+    Sets the APNS Developer certificate to be able to send push notifications to
+    the Mobile
+  description: >-
+    The storage of the APNSCert and the other details happen at a Tenant level.
+    The APNS Cert details related ClientKey set here will be hereon used to send
+    the push notification Earlier ClientAppKeys will be ignored while sending
+    the push notification. You need to have APNSCertificate management rights to
+    use this API
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - APNSCert
+            - APNSPass
+            - APNSTopic
+            - ClientAppKey
+          type: object
+          properties:
+            APNSTopic:
+              type: string
+              description: >-
+                The topic related to client application with which the push
+                notification needs to be sent.
+            APNSPass:
+              type: string
+              description: Password associated with the APNS Certificate
+            ClientAppKey:
+              type: string
+              description: >-
+                Client key is a unique identifier to associate the certificate
+                of client applicatoin that needs to be used for APNS
+                notifications. By default, the latest cert
+            APNSCert:
+              type: string
+              description: >-
+                Base64 string representation of the APNS certificate of p12
+                format
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/MobileSetApnsCertForClientApp.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

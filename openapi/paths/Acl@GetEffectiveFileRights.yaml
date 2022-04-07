@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Authorization
+  summary: Gets a list of file rights.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Paths
+          type: object
+          properties:
+            Paths:
+              type: array
+              description: List of files to examine for rights.
+              items:
+                type: string
+                description: A file.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/AclGetEffectiveFileRights.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

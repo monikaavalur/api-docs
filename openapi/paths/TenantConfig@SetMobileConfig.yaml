@@ -1,0 +1,41 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Sets the tenant mobile configuration.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CompanyName:
+              type: string
+              description: The company name for this tenant.
+            WelcomeMessage:
+              type: string
+              description: The tenant welcome message.
+            EndpointEnrollWelcomeTextL10nEnabled:
+              type: boolean
+              description: Is endpoint enrollment welcome text localization enabled.
+            CompanyImageBackgroundColor:
+              type: string
+              description: The company image background color.
+            CompanyImage:
+              type: string
+              description: The company image content type and the image encoded as base64.
+            LocalizationMappings:
+              type: array
+              description: A list of localization mappings.
+              items:
+                type: object
+                properties: {}
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigSetMobileConfig.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

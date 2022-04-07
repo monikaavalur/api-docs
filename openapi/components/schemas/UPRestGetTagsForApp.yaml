@@ -1,0 +1,10 @@
+type: object
+properties:
+  Result:
+    type: array
+    description: List of tag names
+    items:
+      type: string
+  Error:
+    type: object
+    description: Error message text on failure, may be null

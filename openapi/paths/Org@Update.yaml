@@ -1,0 +1,36 @@
+post:
+  tags:
+    - Organization Management
+  summary: Update an organization unit
+  description: Must be system administrator to perform this operation.
+  parameters:
+    - name: OrgId
+      in: query
+      description: The organization id.
+      required: true
+      schema:
+        type: string
+    - name: Name
+      in: query
+      description: >-
+        The name of the organization. (Optional, when the parameter is provided,
+        will update the data)
+      required: true
+      schema:
+        type: string
+    - name: Description
+      in: query
+      description: >-
+        The description of the organization. (Optional, when the parameter is
+        provided, will update the data)
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/OrgUpdate.yaml
+  x-idap-anon: false

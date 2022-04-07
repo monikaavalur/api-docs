@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: >-
+    Gets the directory service version for an LDAP directory service specified
+    by UUID.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - directoryServiceUuid
+          type: object
+          properties:
+            directoryServiceUuid:
+              type: string
+              description: The LDAP service unique identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: >-
+              ../components/schemas/LDAPDirectoryServiceGetDirectoryServiceVersion.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

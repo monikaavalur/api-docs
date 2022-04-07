@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Deprecated -- Deletes a Blocked IP Range.
+  description: Deprecated -- Use /core/DeleteBlockedIpRange instead
+  parameters:
+    - name: value
+      in: query
+      description: IP range to remove.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreDelBlockedIpRange.yaml
+  deprecated: true
+  x-idap-anon: false

@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Stops a diagnostic session.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - _RowKey
+          type: object
+          properties:
+            _RowKey:
+              type: string
+              description: The application unique identifier being diagnosed.
+            SessionId:
+              type: string
+              description: The session identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/GatewayStopDiagnosticSession.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

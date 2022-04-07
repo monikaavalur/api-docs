@@ -1,0 +1,1149 @@
+openapi: 3.0.1
+info:
+  title: Idaptive Identity Platform API
+  description: "This site provides basic reference material for the Idaptive Identity Platform API. The API calls are grouped by category – click **Show/Hide** to view or hide the list of calls for each category. Click any call to expand the information for that call, **Expand Operations** to expand the information for all calls in that category, or **List Operations** to return to list view. \r\n \r\nTo  try out any of the calls:\r\n\r\n1.      Click the **Model Schema** box to transfer the data to the payload box (or enter data in the parameter boxes).\r\n\r\n2.      In **payload**, replace the field value-type descriptions with actual values. \r\n\r\n3.      Click **Try it out!** to execute the call.\r\n \r\nNote that you must be logged in to execute any calls. If you are not logged in, you can see all the reference material but the **Try it out!** button is not available to call the API. \r\n \r\nClick **Model** to view a description of each field in the response or payload, and click **Model Schema** to view the schema again.\r\n \r\nFor more information, see [developer site](http://developer.idaptive.com). "
+  termsOfService: https://www.idaptive.com/eula/
+  version: 22.3.244-ae3a9663f
+servers:
+  - url: /
+tags:
+  - name: Authentication
+    description: Authentication functions and ops
+  - name: Authorization
+    description: Authorization functions and ops
+  - name: Multi-Factor Registration
+    description: MFA related operations
+  - name: User Management
+    description: Manage users for all Directory Services (AD, Cloud, LDAP, etc)
+  - name: Role Management
+    description: Manage roles and admin rights
+  - name: Policy Management
+    description: Manage policies
+  - name: Organization Management
+    description: Organization related operations
+  - name: Device Management
+    description: Device related operations
+  - name: Application Management
+    description: Manage applications and SaaS
+  - name: Tenant Management
+    description: Tenant Management related operations
+  - name: OAuth & OpenID Connect
+    description: OAuth and OpenID Connect related operations
+  - name: Device Set Management
+    description: Device Set Management related operations
+  - name: Certificate Management
+    description: Certificates related operations
+  - name: Directory Service Management
+    description: DirectoryService Management related operations
+  - name: Connector Management
+    description: OAuth and OpenID Connect related operations
+  - name: File Management
+    description: Files related operations
+  - name: Widget Management
+    description: Widgets creation and customization using APIs
+  - name: Social Login
+    description: Social Login related APIs
+  - name: Customization
+    description: Customizations related APIs
+  - name: Reports
+    description: Reports related APIs
+  - name: Workflow Management
+    description: Workflows related APIs
+  - name: Signup
+    description: SignUp related APIs
+  - name: Additional APIs
+    description: Miscellaneous API's
+paths:
+  /Acl/CheckRowRight:
+    $ref: paths/Acl@CheckRowRight.yaml
+  /Acl/GetAce:
+    $ref: paths/Acl@GetAce.yaml
+  /Acl/GetCollectionAces:
+    $ref: paths/Acl@GetCollectionAces.yaml
+  /Acl/GetCollectionAcesHelper:
+    $ref: paths/Acl@GetCollectionAcesHelper.yaml
+  /Acl/GetDirAces:
+    $ref: paths/Acl@GetDirAces.yaml
+  /Acl/GetEffectiveDirRights:
+    $ref: paths/Acl@GetEffectiveDirRights.yaml
+  /Acl/GetEffectiveFileRights:
+    $ref: paths/Acl@GetEffectiveFileRights.yaml
+  /Acl/GetEffectiveRowRights:
+    $ref: paths/Acl@GetEffectiveRowRights.yaml
+  /Acl/GetFileAces:
+    $ref: paths/Acl@GetFileAces.yaml
+  /Acl/GetRowAces:
+    $ref: paths/Acl@GetRowAces.yaml
+  /Acl/GetRowAcesHelper:
+    $ref: paths/Acl@GetRowAcesHelper.yaml
+  /AuthenticationWidgets/WidgetPage:
+    $ref: paths/AuthenticationWidgets@WidgetPage.yaml
+  /AuthProfile/DeleteProfile:
+    $ref: paths/AuthProfile@DeleteProfile.yaml
+  /AuthProfile/GetProfile:
+    $ref: paths/AuthProfile@GetProfile.yaml
+  /AuthProfile/GetProfileList:
+    $ref: paths/AuthProfile@GetProfileList.yaml
+  /AuthProfile/GetProfileMFAScoring:
+    $ref: paths/AuthProfile@GetProfileMFAScoring.yaml
+  /AuthProfile/SaveProfile:
+    $ref: paths/AuthProfile@SaveProfile.yaml
+  /Brand/Info:
+    $ref: paths/Brand@Info.yaml
+  /Brand/MyBrand:
+    $ref: paths/Brand@MyBrand.yaml
+  /CDirectoryService/BulkDeleteUsers:
+    $ref: paths/CDirectoryService@BulkDeleteUsers.yaml
+  /CDirectoryService/ChangeUser:
+    $ref: paths/CDirectoryService@ChangeUser.yaml
+  /CDirectoryService/ChangeUserState:
+    $ref: paths/CDirectoryService@ChangeUserState.yaml
+  /CDirectoryService/CreateUser:
+    $ref: paths/CDirectoryService@CreateUser.yaml
+  /CDirectoryService/CreateUserBulk:
+    $ref: paths/CDirectoryService@CreateUserBulk.yaml
+  /CDirectoryService/CreateUserQuick:
+    $ref: paths/CDirectoryService@CreateUserQuick.yaml
+  /CDirectoryService/CreateUsers:
+    $ref: paths/CDirectoryService@CreateUsers.yaml
+  /CDirectoryService/Delete:
+    $ref: paths/CDirectoryService@Delete.yaml
+  /CDirectoryService/DeleteUser:
+    $ref: paths/CDirectoryService@DeleteUser.yaml
+  /CDirectoryService/ExemptUserFromMfa:
+    $ref: paths/CDirectoryService@ExemptUserFromMfa.yaml
+  /CDirectoryService/GetBulkImportWithExtAtt:
+    $ref: paths/CDirectoryService@GetBulkImportWithExtAtt.yaml
+  /CDirectoryService/GetDirectoryServiceSettings:
+    $ref: paths/CDirectoryService@GetDirectoryServiceSettings.yaml
+  /CDirectoryService/GetTechSupportUser:
+    $ref: paths/CDirectoryService@GetTechSupportUser.yaml
+  /CDirectoryService/GetUser:
+    $ref: paths/CDirectoryService@GetUser.yaml
+  /CDirectoryService/GetUserAttributes:
+    $ref: paths/CDirectoryService@GetUserAttributes.yaml
+  /CDirectoryService/GetUserByName:
+    $ref: paths/CDirectoryService@GetUserByName.yaml
+  /CDirectoryService/GetUsers:
+    $ref: paths/CDirectoryService@GetUsers.yaml
+  /CDirectoryService/GetUsersFromCsvFile:
+    $ref: paths/CDirectoryService@GetUsersFromCsvFile.yaml
+  /CDirectoryService/GrantAccess:
+    $ref: paths/CDirectoryService@GrantAccess.yaml
+  /CDirectoryService/RefreshToken:
+    $ref: paths/CDirectoryService@RefreshToken.yaml
+  /CDirectoryService/RemoveAuthSource:
+    $ref: paths/CDirectoryService@RemoveAuthSource.yaml
+  /CDirectoryService/RemoveFederationAuthSource:
+    $ref: paths/CDirectoryService@RemoveFederationAuthSource.yaml
+  /CDirectoryService/SendIdentityVerificationOTP:
+    $ref: paths/CDirectoryService@SendIdentityVerificationOTP.yaml
+  /CDirectoryService/SetDirectoryServiceSettings:
+    $ref: paths/CDirectoryService@SetDirectoryServiceSettings.yaml
+  /CDirectoryService/SetUserPicture:
+    $ref: paths/CDirectoryService@SetUserPicture.yaml
+  /CDirectoryService/SetUserState:
+    $ref: paths/CDirectoryService@SetUserState.yaml
+  /CDirectoryService/Signup:
+    $ref: paths/CDirectoryService@Signup.yaml
+  /CDirectoryService/StandardJsonResultWithPermissionCheck:
+    $ref: paths/CDirectoryService@StandardJsonResultWithPermissionCheck.yaml
+  /CDirectoryService/SubmitUploadedFile:
+    $ref: paths/CDirectoryService@SubmitUploadedFile.yaml
+  /CDirectoryService/VerifyIdentityOTP:
+    $ref: paths/CDirectoryService@VerifyIdentityOTP.yaml
+  /Collection/CreateDynamicCollection:
+    $ref: paths/Collection@CreateDynamicCollection.yaml
+  /Collection/CreateManualCollection:
+    $ref: paths/Collection@CreateManualCollection.yaml
+  /Collection/DeleteCollection:
+    $ref: paths/Collection@DeleteCollection.yaml
+  /Collection/GetBucketContents:
+    $ref: paths/Collection@GetBucketContents.yaml
+  /Collection/GetCollection:
+    $ref: paths/Collection@GetCollection.yaml
+  /Collection/GetCollectionPermissions:
+    $ref: paths/Collection@GetCollectionPermissions.yaml
+  /Collection/GetCollectionReferences:
+    $ref: paths/Collection@GetCollectionReferences.yaml
+  /Collection/GetCollectionRights:
+    $ref: paths/Collection@GetCollectionRights.yaml
+  /Collection/GetCollectionTemplate:
+    $ref: paths/Collection@GetCollectionTemplate.yaml
+  /Collection/GetMembers:
+    $ref: paths/Collection@GetMembers.yaml
+  /Collection/GetObjectCollections:
+    $ref: paths/Collection@GetObjectCollections.yaml
+  /Collection/GetObjectCollectionsAndFilters:
+    $ref: paths/Collection@GetObjectCollectionsAndFilters.yaml
+  /Collection/IsMember:
+    $ref: paths/Collection@IsMember.yaml
+  /Collection/SetCollectionPermissions:
+    $ref: paths/Collection@SetCollectionPermissions.yaml
+  /Collection/UpdateCollection:
+    $ref: paths/Collection@UpdateCollection.yaml
+  /Collection/UpdateMembersCollection:
+    $ref: paths/Collection@UpdateMembersCollection.yaml
+  /ConsentManagement/GetConsentManagementProviderConfig:
+    $ref: paths/ConsentManagement@GetConsentManagementProviderConfig.yaml
+  /ConsentManagement/GetScriptWithMetaData:
+    $ref: paths/ConsentManagement@GetScriptWithMetaData.yaml
+  /ConsentManagement/IsConsentManagementEnabled:
+    $ref: paths/ConsentManagement@IsConsentManagementEnabled.yaml
+  /ConsentManagement/UpdateConsentManagementConfig:
+    $ref: paths/ConsentManagement@UpdateConsentManagementConfig.yaml
+  /Core/AddBlockedIpRange:
+    $ref: paths/Core@AddBlockedIpRange.yaml
+  /Core/AddPremDetectRange:
+    $ref: paths/Core@AddPremDetectRange.yaml
+  /Core/AssignDirectoryFileRightsToRoles:
+    $ref: paths/Core@AssignDirectoryFileRightsToRoles.yaml
+  /Core/AssignDirectoryRightsToRoles:
+    $ref: paths/Core@AssignDirectoryRightsToRoles.yaml
+  /Core/AssignFileRightsToRoles:
+    $ref: paths/Core@AssignFileRightsToRoles.yaml
+  /Core/CheckProxyHealth:
+    $ref: paths/Core@CheckProxyHealth.yaml
+  /Core/CreateDirectory:
+    $ref: paths/Core@CreateDirectory.yaml
+  /Core/CreateTenantReportsDirectory:
+    $ref: paths/Core@CreateTenantReportsDirectory.yaml
+  /Core/CreateUserHomeReportsDirectory:
+    $ref: paths/Core@CreateUserHomeReportsDirectory.yaml
+  /Core/DelBlockedIpRange:
+    $ref: paths/Core@DelBlockedIpRange.yaml
+  /Core/DeleteAlias:
+    $ref: paths/Core@DeleteAlias.yaml
+  /Core/DeleteAliases:
+    $ref: paths/Core@DeleteAliases.yaml
+  /Core/DeleteBlockedIpRange:
+    $ref: paths/Core@DeleteBlockedIpRange.yaml
+  /Core/DeleteCertificate:
+    $ref: paths/Core@DeleteCertificate.yaml
+  /Core/DeleteDirectory:
+    $ref: paths/Core@DeleteDirectory.yaml
+  /Core/DeleteFile:
+    $ref: paths/Core@DeleteFile.yaml
+  /Core/DeleteFiles:
+    $ref: paths/Core@DeleteFiles.yaml
+  /Core/DeletePremDetectRange:
+    $ref: paths/Core@DeletePremDetectRange.yaml
+  /Core/DeleteProxies:
+    $ref: paths/Core@DeleteProxies.yaml
+  /Core/DeleteProxy:
+    $ref: paths/Core@DeleteProxy.yaml
+  /Core/DeleteTenantConfig:
+    $ref: paths/Core@DeleteTenantConfig.yaml
+  /Core/DelPremDetectRange:
+    $ref: paths/Core@DelPremDetectRange.yaml
+  /Core/DirectoryExists:
+    $ref: paths/Core@DirectoryExists.yaml
+  /Core/DisableBlockedIpRange:
+    $ref: paths/Core@DisableBlockedIpRange.yaml
+  /Core/DisablePremDetectRange:
+    $ref: paths/Core@DisablePremDetectRange.yaml
+  /Core/DownloadCertificate:
+    $ref: paths/Core@DownloadCertificate.yaml
+  /Core/DownloadFile:
+    $ref: paths/Core@DownloadFile.yaml
+  /Core/EnableBlockedIpRange:
+    $ref: paths/Core@EnableBlockedIpRange.yaml
+  /Core/EnablePremDetectRange:
+    $ref: paths/Core@EnablePremDetectRange.yaml
+  /Core/FileExists:
+    $ref: paths/Core@FileExists.yaml
+  /Core/GenerateNewProxyCode:
+    $ref: paths/Core@GenerateNewProxyCode.yaml
+  /Core/GeneratePassword:
+    $ref: paths/Core@GeneratePassword.yaml
+  /Core/GetAdLoginSuffixesByForest:
+    $ref: paths/Core@GetAdLoginSuffixesByForest.yaml
+  /Core/GetAdTopology:
+    $ref: paths/Core@GetAdTopology.yaml
+  /Core/GetAliasesForTenant:
+    $ref: paths/Core@GetAliasesForTenant.yaml
+  /Core/GetAssignedAdministrativeRights:
+    $ref: paths/Core@GetAssignedAdministrativeRights.yaml
+  /Core/GetBlockedIpRanges:
+    $ref: paths/Core@GetBlockedIpRanges.yaml
+  /Core/GetCaCertChain:
+    $ref: paths/Core@GetCaCertChain.yaml
+  /Core/GetCdsAliasesForTenant:
+    $ref: paths/Core@GetCdsAliasesForTenant.yaml
+  /Core/GetCloudCACert:
+    $ref: paths/Core@GetCloudCACert.yaml
+  /Core/GetConnectorLog4NetConfig:
+    $ref: paths/Core@GetConnectorLog4NetConfig.yaml
+  /Core/GetCurrentIwaJsonpUrl:
+    $ref: paths/Core@GetCurrentIwaJsonpUrl.yaml
+  /Core/GetCurrentIwaUrl:
+    $ref: paths/Core@GetCurrentIwaUrl.yaml
+  /Core/GetDefaultGlobalAppSigningCert:
+    $ref: paths/Core@GetDefaultGlobalAppSigningCert.yaml
+  /Core/GetDirectories:
+    $ref: paths/Core@GetDirectories.yaml
+  /Core/GetDirectoryContents:
+    $ref: paths/Core@GetDirectoryContents.yaml
+  /Core/GetDirectoryFileRolesAndRights:
+    $ref: paths/Core@GetDirectoryFileRolesAndRights.yaml
+  /Core/GetDirectoryInfo:
+    $ref: paths/Core@GetDirectoryInfo.yaml
+  /Core/GetDirectoryRolesAndRights:
+    $ref: paths/Core@GetDirectoryRolesAndRights.yaml
+  /Core/GetDirectoryServices:
+    $ref: paths/Core@GetDirectoryServices.yaml
+  /Core/GetDomainControllersForDomain:
+    $ref: paths/Core@GetDomainControllersForDomain.yaml
+  /Core/GetDownloadUrls:
+    $ref: paths/Core@GetDownloadUrls.yaml
+  /Core/GetFileInfo:
+    $ref: paths/Core@GetFileInfo.yaml
+  /Core/GetFileRolesAndRights:
+    $ref: paths/Core@GetFileRolesAndRights.yaml
+  /Core/GetIwaTrustRootCert:
+    $ref: paths/Core@GetIwaTrustRootCert.yaml
+  /Core/GetLocTag:
+    $ref: paths/Core@GetLocTag.yaml
+  /Core/GetOUTreeContents:
+    $ref: paths/Core@GetOUTreeContents.yaml
+  /Core/GetPremDetectRanges:
+    $ref: paths/Core@GetPremDetectRanges.yaml
+  /Core/GetProxyIwaHostCertificateFile:
+    $ref: paths/Core@GetProxyIwaHostCertificateFile.yaml
+  /Core/GetProxyIwaSettings:
+    $ref: paths/Core@GetProxyIwaSettings.yaml
+  /Core/GetProxyNotificationMembers:
+    $ref: paths/Core@GetProxyNotificationMembers.yaml
+  /Core/GetPurchasedLicenses:
+    $ref: paths/Core@GetPurchasedLicenses.yaml
+  /Core/GetReportsDirectoryContents:
+    $ref: paths/Core@GetReportsDirectoryContents.yaml
+  /Core/GetSupportedCultures:
+    $ref: paths/Core@GetSupportedCultures.yaml
+  /Core/GetTenantCACert:
+    $ref: paths/Core@GetTenantCACert.yaml
+  /Core/GetTenantConfig:
+    $ref: paths/Core@GetTenantConfig.yaml
+  /Core/GetUniqueFileName:
+    $ref: paths/Core@GetUniqueFileName.yaml
+  /Core/GetUserSettings:
+    $ref: paths/Core@GetUserSettings.yaml
+  /Core/GetZsoCertAuthority:
+    $ref: paths/Core@GetZsoCertAuthority.yaml
+  /Core/GetZsoHostInfo:
+    $ref: paths/Core@GetZsoHostInfo.yaml
+  /Core/HandleTwilioSmsReceipt:
+    $ref: paths/Core@HandleTwilioSmsReceipt.yaml
+  /Core/IssueUserCert:
+    $ref: paths/Core@IssueUserCert.yaml
+  /Core/IssueZsoUserCert:
+    $ref: paths/Core@IssueZsoUserCert.yaml
+  /Core/ListDirectory:
+    $ref: paths/Core@ListDirectory.yaml
+  /Core/MakeFile:
+    $ref: paths/Core@MakeFile.yaml
+  /Core/MoveDirectory:
+    $ref: paths/Core@MoveDirectory.yaml
+  /Core/NotifyEnvironment:
+    $ref: paths/Core@NotifyEnvironment.yaml
+  /Core/ProcessProxyIwaCloudRedirect:
+    $ref: paths/Core@ProcessProxyIwaCloudRedirect.yaml
+  /Core/ReadFile:
+    $ref: paths/Core@ReadFile.yaml
+  /Core/ReIssueIwaHostCertificate:
+    $ref: paths/Core@ReIssueIwaHostCertificate.yaml
+  /Core/RenameCertificate:
+    $ref: paths/Core@RenameCertificate.yaml
+  /Core/SetConnectorLog4NetConfig:
+    $ref: paths/Core@SetConnectorLog4NetConfig.yaml
+  /Core/SetDefaultCertificate:
+    $ref: paths/Core@SetDefaultCertificate.yaml
+  /Core/SetProxyIwaHostCertificateFile:
+    $ref: paths/Core@SetProxyIwaHostCertificateFile.yaml
+  /Core/SetProxyIwaSettings:
+    $ref: paths/Core@SetProxyIwaSettings.yaml
+  /Core/SetTenantConfig:
+    $ref: paths/Core@SetTenantConfig.yaml
+  /Core/StartService:
+    $ref: paths/Core@StartService.yaml
+  /Core/StopService:
+    $ref: paths/Core@StopService.yaml
+  /Core/StoreAlias:
+    $ref: paths/Core@StoreAlias.yaml
+  /Core/StoreUser:
+    $ref: paths/Core@StoreUser.yaml
+  /Core/StoreUserSetting:
+    $ref: paths/Core@StoreUserSetting.yaml
+  /Core/UpdateBlockedIpRange:
+    $ref: paths/Core@UpdateBlockedIpRange.yaml
+  /Core/UpdateDirectoryServicesPrecedence:
+    $ref: paths/Core@UpdateDirectoryServicesPrecedence.yaml
+  /Core/UpdatePremDetectRange:
+    $ref: paths/Core@UpdatePremDetectRange.yaml
+  /Core/UpdateProxyIwaSettings:
+    $ref: paths/Core@UpdateProxyIwaSettings.yaml
+  /Core/UploadCertificate:
+    $ref: paths/Core@UploadCertificate.yaml
+  /Core/WriteFile:
+    $ref: paths/Core@WriteFile.yaml
+  /Device/EnrollAndroidDevice:
+    $ref: paths/Device@EnrollAndroidDevice.yaml
+  /Device/EnrollIosDevice:
+    $ref: paths/Device@EnrollIosDevice.yaml
+  /ExtData/GetColumn:
+    $ref: paths/ExtData@GetColumn.yaml
+  /ExtData/GetColumns:
+    $ref: paths/ExtData@GetColumns.yaml
+  /ExtData/GetSchema:
+    $ref: paths/ExtData@GetSchema.yaml
+  /ExtData/SetColumn:
+    $ref: paths/ExtData@SetColumn.yaml
+  /ExtData/SetColumns:
+    $ref: paths/ExtData@SetColumns.yaml
+  /ExtData/UpdateSchema:
+    $ref: paths/ExtData@UpdateSchema.yaml
+  /ExternalCaMgmt/AddCertAuthority:
+    $ref: paths/ExternalCaMgmt@AddCertAuthority.yaml
+  /ExternalCaMgmt/DownloadCertAuthority:
+    $ref: paths/ExternalCaMgmt@DownloadCertAuthority.yaml
+  /ExternalCaMgmt/GetCertAuthorities:
+    $ref: paths/ExternalCaMgmt@GetCertAuthorities.yaml
+  /ExternalCaMgmt/RemoveCertAuthority:
+    $ref: paths/ExternalCaMgmt@RemoveCertAuthority.yaml
+  /ExternalCaMgmt/UpdateCertAuthority:
+    $ref: paths/ExternalCaMgmt@UpdateCertAuthority.yaml
+  /Federation/AddGlobalGroupAssertionMapping:
+    $ref: paths/Federation@AddGlobalGroupAssertionMapping.yaml
+  /Federation/CreateFederation:
+    $ref: paths/Federation@CreateFederation.yaml
+  /Federation/DeleteFederation:
+    $ref: paths/Federation@DeleteFederation.yaml
+  /Federation/DeleteGlobalGroupAssertionMapping:
+    $ref: paths/Federation@DeleteGlobalGroupAssertionMapping.yaml
+  /Federation/FederationMetadata:
+    $ref: paths/Federation@FederationMetadata.yaml
+  /Federation/GetFederatedGroupMembers:
+    $ref: paths/Federation@GetFederatedGroupMembers.yaml
+  /Federation/GetFederatedGroupsForUser:
+    $ref: paths/Federation@GetFederatedGroupsForUser.yaml
+  /Federation/GetFederation:
+    $ref: paths/Federation@GetFederation.yaml
+  /Federation/GetFederationGroupAssertionMappings:
+    $ref: paths/Federation@GetFederationGroupAssertionMappings.yaml
+  /Federation/GetFederations:
+    $ref: paths/Federation@GetFederations.yaml
+  /Federation/GetFederationTypes:
+    $ref: paths/Federation@GetFederationTypes.yaml
+  /Federation/GetGlobalFederationSettings:
+    $ref: paths/Federation@GetGlobalFederationSettings.yaml
+  /Federation/GetGlobalGroupAssertionMappings:
+    $ref: paths/Federation@GetGlobalGroupAssertionMappings.yaml
+  /Federation/GetGroups:
+    $ref: paths/Federation@GetGroups.yaml
+  /Federation/RemoveUserFromFederatedGroup:
+    $ref: paths/Federation@RemoveUserFromFederatedGroup.yaml
+  /Federation/SPSigningCertificate:
+    $ref: paths/Federation@SPSigningCertificate.yaml
+  /Federation/SPSigningCertificateAuthority:
+    $ref: paths/Federation@SPSigningCertificateAuthority.yaml
+  /Federation/UpdateFederation:
+    $ref: paths/Federation@UpdateFederation.yaml
+  /Federation/UpdateFederationGroupAssertionMappings:
+    $ref: paths/Federation@UpdateFederationGroupAssertionMappings.yaml
+  /Federation/UpdateGlobalGroupAssertionMappings:
+    $ref: paths/Federation@UpdateGlobalGroupAssertionMappings.yaml
+  /GoogleDirectory/AuthCallback:
+    $ref: paths/GoogleDirectory@AuthCallback.yaml
+  /GoogleDirectory/GetAuthTokenState:
+    $ref: paths/GoogleDirectory@GetAuthTokenState.yaml
+  /GoogleDirectory/GetDirectoryServiceConfig:
+    $ref: paths/GoogleDirectory@GetDirectoryServiceConfig.yaml
+  /GoogleDirectory/GetServiceLoginUrlInfo:
+    $ref: paths/GoogleDirectory@GetServiceLoginUrlInfo.yaml
+  /GoogleDirectory/RemoveDirectoryService:
+    $ref: paths/GoogleDirectory@RemoveDirectoryService.yaml
+  /GoogleDirectory/UpdateDirectoryServiceConfig:
+    $ref: paths/GoogleDirectory@UpdateDirectoryServiceConfig.yaml
+  /Health/Check:
+    $ref: paths/Health@Check.yaml
+  /Home/GetLoginData:
+    $ref: paths/Home@GetLoginData.yaml
+  /IdentityProofing/GetIdentityProofingInfoByUser:
+    $ref: paths/IdentityProofing@GetIdentityProofingInfoByUser.yaml
+  /IdentityProofing/GetIdentityVerificationProviderConfig:
+    $ref: paths/IdentityProofing@GetIdentityVerificationProviderConfig.yaml
+  /IdentityProofing/GetScriptWithMetaData:
+    $ref: paths/IdentityProofing@GetScriptWithMetaData.yaml
+  /IdentityProofing/GetWorkflowInfo:
+    $ref: paths/IdentityProofing@GetWorkflowInfo.yaml
+  /IdentityProofing/IsIdentityProofingEnabled:
+    $ref: paths/IdentityProofing@IsIdentityProofingEnabled.yaml
+  /IdentityProofing/UpdateIdentityVerificationConfig:
+    $ref: paths/IdentityProofing@UpdateIdentityVerificationConfig.yaml
+  /IdentityProofing/UpdateUserSignUpStatus:
+    $ref: paths/IdentityProofing@UpdateUserSignUpStatus.yaml
+  /JobFlow/DeleteJob:
+    $ref: paths/JobFlow@DeleteJob.yaml
+  /JobFlow/Event:
+    $ref: paths/JobFlow@Event.yaml
+  /JobFlow/GetJob:
+    $ref: paths/JobFlow@GetJob.yaml
+  /JobFlow/GetJobs:
+    $ref: paths/JobFlow@GetJobs.yaml
+  /JobFlow/GetMyJobs:
+    $ref: paths/JobFlow@GetMyJobs.yaml
+  /JobFlow/StartJob:
+    $ref: paths/JobFlow@StartJob.yaml
+  /JsManage/GetDashboardRolesAndRights:
+    $ref: paths/JsManage@GetDashboardRolesAndRights.yaml
+  /JsManage/GetReportRolesAndRights:
+    $ref: paths/JsManage@GetReportRolesAndRights.yaml
+  /LDAPDirectoryService/AddLDAPDirectoryServiceConfig:
+    $ref: paths/LDAPDirectoryService@AddLDAPDirectoryServiceConfig.yaml
+  /LDAPDirectoryService/DeleteLDAPDirectoryServiceConfig:
+    $ref: paths/LDAPDirectoryService@DeleteLDAPDirectoryServiceConfig.yaml
+  /LDAPDirectoryService/GetCloudConnectors:
+    $ref: paths/LDAPDirectoryService@GetCloudConnectors.yaml
+  /LDAPDirectoryService/GetDirectoryServiceVersion:
+    $ref: paths/LDAPDirectoryService@GetDirectoryServiceVersion.yaml
+  /LDAPDirectoryService/GetLDAPDirectoryServiceConfig:
+    $ref: paths/LDAPDirectoryService@GetLDAPDirectoryServiceConfig.yaml
+  /LDAPDirectoryService/GetLDAPDirectoryServiceUuidByName:
+    $ref: paths/LDAPDirectoryService@GetLDAPDirectoryServiceUuidByName.yaml
+  /LDAPDirectoryService/GetMappableAttributeList:
+    $ref: paths/LDAPDirectoryService@GetMappableAttributeList.yaml
+  /LDAPDirectoryService/GetPropertyToAttributeMappings:
+    $ref: paths/LDAPDirectoryService@GetPropertyToAttributeMappings.yaml
+  /LDAPDirectoryService/GetScriptingPropertyToAttributeMappings:
+    $ref: paths/LDAPDirectoryService@GetScriptingPropertyToAttributeMappings.yaml
+  /LDAPDirectoryService/ModifyLDAPDirectoryServiceConfig:
+    $ref: paths/LDAPDirectoryService@ModifyLDAPDirectoryServiceConfig.yaml
+  /LDAPDirectoryService/SetPropertyToAttributeMappings:
+    $ref: paths/LDAPDirectoryService@SetPropertyToAttributeMappings.yaml
+  /LDAPDirectoryService/SetScriptingPropertyToAttributeMappings:
+    $ref: paths/LDAPDirectoryService@SetScriptingPropertyToAttributeMappings.yaml
+  /LDAPDirectoryService/TestUserLookup:
+    $ref: paths/LDAPDirectoryService@TestUserLookup.yaml
+  /LDAPDirectoryService/VerifyLDAPDirectoryServiceConfig:
+    $ref: paths/LDAPDirectoryService@VerifyLDAPDirectoryServiceConfig.yaml
+  /Mobile/DeleteApnsCertForClientApp:
+    $ref: paths/Mobile@DeleteApnsCertForClientApp.yaml
+  /Mobile/DeleteDevice:
+    $ref: paths/Mobile@DeleteDevice.yaml
+  /Mobile/DisableSSO:
+    $ref: paths/Mobile@DisableSSO.yaml
+  /Mobile/EnableSSO:
+    $ref: paths/Mobile@EnableSSO.yaml
+  /Mobile/GetGlobalDevicePermissions:
+    $ref: paths/Mobile@GetGlobalDevicePermissions.yaml
+  /Mobile/KnoxResetContainerPassword:
+    $ref: paths/Mobile@KnoxResetContainerPassword.yaml
+  /Mobile/LockClientApp:
+    $ref: paths/Mobile@LockClientApp.yaml
+  /Mobile/LockDevice:
+    $ref: paths/Mobile@LockDevice.yaml
+  /Mobile/PingDevice:
+    $ref: paths/Mobile@PingDevice.yaml
+  /Mobile/PowerOff:
+    $ref: paths/Mobile@PowerOff.yaml
+  /Mobile/ReapplyDevicePolicy:
+    $ref: paths/Mobile@ReapplyDevicePolicy.yaml
+  /Mobile/Reboot:
+    $ref: paths/Mobile@Reboot.yaml
+  /Mobile/RemoveDeviceProfile:
+    $ref: paths/Mobile@RemoveDeviceProfile.yaml
+  /Mobile/ResetClientAppLockPin:
+    $ref: paths/Mobile@ResetClientAppLockPin.yaml
+  /Mobile/SetApnsCertForClientApp:
+    $ref: paths/Mobile@SetApnsCertForClientApp.yaml
+  /Mobile/SetDevicePermissions:
+    $ref: paths/Mobile@SetDevicePermissions.yaml
+  /Mobile/SetPrimaryDevice:
+    $ref: paths/Mobile@SetPrimaryDevice.yaml
+  /Mobile/UnlockDevice:
+    $ref: paths/Mobile@UnlockDevice.yaml
+  /Mobile/UpdateDevicePolicy:
+    $ref: paths/Mobile@UpdateDevicePolicy.yaml
+  /Mobile/WipeDevice:
+    $ref: paths/Mobile@WipeDevice.yaml
+  /Oath/AddOrUpdateProfile:
+    $ref: paths/Oath@AddOrUpdateProfile.yaml
+  /Oath/CentrifyOathOtpProfileCheck:
+    $ref: paths/Oath@CentrifyOathOtpProfileCheck.yaml
+  /Oath/CloudOathOtpProfileCheck:
+    $ref: paths/Oath@CloudOathOtpProfileCheck.yaml
+  /Oath/DeleteProfiles:
+    $ref: paths/Oath@DeleteProfiles.yaml
+  /Oath/GetDataFromCsvFile:
+    $ref: paths/Oath@GetDataFromCsvFile.yaml
+  /Oath/GetImportProfileList:
+    $ref: paths/Oath@GetImportProfileList.yaml
+  /Oath/GetProfileList:
+    $ref: paths/Oath@GetProfileList.yaml
+  /Oath/GetProfileListForDevice:
+    $ref: paths/Oath@GetProfileListForDevice.yaml
+  /Oath/ResetCentrifyOathProfile:
+    $ref: paths/Oath@ResetCentrifyOathProfile.yaml
+  /Oath/ResetCloudOathProfile:
+    $ref: paths/Oath@ResetCloudOathProfile.yaml
+  /Oath/ResynchronizeOathToken:
+    $ref: paths/Oath@ResynchronizeOathToken.yaml
+  /Oath/SaveProfile:
+    $ref: paths/Oath@SaveProfile.yaml
+  /Oath/SetResponseParamsToEntity:
+    $ref: paths/Oath@SetResponseParamsToEntity.yaml
+  /Oath/SubmitUploadedFile:
+    $ref: paths/Oath@SubmitUploadedFile.yaml
+  /Oath/UpdateOathProfileCounter:
+    $ref: paths/Oath@UpdateOathProfileCounter.yaml
+  /Oath/ValidateOtpCode:
+    $ref: paths/Oath@ValidateOtpCode.yaml
+  /OAuth2/Authorize:
+    $ref: paths/OAuth2@Authorize.yaml
+  /OAuth2/Confirm:
+    $ref: paths/OAuth2@Confirm.yaml
+  /OAuth2/EndSession:
+    $ref: paths/OAuth2@EndSession.yaml
+  /OAuth2/GetMeta:
+    $ref: paths/OAuth2@GetMeta.yaml
+  /OAuth2/Introspect:
+    $ref: paths/OAuth2@Introspect.yaml
+  /OAuth2/Keys:
+    $ref: paths/OAuth2@Keys.yaml
+  /OAuth2/PlatformToken:
+    $ref: paths/OAuth2@PlatformToken.yaml
+  /OAuth2/Revoke:
+    $ref: paths/OAuth2@Revoke.yaml
+  /OAuth2/Token:
+    $ref: paths/OAuth2@Token.yaml
+  /OAuth2/UserInfo:
+    $ref: paths/OAuth2@UserInfo.yaml
+  /OAuth2Man/CreateClientToken:
+    $ref: paths/OAuth2Man@CreateClientToken.yaml
+  /Org/ChangeMemberShip:
+    $ref: paths/Org@ChangeMemberShip.yaml
+  /Org/Create:
+    $ref: paths/Org@Create.yaml
+  /Org/Delete:
+    $ref: paths/Org@Delete.yaml
+  /Org/Get:
+    $ref: paths/Org@Get.yaml
+  /Org/GetAdministrators:
+    $ref: paths/Org@GetAdministrators.yaml
+  /Org/GetPermission:
+    $ref: paths/Org@GetPermission.yaml
+  /Org/GetRoles:
+    $ref: paths/Org@GetRoles.yaml
+  /Org/ListAll:
+    $ref: paths/Org@ListAll.yaml
+  /Org/TaskCheck:
+    $ref: paths/Org@TaskCheck.yaml
+  /Org/Update:
+    $ref: paths/Org@Update.yaml
+  /Org/UpdateAdministrators:
+    $ref: paths/Org@UpdateAdministrators.yaml
+  /Org/UpdatePermission:
+    $ref: paths/Org@UpdatePermission.yaml
+  /PKI/Login:
+    $ref: paths/PKI@Login.yaml
+  /Policy/AddAuthPolicyModifier:
+    $ref: paths/Policy@AddAuthPolicyModifier.yaml
+  /Policy/DeleteAuthPolicyModifier:
+    $ref: paths/Policy@DeleteAuthPolicyModifier.yaml
+  /Policy/DeletePolicyBlock:
+    $ref: paths/Policy@DeletePolicyBlock.yaml
+  /Policy/GetAuthPolicyModifiers:
+    $ref: paths/Policy@GetAuthPolicyModifiers.yaml
+  /Policy/GetNicePlinks:
+    $ref: paths/Policy@GetNicePlinks.yaml
+  /Policy/GetNicePolicyBlock:
+    $ref: paths/Policy@GetNicePolicyBlock.yaml
+  /Policy/GetOathOtpClientName:
+    $ref: paths/Policy@GetOathOtpClientName.yaml
+  /Policy/GetPasswordComplexityRequirements:
+    $ref: paths/Policy@GetPasswordComplexityRequirements.yaml
+  /Policy/GetPlinks:
+    $ref: paths/Policy@GetPlinks.yaml
+  /Policy/GetPolicyBlock:
+    $ref: paths/Policy@GetPolicyBlock.yaml
+  /Policy/GetPolicyBool:
+    $ref: paths/Policy@GetPolicyBool.yaml
+  /Policy/GetPolicyInt:
+    $ref: paths/Policy@GetPolicyInt.yaml
+  /Policy/GetPolicyMetaData:
+    $ref: paths/Policy@GetPolicyMetaData.yaml
+  /Policy/GetPolicyString:
+    $ref: paths/Policy@GetPolicyString.yaml
+  /Policy/GetRsop:
+    $ref: paths/Policy@GetRsop.yaml
+  /Policy/GetU2fClientName:
+    $ref: paths/Policy@GetU2fClientName.yaml
+  /Policy/GetUsingCloudMobileGP:
+    $ref: paths/Policy@GetUsingCloudMobileGP.yaml
+  /Policy/PolicyChecks:
+    $ref: paths/Policy@PolicyChecks.yaml
+  /Policy/SavePolicyBlock2:
+    $ref: paths/Policy@SavePolicyBlock2.yaml
+  /Policy/SavePolicyBlock3:
+    $ref: paths/Policy@SavePolicyBlock3.yaml
+  /Policy/SetPlinks:
+    $ref: paths/Policy@SetPlinks.yaml
+  /Policy/SetPlinksv2:
+    $ref: paths/Policy@SetPlinksv2.yaml
+  /Policy/SetUsingCloudMobileGP:
+    $ref: paths/Policy@SetUsingCloudMobileGP.yaml
+  /Ppm/GetScriptWithMetadata:
+    $ref: paths/Ppm@GetScriptWithMetadata.yaml
+  /Ppm/UpdatePpmConfig:
+    $ref: paths/Ppm@UpdatePpmConfig.yaml
+  /Radius/GetClients:
+    $ref: paths/Radius@GetClients.yaml
+  /Radius/GetConfig:
+    $ref: paths/Radius@GetConfig.yaml
+  /Radius/GetServers:
+    $ref: paths/Radius@GetServers.yaml
+  /Radius/GetUserIdentifierAttributes:
+    $ref: paths/Radius@GetUserIdentifierAttributes.yaml
+  /Radius/RemoveClients:
+    $ref: paths/Radius@RemoveClients.yaml
+  /Radius/RemoveServers:
+    $ref: paths/Radius@RemoveServers.yaml
+  /Radius/SetClient:
+    $ref: paths/Radius@SetClient.yaml
+  /Radius/SetConfig:
+    $ref: paths/Radius@SetConfig.yaml
+  /Radius/SetServer:
+    $ref: paths/Radius@SetServer.yaml
+  /Registration/CustomerInfo:
+    $ref: paths/Registration@CustomerInfo.yaml
+  /Registration/RegisterNewTenant:
+    $ref: paths/Registration@RegisterNewTenant.yaml
+  /Roles/GetPagedRoleMembers:
+    $ref: paths/Roles@GetPagedRoleMembers.yaml
+  /Roles/GetRole:
+    $ref: paths/Roles@GetRole.yaml
+  /Roles/GetRoleMembers:
+    $ref: paths/Roles@GetRoleMembers.yaml
+  /Roles/SetDynamicRoleScript:
+    $ref: paths/Roles@SetDynamicRoleScript.yaml
+  /Roles/StoreRole:
+    $ref: paths/Roles@StoreRole.yaml
+  /Roles/TestDynamicRoleScript:
+    $ref: paths/Roles@TestDynamicRoleScript.yaml
+  /Roles/UpdateRole:
+    $ref: paths/Roles@UpdateRole.yaml
+  /SaasManage/AddUsersAndGroupsToRole:
+    $ref: paths/SaasManage@AddUsersAndGroupsToRole.yaml
+  /SaasManage/DeleteApplication:
+    $ref: paths/SaasManage@DeleteApplication.yaml
+  /SaasManage/DeleteRole:
+    $ref: paths/SaasManage@DeleteRole.yaml
+  /SaasManage/DeleteRoles:
+    $ref: paths/SaasManage@DeleteRoles.yaml
+  /SaasManage/GetAppIDByServiceName:
+    $ref: paths/SaasManage@GetAppIDByServiceName.yaml
+  /SaasManage/GetApplication:
+    $ref: paths/SaasManage@GetApplication.yaml
+  /SaasManage/GetRole:
+    $ref: paths/SaasManage@GetRole.yaml
+  /SaasManage/GetRoleMembers:
+    $ref: paths/SaasManage@GetRoleMembers.yaml
+  /SaasManage/GetTemplatesAndCategories:
+    $ref: paths/SaasManage@GetTemplatesAndCategories.yaml
+  /SaasManage/ImportAppFromTemplate:
+    $ref: paths/SaasManage@ImportAppFromTemplate.yaml
+  /SaasManage/IsApplicationAvailableInCatalog:
+    $ref: paths/SaasManage@IsApplicationAvailableInCatalog.yaml
+  /SaasManage/RemoveUsersAndGroupsFromRole:
+    $ref: paths/SaasManage@RemoveUsersAndGroupsFromRole.yaml
+  /SaasManage/SetApplicationPermissions:
+    $ref: paths/SaasManage@SetApplicationPermissions.yaml
+  /SaasManage/StoreRole:
+    $ref: paths/SaasManage@StoreRole.yaml
+  /SaasManage/UpdateApplicationDE:
+    $ref: paths/SaasManage@UpdateApplicationDE.yaml
+  /SaasManage/UpdateRole:
+    $ref: paths/SaasManage@UpdateRole.yaml
+  /SchedulerHistory/DeleteJobHistory:
+    $ref: paths/SchedulerHistory@DeleteJobHistory.yaml
+  /SchedulerHistory/GetJobReport:
+    $ref: paths/SchedulerHistory@GetJobReport.yaml
+  /Security/AdvanceAuthentication:
+    $ref: paths/Security@AdvanceAuthentication.yaml
+  /Security/AdvanceForgotUsername:
+    $ref: paths/Security@AdvanceForgotUsername.yaml
+  /Security/AmIAuthenticated:
+    $ref: paths/Security@AmIAuthenticated.yaml
+  /Security/AnswerOOBChallenge:
+    $ref: paths/Security@AnswerOOBChallenge.yaml
+  /Security/ChallengeUser:
+    $ref: paths/Security@ChallengeUser.yaml
+  /Security/CleanupAuthentication:
+    $ref: paths/Security@CleanupAuthentication.yaml
+  /Security/DoIHaveRight:
+    $ref: paths/Security@DoIHaveRight.yaml
+  /Security/ForgotUsername:
+    $ref: paths/Security@ForgotUsername.yaml
+  /Security/GetOneTimePassword:
+    $ref: paths/Security@GetOneTimePassword.yaml
+  /Security/GetQRCodeStatus:
+    $ref: paths/Security@GetQRCodeStatus.yaml
+  /Security/GetRiskAnalysisLevels:
+    $ref: paths/Security@GetRiskAnalysisLevels.yaml
+  /Security/GetTokenForUser:
+    $ref: paths/Security@GetTokenForUser.yaml
+  /Security/Login:
+    $ref: paths/Security@Login.yaml
+  /Security/Logout:
+    $ref: paths/Security@Logout.yaml
+  /Security/MultiAuthLogin:
+    $ref: paths/Security@MultiAuthLogin.yaml
+  /Security/OnDemandChallenge:
+    $ref: paths/Security@OnDemandChallenge.yaml
+  /Security/OobAuthStatus:
+    $ref: paths/Security@OobAuthStatus.yaml
+  /Security/RefreshToken:
+    $ref: paths/Security@RefreshToken.yaml
+  /Security/ResumeFromExtIdpAuth:
+    $ref: paths/Security@ResumeFromExtIdpAuth.yaml
+  /Security/SetUserSecurityImage:
+    $ref: paths/Security@SetUserSecurityImage.yaml
+  /Security/StartAuthentication:
+    $ref: paths/Security@StartAuthentication.yaml
+  /Security/StartChallenge:
+    $ref: paths/Security@StartChallenge.yaml
+  /Security/StartForgotUsername:
+    $ref: paths/Security@StartForgotUsername.yaml
+  /Security/StartQRCodeAuthentication:
+    $ref: paths/Security@StartQRCodeAuthentication.yaml
+  /Security/StartSocialAuthentication:
+    $ref: paths/Security@StartSocialAuthentication.yaml
+  /Security/SubmitDuo:
+    $ref: paths/Security@SubmitDuo.yaml
+  /Security/SubmitOathOtpCode:
+    $ref: paths/Security@SubmitOathOtpCode.yaml
+  /Security/SubmitQRCode:
+    $ref: paths/Security@SubmitQRCode.yaml
+  /Security/TaskCheck:
+    $ref: paths/Security@TaskCheck.yaml
+  /Security/TaskChecks:
+    $ref: paths/Security@TaskChecks.yaml
+  /Security/TwilioPhoneChallengeCompleted:
+    $ref: paths/Security@TwilioPhoneChallengeCompleted.yaml
+  /Security/TwilioPhoneChallengeNotAnswered:
+    $ref: paths/Security@TwilioPhoneChallengeNotAnswered.yaml
+  /Security/WhoAmI:
+    $ref: paths/Security@WhoAmI.yaml
+  /ServerAgent/AddEnrollmentCode:
+    $ref: paths/ServerAgent@AddEnrollmentCode.yaml
+  /ServerAgent/DeleteEnrollmentCode:
+    $ref: paths/ServerAgent@DeleteEnrollmentCode.yaml
+  /ServerAgent/DisableFeatures:
+    $ref: paths/ServerAgent@DisableFeatures.yaml
+  /ServerAgent/EnableFeatures:
+    $ref: paths/ServerAgent@EnableFeatures.yaml
+  /ServerAgent/EnableFeaturesV2:
+    $ref: paths/ServerAgent@EnableFeaturesV2.yaml
+  /ServerAgent/Enroll:
+    $ref: paths/ServerAgent@Enroll.yaml
+  /ServerAgent/EnrollV2:
+    $ref: paths/ServerAgent@EnrollV2.yaml
+  /ServerAgent/GetAllEnrollmentCodes:
+    $ref: paths/ServerAgent@GetAllEnrollmentCodes.yaml
+  /ServerAgent/GetCertificate:
+    $ref: paths/ServerAgent@GetCertificate.yaml
+  /ServerAgent/Register:
+    $ref: paths/ServerAgent@Register.yaml
+  /ServerAgent/RegisterV2:
+    $ref: paths/ServerAgent@RegisterV2.yaml
+  /ServerAgent/Unenroll:
+    $ref: paths/ServerAgent@Unenroll.yaml
+  /ServerAgent/VerifyPasswordV2:
+    $ref: paths/ServerAgent@VerifyPasswordV2.yaml
+  /ServerManage/AddAccount:
+    $ref: paths/ServerManage@AddAccount.yaml
+  /ServerManage/CheckoutPassword:
+    $ref: paths/ServerManage@CheckoutPassword.yaml
+  /ServerManage/DeleteAccount:
+    $ref: paths/ServerManage@DeleteAccount.yaml
+  /ServerManage/GetAccountPermissions:
+    $ref: paths/ServerManage@GetAccountPermissions.yaml
+  /ServerManage/GetAdministrativeAccountCandidates:
+    $ref: paths/ServerManage@GetAdministrativeAccountCandidates.yaml
+  /ServerManage/GetAdministrativeAccounts:
+    $ref: paths/ServerManage@GetAdministrativeAccounts.yaml
+  /ServerManage/GetAllADTopologyWithAdministrativeAccounts:
+    $ref: paths/ServerManage@GetAllADTopologyWithAdministrativeAccounts.yaml
+  /ServerManage/GetDomainAccountStatus:
+    $ref: paths/ServerManage@GetDomainAccountStatus.yaml
+  /ServerManage/GetRetiredPassword:
+    $ref: paths/ServerManage@GetRetiredPassword.yaml
+  /ServerManage/SetAccountPermissions:
+    $ref: paths/ServerManage@SetAccountPermissions.yaml
+  /ServerManage/SetAdministrativeAccounts:
+    $ref: paths/ServerManage@SetAdministrativeAccounts.yaml
+  /ServerManage/SetDomainPermissions:
+    $ref: paths/ServerManage@SetDomainPermissions.yaml
+  /ServerManage/UpdateAccount:
+    $ref: paths/ServerManage@UpdateAccount.yaml
+  /Signup/GetVerificationState:
+    $ref: paths/Signup@GetVerificationState.yaml
+  /Signup/SendVerificationEmail:
+    $ref: paths/Signup@SendVerificationEmail.yaml
+  /Signup/VerifyLink:
+    $ref: paths/Signup@VerifyLink.yaml
+  /SocialAuth/FacebookAuthCallback:
+    $ref: paths/SocialAuth@FacebookAuthCallback.yaml
+  /SocialAuth/GoogleAuthCallback:
+    $ref: paths/SocialAuth@GoogleAuthCallback.yaml
+  /SocialAuth/LinkedInAuthCallback:
+    $ref: paths/SocialAuth@LinkedInAuthCallback.yaml
+  /SocialAuth/MicrosoftActAuthCallback:
+    $ref: paths/SocialAuth@MicrosoftActAuthCallback.yaml
+  /SocialAuth/TwitterAuthCallback:
+    $ref: paths/SocialAuth@TwitterAuthCallback.yaml
+  /SocialAuthMgmt/GetAllCustomConfig:
+    $ref: paths/SocialAuthMgmt@GetAllCustomConfig.yaml
+  /SocialAuthMgmt/GetApplicationClientSecret:
+    $ref: paths/SocialAuthMgmt@GetApplicationClientSecret.yaml
+  /SocialAuthMgmt/GetAuthConfig:
+    $ref: paths/SocialAuthMgmt@GetAuthConfig.yaml
+  /SocialAuthMgmt/GetCustomConfig:
+    $ref: paths/SocialAuthMgmt@GetCustomConfig.yaml
+  /SocialAuthMgmt/ResetAuthConfig:
+    $ref: paths/SocialAuthMgmt@ResetAuthConfig.yaml
+  /SocialAuthMgmt/SetAuthConfig:
+    $ref: paths/SocialAuthMgmt@SetAuthConfig.yaml
+  /SocialAuthMgmt/SetCustomConfig:
+    $ref: paths/SocialAuthMgmt@SetCustomConfig.yaml
+  /StaticVfs/GetFile:
+    $ref: paths/StaticVfs@GetFile.yaml
+  /SysInfo/About:
+    $ref: paths/SysInfo@About.yaml
+  /SysInfo/Dummy:
+    $ref: paths/SysInfo@Dummy.yaml
+  /SysInfo/GetMySession:
+    $ref: paths/SysInfo@GetMySession.yaml
+  /SysInfo/Version:
+    $ref: paths/SysInfo@Version.yaml
+  /Task/CancelJob:
+    $ref: paths/Task@CancelJob.yaml
+  /Task/CreateOneTimeJob:
+    $ref: paths/Task@CreateOneTimeJob.yaml
+  /Task/EmailReport:
+    $ref: paths/Task@EmailReport.yaml
+  /Task/GetJobHistory:
+    $ref: paths/Task@GetJobHistory.yaml
+  /Task/GetSingleJobHistory:
+    $ref: paths/Task@GetSingleJobHistory.yaml
+  /Task/JobReport:
+    $ref: paths/Task@JobReport.yaml
+  /TenantCnames/Get:
+    $ref: paths/TenantCnames@Get.yaml
+  /TenantCnames/GetDomainInfo:
+    $ref: paths/TenantCnames@GetDomainInfo.yaml
+  /TenantCnames/Register:
+    $ref: paths/TenantCnames@Register.yaml
+  /TenantCnames/SetPreferred:
+    $ref: paths/TenantCnames@SetPreferred.yaml
+  /TenantCnames/UiGet:
+    $ref: paths/TenantCnames@UiGet.yaml
+  /TenantCnames/UnRegister:
+    $ref: paths/TenantCnames@UnRegister.yaml
+  /TenantConfig/DeleteAdminSecurityQuestion:
+    $ref: paths/TenantConfig@DeleteAdminSecurityQuestion.yaml
+  /TenantConfig/DeleteAdvancedConfig:
+    $ref: paths/TenantConfig@DeleteAdvancedConfig.yaml
+  /TenantConfig/GetAdminSecurityQuestion:
+    $ref: paths/TenantConfig@GetAdminSecurityQuestion.yaml
+  /TenantConfig/GetAdminSecurityQuestions:
+    $ref: paths/TenantConfig@GetAdminSecurityQuestions.yaml
+  /TenantConfig/GetAdvancedConfig:
+    $ref: paths/TenantConfig@GetAdvancedConfig.yaml
+  /TenantConfig/GetCustomerConfig:
+    $ref: paths/TenantConfig@GetCustomerConfig.yaml
+  /TenantConfig/GetEditableMailTemplates:
+    $ref: paths/TenantConfig@GetEditableMailTemplates.yaml
+  /TenantConfig/GetEditableMessageTemplate:
+    $ref: paths/TenantConfig@GetEditableMessageTemplate.yaml
+  /TenantConfig/GetEditableMessageTemplates:
+    $ref: paths/TenantConfig@GetEditableMessageTemplates.yaml
+  /TenantConfig/GetGoogleKey:
+    $ref: paths/TenantConfig@GetGoogleKey.yaml
+  /TenantConfig/GetMobileConfig:
+    $ref: paths/TenantConfig@GetMobileConfig.yaml
+  /TenantConfig/GetSMTPConfig:
+    $ref: paths/TenantConfig@GetSMTPConfig.yaml
+  /TenantConfig/GetTelephonyCreditsNotificationConfig:
+    $ref: paths/TenantConfig@GetTelephonyCreditsNotificationConfig.yaml
+  /TenantConfig/GetTwilioConfig:
+    $ref: paths/TenantConfig@GetTwilioConfig.yaml
+  /TenantConfig/ResetPortalConfig:
+    $ref: paths/TenantConfig@ResetPortalConfig.yaml
+  /TenantConfig/SendTestMessageTemplate:
+    $ref: paths/TenantConfig@SendTestMessageTemplate.yaml
+  /TenantConfig/SetAdminSecurityQuestion:
+    $ref: paths/TenantConfig@SetAdminSecurityQuestion.yaml
+  /TenantConfig/SetAdvancedConfig:
+    $ref: paths/TenantConfig@SetAdvancedConfig.yaml
+  /TenantConfig/SetCustomerConfig:
+    $ref: paths/TenantConfig@SetCustomerConfig.yaml
+  /TenantConfig/SetGoogleKey:
+    $ref: paths/TenantConfig@SetGoogleKey.yaml
+  /TenantConfig/SetMobileConfig:
+    $ref: paths/TenantConfig@SetMobileConfig.yaml
+  /TenantConfig/SetPasswordPersistance:
+    $ref: paths/TenantConfig@SetPasswordPersistance.yaml
+  /TenantConfig/SetSMTPConfig:
+    $ref: paths/TenantConfig@SetSMTPConfig.yaml
+  /TenantConfig/SetTelephonyCreditsNotificationConfig:
+    $ref: paths/TenantConfig@SetTelephonyCreditsNotificationConfig.yaml
+  /TenantConfig/SetTwilioConfig:
+    $ref: paths/TenantConfig@SetTwilioConfig.yaml
+  /TenantConfig/TestSMTPConfig:
+    $ref: paths/TenantConfig@TestSMTPConfig.yaml
+  /TenantConfig/TestTwilioConfig:
+    $ref: paths/TenantConfig@TestTwilioConfig.yaml
+  /U/Evaluate:
+    $ref: paths/U@Evaluate.yaml
+  /U2f/AnswerRegistrationChallenge:
+    $ref: paths/U2f@AnswerRegistrationChallenge.yaml
+  /U2f/DeleteU2fDevice:
+    $ref: paths/U2f@DeleteU2fDevice.yaml
+  /U2f/DeleteU2fDevices:
+    $ref: paths/U2f@DeleteU2fDevices.yaml
+  /U2f/Facets:
+    $ref: paths/U2f@Facets.yaml
+  /U2f/GetRegistrationChallenge:
+    $ref: paths/U2f@GetRegistrationChallenge.yaml
+  /U2f/GetU2fDevices:
+    $ref: paths/U2f@GetU2fDevices.yaml
+  /U2f/GetU2fDevicesForUser:
+    $ref: paths/U2f@GetU2fDevicesForUser.yaml
+  /UPRest/CreateTagWithNoApp:
+    $ref: paths/UPRest@CreateTagWithNoApp.yaml
+  /UPRest/DeleteTag:
+    $ref: paths/UPRest@DeleteTag.yaml
+  /UPRest/GetAppByKey:
+    $ref: paths/UPRest@GetAppByKey.yaml
+  /UPRest/GetResultantAppsForUser:
+    $ref: paths/UPRest@GetResultantAppsForUser.yaml
+  /UPRest/GetTagsForApp:
+    $ref: paths/UPRest@GetTagsForApp.yaml
+  /UPRest/GetUPData:
+    $ref: paths/UPRest@GetUPData.yaml
+  /UPRest/RenameTag:
+    $ref: paths/UPRest@RenameTag.yaml
+  /UPRest/SetUserCredsForApp:
+    $ref: paths/UPRest@SetUserCredsForApp.yaml
+  /UPRest/UpdateCredsForSecuredItem:
+    $ref: paths/UPRest@UpdateCredsForSecuredItem.yaml
+  /UPRest/UpdateUserApplication:
+    $ref: paths/UPRest@UpdateUserApplication.yaml
+  /UPRest/UploadSecuredItemIcon:
+    $ref: paths/UPRest@UploadSecuredItemIcon.yaml
+  /UPRest/UpsertTagsForApp:
+    $ref: paths/UPRest@UpsertTagsForApp.yaml
+  /UPRest/UpsertTagsForSecuredItem:
+    $ref: paths/UPRest@UpsertTagsForSecuredItem.yaml
+  /User/UpdateProfile:
+    $ref: paths/User@UpdateProfile.yaml
+  /UserMgmt/AnalyzeAdaptiveMfaRisk:
+    $ref: paths/UserMgmt@AnalyzeAdaptiveMfaRisk.yaml
+  /UserMgmt/CanEditUserAttributes:
+    $ref: paths/UserMgmt@CanEditUserAttributes.yaml
+  /UserMgmt/ChangeUserAttributes:
+    $ref: paths/UserMgmt@ChangeUserAttributes.yaml
+  /UserMgmt/ChangeUserPassword:
+    $ref: paths/UserMgmt@ChangeUserPassword.yaml
+  /UserMgmt/CheckUserProfileChallenge:
+    $ref: paths/UserMgmt@CheckUserProfileChallenge.yaml
+  /UserMgmt/DirectoryServiceQuery:
+    $ref: paths/UserMgmt@DirectoryServiceQuery.yaml
+  /UserMgmt/GetCachedEntity:
+    $ref: paths/UserMgmt@GetCachedEntity.yaml
+  /UserMgmt/GetCachedUser:
+    $ref: paths/UserMgmt@GetCachedUser.yaml
+  /UserMgmt/GetSecurityQuestions:
+    $ref: paths/UserMgmt@GetSecurityQuestions.yaml
+  /UserMgmt/GetUserAttributes:
+    $ref: paths/UserMgmt@GetUserAttributes.yaml
+  /UserMgmt/GetUserCertificateInfo:
+    $ref: paths/UserMgmt@GetUserCertificateInfo.yaml
+  /UserMgmt/GetUserHierarchy:
+    $ref: paths/UserMgmt@GetUserHierarchy.yaml
+  /UserMgmt/GetUserInfo:
+    $ref: paths/UserMgmt@GetUserInfo.yaml
+  /UserMgmt/GetUserPicture:
+    $ref: paths/UserMgmt@GetUserPicture.yaml
+  /UserMgmt/GetUserPreferences:
+    $ref: paths/UserMgmt@GetUserPreferences.yaml
+  /UserMgmt/GetUsersRolesAndAdministrativeRights:
+    $ref: paths/UserMgmt@GetUsersRolesAndAdministrativeRights.yaml
+  /UserMgmt/InviteUsers:
+    $ref: paths/UserMgmt@InviteUsers.yaml
+  /UserMgmt/IsUserCloudLocked:
+    $ref: paths/UserMgmt@IsUserCloudLocked.yaml
+  /UserMgmt/IsUserLockedOutByPolicy:
+    $ref: paths/UserMgmt@IsUserLockedOutByPolicy.yaml
+  /UserMgmt/IsUserSubjectToCloudLocks:
+    $ref: paths/UserMgmt@IsUserSubjectToCloudLocks.yaml
+  /UserMgmt/RemoveUser:
+    $ref: paths/UserMgmt@RemoveUser.yaml
+  /UserMgmt/RemoveUserCertificate:
+    $ref: paths/UserMgmt@RemoveUserCertificate.yaml
+  /UserMgmt/RemoveUsers:
+    $ref: paths/UserMgmt@RemoveUsers.yaml
+  /UserMgmt/ResetSecurityQuestions:
+    $ref: paths/UserMgmt@ResetSecurityQuestions.yaml
+  /UserMgmt/ResetUserPassword:
+    $ref: paths/UserMgmt@ResetUserPassword.yaml
+  /UserMgmt/SendLoginEmail:
+    $ref: paths/UserMgmt@SendLoginEmail.yaml
+  /UserMgmt/SendLoginEmails:
+    $ref: paths/UserMgmt@SendLoginEmails.yaml
+  /UserMgmt/SendSmsInvite:
+    $ref: paths/UserMgmt@SendSmsInvite.yaml
+  /UserMgmt/SetCloudLock:
+    $ref: paths/UserMgmt@SetCloudLock.yaml
+  /UserMgmt/SetPhonePin:
+    $ref: paths/UserMgmt@SetPhonePin.yaml
+  /UserMgmt/SetSecurityQuestion:
+    $ref: paths/UserMgmt@SetSecurityQuestion.yaml
+  /UserMgmt/SignOutCurrentSession:
+    $ref: paths/UserMgmt@SignOutCurrentSession.yaml
+  /UserMgmt/SignOutEverywhere:
+    $ref: paths/UserMgmt@SignOutEverywhere.yaml
+  /UserMgmt/UncacheUserPreferences:
+    $ref: paths/UserMgmt@UncacheUserPreferences.yaml
+  /UserMgmt/UpdateSecurityQuestions:
+    $ref: paths/UserMgmt@UpdateSecurityQuestions.yaml
+  /UserMgmt/UpdateUserPreferences:
+    $ref: paths/UserMgmt@UpdateUserPreferences.yaml
+  /Vfs/GetFile:
+    $ref: paths/Vfs@GetFile.yaml
+  /Vfs/GetFileLower:
+    $ref: paths/Vfs@GetFileLower.yaml
+  /WinDpa/CreateUser:
+    $ref: paths/WinDpa@CreateUser.yaml
+  /WinDpa/DeleteUser:
+    $ref: paths/WinDpa@DeleteUser.yaml
+  /WinDpa/GetDpaAdmin:
+    $ref: paths/WinDpa@GetDpaAdmin.yaml
+  /WinDpa/SetDpaAdmin:
+    $ref: paths/WinDpa@SetDpaAdmin.yaml
+  /WinDpa/SetDpaConfig:
+    $ref: paths/WinDpa@SetDpaConfig.yaml
+  /Zso/AuthenticateSession:
+    $ref: paths/Zso@AuthenticateSession.yaml
+  /Zso/CertLogin:
+    $ref: paths/Zso@CertLogin.yaml
+  /Zso/ClearMacSafariZsoCookie:
+    $ref: paths/Zso@ClearMacSafariZsoCookie.yaml
+  /Zso/IsMacSafariZsoCookieSet:
+    $ref: paths/Zso@IsMacSafariZsoCookieSet.yaml
+  /Zso/IsSessionAuthenticated:
+    $ref: paths/Zso@IsSessionAuthenticated.yaml
+  /Zso/SetMacSafariZsoCookie:
+    $ref: paths/Zso@SetMacSafariZsoCookie.yaml
+x-explorer-enabled: false

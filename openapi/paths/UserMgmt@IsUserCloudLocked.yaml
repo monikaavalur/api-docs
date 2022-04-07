@@ -1,0 +1,22 @@
+post:
+  tags:
+    - User Management
+  summary: Checks to see if a given user is cloud locked.
+  description: >-
+    You must be a system administrator, have user management permissions, or be
+    checking yourself.
+  parameters:
+    - name: user
+      in: query
+      description: The name or uuid of the user to check.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UserMgmtIsUserCloudLocked.yaml
+  x-idap-anon: false

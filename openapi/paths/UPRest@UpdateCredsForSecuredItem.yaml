@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Application Management
+  summary: Update secured item credentials.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Password:
+              type: string
+              description: User password
+            CustomFields:
+              type: string
+              description: Custom user fields
+            Notes:
+              type: string
+              description: Notes for secured item
+            Username:
+              type: string
+              description: Username
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestUpdateCredsForSecuredItem.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

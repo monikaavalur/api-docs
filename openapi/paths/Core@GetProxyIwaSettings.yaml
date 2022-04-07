@@ -1,0 +1,19 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the Iwa settings for the connector Uuid.
+  parameters:
+    - name: proxyUuid
+      in: query
+      description: The connector Uuid.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreGetProxyIwaSettings.yaml
+  x-idap-anon: false

@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Device Management
+  summary: Enroll an Android Mobile Device
+  description: |-
+    <strong><font color = #46B8DA> Early access </font>
+                This API is an early access API. It is possible that it may change in near future.</strong>
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Udid
+          type: object
+          properties:
+            Version:
+              type: string
+              description: Version of OS running on the mobile device
+            Os:
+              type: string
+              description: Operating system of the device
+            SimpleName:
+              type: string
+              description: Simple name of the mobile device
+            Udid:
+              type: string
+              description: Device Unique Identifier of the mobile device
+            Imei:
+              type: string
+              description: IMEI number of the mobile device
+            Manufacturer:
+              type: string
+              description: Manufacturer name
+            Name:
+              type: string
+              description: Name of the mobile device
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/DeviceEnrollAndroidDevice.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

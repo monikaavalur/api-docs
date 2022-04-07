@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Retrieves a string policy value.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - name
+          type: object
+          properties:
+            name:
+              type: string
+              description: Where in the policy to read.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetPolicyString.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

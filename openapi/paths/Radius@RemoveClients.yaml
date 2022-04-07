@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Remove one or more radius clients if they exist.
+  description: You must be a system administrator or have radius administrator permissions.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - clients
+          type: object
+          properties:
+            clients:
+              type: array
+              description: List of client addresses to delete
+              items:
+                type: object
+                properties: {}
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/RadiusRemoveClients.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

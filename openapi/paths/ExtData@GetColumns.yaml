@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Gets the value of all extended columns for a row.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - ID
+            - Table
+          type: object
+          properties:
+            ID:
+              type: string
+              description: ID of the row to set.
+            IncludeNulls:
+              type: boolean
+              description: Include columns with null values.
+            Table:
+              type: string
+              description: Name of the table to modify.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExtDataGetColumns.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

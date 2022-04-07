@@ -1,0 +1,15 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      BrandExperience:
+        type: string
+        description: The tenant brand experience (Unknown, Legacy, Centrify, Idaptive).
+      Brand:
+        type: string
+        description: The tenant brand.
+    description: The tenant brand information.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

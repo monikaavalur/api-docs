@@ -1,0 +1,9 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties: {}
+    description: The next step (if there is one) for the user authentication.
+  Error:
+    type: object
+    description: Error message text on failure, may be null

@@ -1,0 +1,41 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      DirectoryServiceUuid:
+        type: string
+        description: The unique identifier of this directory service.
+      ErrorMessage:
+        type: string
+        description: Error message from the connectivity validation.
+      TrustedRedirectUris:
+        type: array
+        description: The list of trusted redirect uri's.
+        items:
+          type: string
+      PrimaryDomain:
+        type: string
+        description: The primary domain for this directory service.
+      ConnectivityStatus:
+        type: string
+        description: The directory service's connectivity status.
+    description: The directory service configuration.
+  Error:
+    type: object
+    properties: {}
+    description: |2-
+
+                  {
+                      description: "The directory service configuration.", 
+                      type: "object",
+                      properties: 
+                      {
+                          DirectoryServiceUuid: { description: "The unique identifier of this directory service.", type: "string" },
+                          PrimaryDomain: { description: "The primary domain for this directory service.", type: "string" },
+                          ConnectivityStatus: { description: "The directory service's connectivity status.", type: "string" },
+                          ErrorMessage: { description: "Error message from the connectivity validation.", type: "string" },
+                          TrustedRedirectUris: { description: "The list of trusted redirect uri's.", type: "array", items: { type: "string" } }
+                      }
+                  }
+                  

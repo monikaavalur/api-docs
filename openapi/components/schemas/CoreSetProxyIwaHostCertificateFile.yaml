@@ -1,0 +1,36 @@
+type: object
+properties:
+  Result:
+    type: object
+    properties:
+      HttpPort:
+        type: integer
+        description: Hyper text transport port number.
+      Port:
+        type: integer
+        description: Port number for the connector.
+      WebProxyEnabled:
+        type: boolean
+        description: Should the web connector be enabled.
+      CertThumbprint:
+        type: string
+        description: certificate thumbprint
+      WebProxyPort:
+        type: integer
+        description: The port used by the web connector.
+      Enabled:
+        type: boolean
+        description: Is the connector enabled.
+      IwaCheckTimeout:
+        type: integer
+        description: The Iwa timeout value to use.
+      Name:
+        type: string
+        description: The proxies name.
+      Hostname:
+        type: string
+        description: The host name of the connector.
+    description: The connector that got its certificate set
+  Error:
+    type: object
+    description: Error message text on failure, may be null

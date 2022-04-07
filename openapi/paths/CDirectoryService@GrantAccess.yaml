@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Grant portal access to technical support.
+  description: >-
+    You must be a system administrator or have user management permissions. 
+    Support will receive portal access for the specified time period.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            SupportAccessTimeInMinute:
+              type: integer
+              description: >-
+                Number of minutes support user will have portal access
+                (default=240 (4 hours), max of 30 days)
+            SupportEmailAddress:
+              type: string
+              description: >-
+                Email address of the support user (default=internal support
+                email); an email with login info will be sent to this address.
+            SendEmail:
+              type: boolean
+              description: >-
+                Whether or not to send Auth URL in email (default=true); if
+                false, Auth URL will be in the 'AuthUrl' response property
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CDirectoryServiceGrantAccess.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

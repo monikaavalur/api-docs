@@ -1,0 +1,12 @@
+post:
+  tags:
+    - Policy Management
+  summary: Get the authentication policy modifiers.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyGetAuthPolicyModifiers.yaml
+  x-idap-anon: false

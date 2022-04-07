@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Store a suffix.
+  parameters:
+    - name: alias
+      in: query
+      description: The name of the alias to save.
+      required: true
+      schema:
+        type: string
+    - name: domain
+      in: query
+      description: The alias's domain.
+      required: true
+      schema:
+        type: string
+    - name: oldName
+      in: query
+      description: The old name of the alias.
+      required: true
+      schema:
+        type: string
+    - name: cdsAlias
+      in: query
+      description: Is the alias legacy.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreStoreAlias.yaml
+  x-idap-anon: false

@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Additional APIs
+    - User Management
+  summary: Delete admin security question.
+  parameters:
+    - name: Id
+      in: query
+      description: Uuid of the question to delete.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - Id
+          type: object
+          properties:
+            Id:
+              type: string
+              description: Uuid of the question to delete
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/TenantConfigDeleteAdminSecurityQuestion.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

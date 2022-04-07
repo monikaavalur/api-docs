@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Returns a machine certificate.
+  description: >-
+    The agent uses the certificate to establish an SslStream with a DirectAudit
+    collector.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            CertificatePassword:
+              type: string
+              description: The certificate password.
+              default: ''
+            ServerAuthentication:
+              type: boolean
+              description: Is the certificate being used for server authentication.
+              default: false
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ServerAgentGetCertificate.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

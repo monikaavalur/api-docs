@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Additional APIs
+    - Directory Service Management
+  summary: Get a list of cloud connectors that have the LDAP module enabled.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - DirectoryServiceUuid
+          type: object
+          properties:
+            DirectoryServiceUuid:
+              type: string
+              description: The LDAP service unique identifier.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/LDAPDirectoryServiceGetCloudConnectors.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

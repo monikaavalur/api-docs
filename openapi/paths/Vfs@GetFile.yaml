@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get the file.
+  description: vfs/...... points here.
+  parameters:
+    - name: path
+      in: query
+      description: Path to the file.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/VfsGetFile.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

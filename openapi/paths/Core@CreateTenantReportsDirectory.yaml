@@ -1,0 +1,13 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Creates a Reports directory in Path for the tenant.
+  description: The user must have AdminUI rights.
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreCreateTenantReportsDirectory.yaml
+  x-idap-anon: false

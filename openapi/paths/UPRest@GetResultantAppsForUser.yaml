@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Application Management
+  summary: >-
+    Return a user's portal applications and how the user has access to each
+    application.
+  description: >-
+    Your must have user management rights to invoke this API.  This call caches
+    the list of applications and roles.  Personal apps are not included in the
+    result.
+  parameters:
+    - name: userUuid
+      in: query
+      description: Target user uuid.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/UPRestGetResultantAppsForUser.yaml
+  x-idap-anon: false

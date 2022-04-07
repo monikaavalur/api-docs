@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Add a certificate authority.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - externalCa
+          type: object
+          properties:
+            externalCa:
+              type: object
+              properties: {}
+              description: >-
+                The file containing the certificate authority, in the
+                form-data.  (Not as a parameter.)
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/ExternalCaMgmtAddCertAuthority.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload

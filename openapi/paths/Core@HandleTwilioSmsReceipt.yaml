@@ -1,0 +1,49 @@
+post:
+  tags:
+    - Additional APIs
+  summary: This is a callback used by the twilio service.
+  description: Customers will not call this directly.
+  parameters:
+    - name: state
+      in: query
+      description: The twilio state to log.
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - AccountSid
+            - MessageSid
+            - MessageStatus
+            - SMsStatus
+            - SmsSid
+          type: object
+          properties:
+            SMsStatus:
+              type: string
+              description: The message's SmsStatus.
+            AccountSid:
+              type: string
+              description: The message's AccountSid.
+            SmsSid:
+              type: string
+              description: The message's SmsSid.
+            MessageStatus:
+              type: string
+              description: The message's status.
+            MessageSid:
+              type: string
+              description: The message's MessageSid.
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/CoreHandleTwilioSmsReceipt.yaml
+  x-idap-anon: true
+  x-codegen-request-body-name: payload

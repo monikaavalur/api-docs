@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Additional APIs
+  summary: Get a list of policies for a device.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - deviceId
+            - policies
+          type: object
+          properties:
+            deviceId:
+              type: string
+              description: The device identifier.
+            policies:
+              type: array
+              description: A list of policies
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: API-Result
+      content:
+        '*/*':
+          schema:
+            $ref: ../components/schemas/PolicyPolicyChecks.yaml
+  x-idap-anon: false
+  x-codegen-request-body-name: payload
