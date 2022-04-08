@@ -5,12 +5,4 @@ flows:
     tokenUrl: https://{tenant}.my.idaptive.app/OAuth2/Token/{appid}
     scopes:
       all: All Scopes
-  parameters:
-    - name: tenant
-      in: path
-      description: Cyberark Identity Tenant ID
-      required: true
-    - name: appid
-      in: path
-      description: Cyberark Identity OAuth2 Application ID
-      required: true
+
