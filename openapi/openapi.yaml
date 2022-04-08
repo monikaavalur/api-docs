@@ -1156,11 +1156,7 @@ components:
       in: path
       description: Cyberark Identity Tenant ID
       required: true
-      schema:
-        type: string
     - name: appid
       in: path
       description: Cyberark Identity OAuth2 Application ID
       required: true
-      schema:
-        type: string
