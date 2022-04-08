@@ -1151,12 +1151,3 @@ components:
   securitySchemes:
     oauth2:
       $ref: components/securitySchemes/oauth2.yaml
-    parameters:
-    - name: tenant
-      in: path
-      description: Cyberark Identity Tenant ID
-      required: true
-    - name: appid
-      in: path
-      description: Cyberark Identity OAuth2 Application ID
-      required: true
