@@ -5,7 +5,7 @@ info:
   termsOfService: https://www.idaptive.com/eula/
   version: 22.3.244-ae3a9663f
 servers:
-  - url: https://{tenant}.my.idaptive.app
+  - url: []
     variables:
       tenant:
         description: CyberArk Identity Tenant ID
