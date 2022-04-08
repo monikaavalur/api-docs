@@ -1162,3 +1162,6 @@ components:
      name: appid
      description: Cyberark Identity OAuth2 Application ID
      required: true  
+security:
+  - oauth2:
+    - all
