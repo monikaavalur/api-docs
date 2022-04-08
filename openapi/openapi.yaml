@@ -9,6 +9,7 @@ servers:
     variables:
       tenant:
         description: CyberArk Identity Tenant ID
+        default: xxx0000
 tags:
   - name: Authentication
     description: Authentication functions and ops
