@@ -5,7 +5,7 @@ info:
   termsOfService: https://www.idaptive.com/eula/
   version: 22.3.244-ae3a9663f
 servers:
-  - url: /
+  - url: https://{tenant}.my.idaptive.app
 tags:
   - name: Authentication
     description: Authentication functions and ops
@@ -1147,3 +1147,7 @@ paths:
   /Zso/SetMacSafariZsoCookie:
     $ref: paths/Zso@SetMacSafariZsoCookie.yaml
 x-explorer-enabled: false
+components:
+  securitySchemes:
+    oauth2:
+      $ref: components/securitySchemes/oauth2.yaml
