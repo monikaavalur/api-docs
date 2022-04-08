@@ -6,8 +6,9 @@ info:
   version: 22.3.244-ae3a9663f
 servers:
   - url: https://{tenant}.my.idaptive.app
-    parameters:
-      - $ref: '#/components/parameters/tenantParam'
+    variables:
+      tenant:
+        description: CyberArk Identity Tenant ID
 tags:
   - name: Authentication
     description: Authentication functions and ops
