@@ -1151,21 +1151,3 @@ paths:
   /Zso/SetMacSafariZsoCookie:
     $ref: paths/Zso@SetMacSafariZsoCookie.yaml
 x-explorer-enabled: false
-components:
-  securitySchemes:
-    oauth2:
-      $ref: components/securitySchemes/oauth2.yaml
-  parameters:
-    tenantParam:
-     in: path
-     name: tenant
-     description: Cyberark Identity Tenant ID
-     required: true
-    appidParam:
-     in: path
-     name: appid
-     description: Cyberark Identity OAuth2 Application ID
-     required: true  
-security:
-  - oauth2:
-    - all
