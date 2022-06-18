@@ -1146,4 +1146,3 @@ paths:
     $ref: paths/Zso@IsSessionAuthenticated.yaml
   /Zso/SetMacSafariZsoCookie:
     $ref: paths/Zso@SetMacSafariZsoCookie.yaml
-x-explorer-enabled: false
