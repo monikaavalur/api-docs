@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: The requested LDAP service config.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

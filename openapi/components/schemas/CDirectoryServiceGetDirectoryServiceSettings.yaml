@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    description: The directory service configuration.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

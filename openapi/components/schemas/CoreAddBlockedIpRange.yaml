@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: boolean
-    description: Did adding the new blocked IP range succeed.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

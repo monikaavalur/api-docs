@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: 200 on yes, 503 on no, and a report.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

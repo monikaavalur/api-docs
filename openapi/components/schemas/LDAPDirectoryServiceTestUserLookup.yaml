@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: integer
-    description: '!!! fix this - it''s not ''description'', this is just a PH !!!'
-  Error:
-    type: object
-    description: Error message text on failure, may be null

@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: string
-    description: Success or fail, if fail includes -'d list of filenames that failed.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

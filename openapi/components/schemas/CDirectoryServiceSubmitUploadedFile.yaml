@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: boolean
-    description: Success or failure of job creation.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

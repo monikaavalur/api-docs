@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: GUID for the storage result
-  Error:
-    type: object
-    description: Error message text on failure, may be null

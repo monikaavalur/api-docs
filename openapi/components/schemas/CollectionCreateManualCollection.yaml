@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: string
-    description: UUID id reference to the manual collection
-  Error:
-    type: object
-    description: Error message text on failure, may be null

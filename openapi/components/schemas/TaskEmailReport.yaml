@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: string
-    description: The unique identifier from the email send job.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

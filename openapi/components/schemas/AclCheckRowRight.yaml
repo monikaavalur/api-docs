@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: boolean
-    description: Did the row right check succeed.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

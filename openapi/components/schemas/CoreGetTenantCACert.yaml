@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: FileResult containing the public part of the tenant CA certificate.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

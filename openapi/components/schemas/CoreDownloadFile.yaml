@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: ActionResult containing the contents of the downloaded file.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

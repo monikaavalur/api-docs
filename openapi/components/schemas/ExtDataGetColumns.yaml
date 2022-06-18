@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: The values of the extended columns as an object
-  Error:
-    type: object
-    description: Error message text on failure, may be null

@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: integer
-    description: The integer value returned by the policy.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: File containing the Iwa trust certificate for the tenant.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

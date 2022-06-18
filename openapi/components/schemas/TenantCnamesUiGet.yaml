@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: A list of tenant cnames in UI Query Response format.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

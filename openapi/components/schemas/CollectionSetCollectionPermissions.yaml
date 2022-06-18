@@ -1,8 +1,0 @@
-type: object
-properties:
-  Result:
-    type: string
-    description: This function returns nothing.
-  Error:
-    type: object
-    description: Error message text on failure, may be null

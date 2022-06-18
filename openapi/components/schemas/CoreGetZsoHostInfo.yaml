@@ -1,9 +1,0 @@
-type: object
-properties:
-  Result:
-    type: object
-    properties: {}
-    description: ActionResult containing the Zso host information.
-  Error:
-    type: object
-    description: Error message text on failure, may be null
